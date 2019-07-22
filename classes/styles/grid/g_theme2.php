@@ -13,17 +13,18 @@
 .g_theme_2 p {
     margin-bottom: 15px;
     color: <?php echo !empty($post_content_color) ? $post_content_color : "#F42156";?>;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 26px;
     font-weight: 100;
     text-align: left;
 }
 .g_theme_2 .post_title {
     margin-bottom: 15px;
+    word-break: break-word;
 }
 .g_theme_2 .pgcu {
     border: 1px solid #ebedf2;
-    padding: 25px 30px;
+    padding: 13px 19px 19px;
 }
 .g_theme_2 .pgcu_post {
     border-bottom: none;
@@ -39,7 +40,7 @@
     color: <?php echo !empty($read_more_color) ? $read_more_color : "#363940";?> !important;
     background-color: <?php echo !empty($read_more_back_color) ? $read_more_back_color : "#fff";?>;
     margin-top: 9px;
-    box-shadow: 0 0 0
+    box-shadow: 0 0 0;
 }
 .g_theme_2 .btn:hover {
     color: <?php echo !empty($read_more_hover_color) ? $read_more_hover_color : "#F42156";?>!important;

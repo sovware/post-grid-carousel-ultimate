@@ -6,12 +6,12 @@
 }
 
 #pgcu_style2 .pgcu_post.pgcu_post--style1 .pgcu_post__contents {
-    padding: 25px 30px 25px;
+    padding: 14px 20px 16px;
 }
 
 #pgcu_style2 .pgcu_post.pgcu_post--style1 .pgcu_post__contents .post_info {
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin-top: 6px;
+    margin-bottom: 8px;
 }
 
 #pgcu_style2 .pgcu_post.pgcu_post--style1 .pgcu_post__contents .post_info .category::before {
@@ -24,9 +24,9 @@
 }
 #pgcu_style2 .pgcu_post .post_info ul li,#pgcu_style2 .pgcu_post .post_info ul li a {
     color: <?php echo !empty($meta_data_color) ? $meta_data_color : "#9192a3";?>;
-    font-size: <?php echo !empty($meta_data_font_size) ? $meta_data_font_size : "16px";?>;
+    font-size: <?php echo !empty($meta_data_font_size) ? $meta_data_font_size : "13px";?>;
     margin-left: 0;
-    
+    line-height: 19px;
 }
 
 #pgcu_style2 .pgcu_post .post_title h4 {
@@ -54,8 +54,8 @@
 #pgcu_style2 p {
     margin-bottom: 15px;
     color: <?php echo !empty($post_content_color) ? $post_content_color : "#6e7387";?>;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 26px;
     font-weight: 100;
     text-align: left;
 }

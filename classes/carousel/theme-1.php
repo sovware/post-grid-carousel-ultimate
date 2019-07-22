@@ -63,13 +63,12 @@
                                                     $cats = get_the_category();
                                                     if(!empty($cats)){
                                                 ?>
-                                                <li class="category">in
-                                                    <?php
+                                                <li class="category">in<?php
                                                     $output = array();
                                                     foreach($cats as $cat) {
                                                         $link = get_category_link($cat->term_id);
                                                         $space = str_repeat('&nbsp;', 1);
-                                                        $output []= "{$space}<a href='{$link}'>{$cat->name}</a>";
+                                                        $output []= "{$space}<a href='{$link}'> {$cat->name}</a>";
                                                     }
                                                     echo join(',', $output);
                                                     ?>

@@ -5,10 +5,10 @@
 }
 #pgcu_style5 .pgcu_post.pgcu_post.pgcu_post--style3 .pgcu_post__contents {
     border: 1px solid #ebedf2;
-    padding: 25px 30px;
+    padding: 14px 20px 20px;
 }
 #pgcu_style5 .pgcu_post.pgcu_post.pgcu_post--style3 .pgcu_post__contents .post_title {
-    margin-bottom: 15px;
+    margin-bottom: 9px;
 }
 #pgcu_style5 .pgcu_post.pgcu_post--style3 .read_more {
     border: 1px solid <?php echo !empty($read_more_border_color) ? $read_more_border_color : "#e4e4ed";?>;
@@ -43,8 +43,8 @@
 #pgcu_style5 p {
     margin-bottom: 15px;
     color: <?php echo !empty($post_content_color) ? $post_content_color : "#6e7387";?>;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 26px;
     font-weight: 100;
     text-align: left;
 }

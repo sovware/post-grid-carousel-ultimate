@@ -7,13 +7,13 @@
 }
 
 #pgcu_style1 .pgcu_post.pgcu_post--style1 .pgcu_post__contents {
-    padding: 25px 30px 25px;
+    padding: 14px 20px 16px;
     line-height: normal;
 }
 
 #pgcu_style1 .pgcu_post.pgcu_post--style1 .pgcu_post__contents .post_info {
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin-top: 6px;
+    margin-bottom: 8px;
 }
 
 #pgcu_style1 .pgcu_post.pgcu_post--style1 .pgcu_post__contents .post_info .category::before {
@@ -31,6 +31,7 @@
     font-size: <?php echo !empty($post_title_font_size) ? $post_title_font_size : "20px";?>;
     font-weight: 500;
     text-align: left;
+    line-height: 24px;
 }
 
 #pgcu_style1 .pgcu_post .post_title h4:hover {
@@ -38,10 +39,12 @@
 }
 #pgcu_style1 .pgcu_post .post_info ul li {
     margin-left: 0;
+    flex-wrap: wrap;
 }
-#pgcu_style1 .pgcu_post .post_info ul li,#pgcu_style1 .pgcu_post .post_info ul li a { 
+#pgcu_style1 .pgcu_post .post_info ul li, #pgcu_style1 .pgcu_post .post_info ul li a {
     color: #9192a3;
-    font-size: 16px;
+    font-size: 13px;
+    line-height: 19px;
 }
 #pgcu_style1 .pgcu_post .post_info ul {
     margin: 0;
@@ -49,8 +52,8 @@
 #pgcu_style1 .pgcu_post__contents p {
     margin-bottom: 15px;
     color: <?php echo !empty($post_content_color) ? $post_content_color : "#6e7387";?>;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 26px;
     font-weight: 100;
     text-align: left;
 }

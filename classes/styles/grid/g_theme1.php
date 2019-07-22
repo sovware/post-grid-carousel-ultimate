@@ -6,7 +6,7 @@
 }
 
 #pgcu_style2 .pgcu_post.pgcu_post--style1 .pgcu_post__contents {
-    padding: 14px 20px 16px;
+    padding: 13px 19px 16px;
 }
 
 #pgcu_style2 .pgcu_post.pgcu_post--style1 .pgcu_post__contents .post_info {

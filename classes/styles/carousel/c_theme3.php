@@ -5,7 +5,7 @@
 }
 #pgcu_style5 .pgcu_post.pgcu_post.pgcu_post--style3 .pgcu_post__contents {
     border: 1px solid #ebedf2;
-    padding: 14px 20px 20px;
+    padding: 13px 19px 19px;
 }
 #pgcu_style5 .pgcu_post.pgcu_post.pgcu_post--style3 .pgcu_post__contents .post_title {
     margin-bottom: 9px;

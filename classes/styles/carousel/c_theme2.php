@@ -5,7 +5,7 @@
     padding:0;
 }
 #pgcu_style4 .pgcu_post.pgcu_post--style2 .pgcu_post__contents {
-    padding: 14px 0 0 0;
+    padding: 13px 0 0 0;
 }
 #pgcu_style4 .pgcu_post.pgcu_post--style2 .pgcu_post__contents .post_info {
     padding-bottom: 8px;

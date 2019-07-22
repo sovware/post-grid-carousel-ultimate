@@ -13,8 +13,8 @@
 .g_theme_2 p {
     margin-bottom: 15px;
     color: <?php echo !empty($post_content_color) ? $post_content_color : "#F42156";?>;
-    font-size: 16px;
-    line-height: 30px;
+    font-size: 15px;
+    line-height: 26px;
     font-weight: 100;
     text-align: left;
 }
@@ -24,7 +24,7 @@
 }
 .g_theme_2 .pgcu {
     border: 1px solid #ebedf2;
-    padding: 25px 30px;
+    padding: 13px 19px 19px;
 }
 .g_theme_2 .pgcu_post {
     border-bottom: none;

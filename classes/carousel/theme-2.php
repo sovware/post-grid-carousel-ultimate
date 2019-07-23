@@ -61,7 +61,7 @@
                                                         $cats = get_the_category();
                                                         if(!empty($cats)){
                                                     ?>
-                                                    <li class="category">in
+                                                    <li class="category"><span>in</span>
                                                         <?php
                                                         $output = array();
                                                         foreach($cats as $cat) {

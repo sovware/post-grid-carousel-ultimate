@@ -14,6 +14,7 @@
     margin-right: 15px;
     margin-left: 0;
     line-height: 19px;
+    padding-left: 0;
 }
 #pgcu_style4 .pgcu_post.pgcu_post--style2 .pgcu_post__contents .post_info ul li,#pgcu_style4 .pgcu_post.pgcu_post--style2 .pgcu_post__contents .post_info ul li a {
     color: <?php echo !empty($meta_data_color) ? $meta_data_color : "#9192a3";?>;
@@ -53,6 +54,7 @@
 }
 #pgcu_style4 .pgcu_post .post_info ul {
     margin: 0;
+    padding: 0;
 }
 #pgcu_style4 .pgcu_post {
     border-bottom: none;

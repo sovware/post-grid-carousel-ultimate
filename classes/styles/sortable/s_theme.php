@@ -34,6 +34,7 @@
 }
 #pgcu_style3 .post_info ul,#pgcu_style3 .post_info ul li  {
 	margin: 0;
+    padding: 0;
 }
 #pgcu_style3 .pgcu_filter_area ul li {
 	margin-left: 0;

@@ -40,6 +40,7 @@
 #pgcu_style1 .pgcu_post .post_info ul li {
     margin-left: 0;
     flex-wrap: wrap;
+    padding-left: 0;
 }
 #pgcu_style1 .pgcu_post .post_info ul li, #pgcu_style1 .pgcu_post .post_info ul li a {
     color: #9192a3;
@@ -48,6 +49,7 @@
 }
 #pgcu_style1 .pgcu_post .post_info ul {
     margin: 0;
+    padding: 0;
 }
 #pgcu_style1 .pgcu_post__contents p {
     margin-bottom: 15px;
@@ -59,6 +61,7 @@
 }
 #pgcu_style1 .read_more {
     color: <?php echo !empty($read_more_color) ? $read_more_color : "#363940";?>;
+
 }
 #pgcu_style1 .read_more:hover {
     color : <?php echo !empty($read_more_hover_color) ? $read_more_hover_color : "#9B9FAC";?>;

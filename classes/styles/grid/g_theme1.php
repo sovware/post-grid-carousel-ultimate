@@ -27,6 +27,8 @@
     font-size: <?php echo !empty($meta_data_font_size) ? $meta_data_font_size : "13px";?>;
     margin-left: 0;
     line-height: 19px;
+    word-break: break-word;
+    padding-left: 0;
 }
 
 #pgcu_style2 .pgcu_post .post_title h4 {
@@ -41,6 +43,7 @@
 } 
 #pgcu_style2 .pgcu_post .post_info ul {
     margin: 0;
+    padding: 0;
 }
 #pgcu_style2 .pgcu_post.pgcu_post--style1 {
     padding:0;

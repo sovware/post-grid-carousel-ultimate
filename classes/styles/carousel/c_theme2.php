@@ -45,6 +45,8 @@
     font-size: 20px;
     font-weight: 500;
     text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 0;
 }
 #pgcu_style4 .pgcu_post .pgcu_post__contents .post_title {
     margin-bottom: 6px;

@@ -37,6 +37,8 @@
     font-size: 20px;
     font-weight: 500;
     text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 0;
 }
 #pgcu_style2 .pgcu_post .post_title h4:hover {
     color: <?php echo !empty($post_title_hover_color) ? $post_title_hover_color : "#F42156";?>;

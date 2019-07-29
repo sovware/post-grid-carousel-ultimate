@@ -8,7 +8,7 @@
     padding: 13px 19px 19px;
 }
 #pgcu_style5 .pgcu_post.pgcu_post.pgcu_post--style3 .pgcu_post__contents .post_title {
-    margin-bottom: 9px;
+    margin-bottom: 13px;
 }
 #pgcu_style5 .pgcu_post.pgcu_post--style3 .read_more {
     border: 1px solid <?php echo !empty($read_more_border_color) ? $read_more_border_color : "#e4e4ed";?>;
@@ -32,6 +32,8 @@
     font-size: 20px;
     font-weight: 500;
     text-align: left;
+    text-transform: capitalize;
+    letter-spacing: 0;
 }
 #pgcu_style5 .pgcu_post .post_title h4:hover {
     color: <?php echo !empty($post_title_hover_color) ? $post_title_hover_color : "#F42156";?>;

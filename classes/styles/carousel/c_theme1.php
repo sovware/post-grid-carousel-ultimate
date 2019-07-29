@@ -32,6 +32,8 @@
     font-weight: 500;
     text-align: left;
     line-height: 24px;
+    text-transform: capitalize;
+    letter-spacing: 0;
 }
 
 #pgcu_style1 .pgcu_post .post_title h4:hover {

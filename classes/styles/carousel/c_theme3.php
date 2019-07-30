@@ -12,9 +12,9 @@
 }
 #pgcu_style5 .pgcu_post.pgcu_post--style3 .read_more {
     border: 1px solid <?php echo !empty($read_more_border_color) ? $read_more_border_color : "#e4e4ed";?>;
-    line-height: 42px;
+    line-height: 24px;
     display: inline-block;
-    padding: 0 20px;
+    padding: 10px 20px;
     -webkit-border-radius: 2px;
             border-radius: 2px;
     font-size: 15px;
@@ -25,6 +25,7 @@
 #pgcu_style5 .pgcu_post.pgcu_post--style3 .read_more:hover{
     color: <?php echo !empty($read_more_hover_color) ? $read_more_hover_color : "#F42156";?>;
     background: <?php echo !empty($read_more_hover_back_color) ? $read_more_hover_back_color : "#1289A7";?>;
+    box-shadow: none;
 }
 #pgcu_style5 .pgcu_post .post_title h4 {
     margin:0;

@@ -29,6 +29,7 @@
     line-height: 19px;
     word-break: break-word;
     padding-left: 0;
+    box-shadow: none;
 }
 
 #pgcu_style2 .pgcu_post .post_title h4 {
@@ -55,6 +56,7 @@
 }
 #pgcu_style2 .read_more:hover {
     color : <?php echo !empty($read_more_hover_color) ? $read_more_hover_color : "#F42156";?>;
+    box-shadow: none;
 }
 #pgcu_style2 p {
     margin-bottom: 15px;

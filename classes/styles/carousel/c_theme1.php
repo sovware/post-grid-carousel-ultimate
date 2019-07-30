@@ -48,6 +48,7 @@
     color: #9192a3;
     font-size: 13px;
     line-height: 19px;
+    box-shadow: none;
 }
 #pgcu_style1 .pgcu_post .post_info ul {
     margin: 0;
@@ -67,6 +68,7 @@
 }
 #pgcu_style1 .read_more:hover {
     color : <?php echo !empty($read_more_hover_color) ? $read_more_hover_color : "#9B9FAC";?>;
+    box-shadow: none;
 }
 
 #pgcu_style1 .aaz_pgcu_wrapper .nav_icon {

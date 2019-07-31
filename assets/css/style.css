@@ -1640,6 +1640,7 @@
 
 .entry-content a {
     border-bottom: 0;
+    box-shadow: none !important;
 }
 
 .entry .entry-content a {
@@ -1648,8 +1649,4 @@
 
 .read_more {
     font-size: 18px;
-}
-
-.entry-content a {
-    box-shadow: none;
 }

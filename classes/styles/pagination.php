@@ -29,8 +29,21 @@
   border-left: 1px solid #e4e4ed;
   margin-bottom: 0;
 }
+
 .pgcu_pagination ul a.page-numbers:first-child{
   border-left: 0 none;
+}
+
+
+.pgcu_pagination ul a.next, .pgcu_pagination ul a.prev {
+    font-size: 16px;
+    padding: 0 17px;
+    background: transparent;
+    line-height: 40px;
+}
+
+.pgcu_pagination ul a.next:hover, .pgcu_pagination ul a.prev:hover {
+    background: transparent;
 }
 
 .pgcu_pagination ul a, .pgcu_pagination ul span {

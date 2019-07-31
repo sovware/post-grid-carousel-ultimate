@@ -1597,6 +1597,7 @@
     padding: 0 15px;
     cursor: pointer;
     margin-right: 10px;
+      margin-bottom: 10px;
   }
 
   .pgcu_filter_area ul li span {

@@ -19,7 +19,7 @@
 }
 
 /* btn */
-.btn {
+.pgcu_container .btn {
 	line-height: 42px;
 	font-size: 15px;
 	font-weight: 400;
@@ -33,14 +33,14 @@
 	align-items: center;
 	border-radius: 2px;
 }
-.btn span {
+.pgcu_container .btn span {
 	margin-left: 10px;
 }
-.btn--colored {
+.pgcu_container .btn--colored {
 	border: 1px solid #f42156;
 	color: #f42156;
 }
-.load--btn:hover {
+.pgcu_container .load--btn:hover {
 	color: #fff !important;
 }
 .pgcu_title {
@@ -269,7 +269,7 @@
 	.pgcu_post.pgcu_post--style5 .pgcu_post__contents .rmbtn-share .rmbtn {
 		margin-right: 10px;
 	}
-	.btn {
+	.pgcu_container .btn {
 		line-height: 35px;
 		padding: 0 13px;
 	}

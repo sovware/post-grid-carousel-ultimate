@@ -44,7 +44,7 @@
                                     		if(empty($post_title) || $post_title != "off"){
                                     	?>
                                         <div class="post_title">
-                                            <a target="_blank" href="<?php the_permalink();?>">
+                                            <a href="<?php the_permalink();?>">
                                                 <h4><?php the_title();?></h4>
                                             </a>
                                         </div>

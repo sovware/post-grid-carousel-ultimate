@@ -49,7 +49,7 @@
                                     <div class="pgcu_post__contents">
                                     	<?php if(empty($post_title) || $post_title != "off") {?>
                                         <div class="post_title">
-                                            <a target="_blank" href="<?php the_permalink();?>">
+                                            <a href="<?php the_permalink();?>">
                                                 <h4><?php the_title();?></h4>
                                             </a>
                                         </div>
@@ -58,7 +58,7 @@
                                         <p><?php echo wp_trim_words(get_the_content(),16);?>
                                         </p>
                                         <?php if(empty($read_more) || $read_more != 'off') {?>
-                                        <a target="_blank" href="<?php the_permalink(); ?>" class="read_more"><?php esc_html_e('Read More', POST_GRID_CAROUSEL_TEXTDOMAIN); ?></a>
+                                        <a href="<?php the_permalink(); ?>" class="read_more"><?php esc_html_e('Read More', POST_GRID_CAROUSEL_TEXTDOMAIN); ?></a>
                                         <?php } ?>
                                         <?php } ?>
                                     </div>

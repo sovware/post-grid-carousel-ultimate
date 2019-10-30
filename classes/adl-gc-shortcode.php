@@ -46,7 +46,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 			if( $layout != 'isotope') { 
 			$post_from = !empty($post_from) ? $post_from : 'latest';
-			$paged 			    = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
+			$paged 			    = pgcu_get_paged_num();
 			$args = array();
 		    $common_args = [
 		        'post_type' => (!empty($post_type) ?  $post_type :  "post"),

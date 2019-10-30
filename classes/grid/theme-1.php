@@ -122,7 +122,7 @@
                         echo paginate_links( array(
                             'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                             'format'    => '?paged=%#%',
-                            'current'   => max( 1, get_query_var('paged') ),
+                            'current'   => max( 1, $paged ),
                             'total'     => $pages,
                             'prev_text' => __('Previous',POST_GRID_CAROUSEL_TEXTDOMAIN),
                             'next_text' => __('Next',POST_GRID_CAROUSEL_TEXTDOMAIN),

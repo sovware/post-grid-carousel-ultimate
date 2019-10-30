@@ -1,7 +1,3 @@
-body {
-  font-family: 'Work Sans', sans-serif;
-  font-size: 16px;
-}
 
 .pgcu_container h1,
 .pgcu_container h2,
@@ -20,7 +16,6 @@ body {
 .pgcu_container h4,
 .pgcu_container h5,
 .pgcu_container h6 {
-  font-family: 'Work Sans', sans-serif;
   color: #363940;
 }
 

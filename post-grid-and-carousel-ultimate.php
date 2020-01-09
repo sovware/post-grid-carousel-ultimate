@@ -3,14 +3,13 @@
 Plugin Name: Post Grid & Carousel Ultimate
 Plugin URI: https://wordpress.org/product/post-grid-carousel-ultimate-pro
 Description: Use Post Grid & Carousel Ultimate Plugin to display your posts in different beautiful Grids and Sliders/Carousels very easily.
-Version: 1.3.3
+Version: 1.3.4
 Author: AazzTech
 Author URI: https://aazztech.com
 License: GPLv2 or later
 */
 
 if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
-
 
 	class post_grid_and_carousel_ultimate
 	{
@@ -27,16 +26,10 @@ if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
 
 		}
 
-		
-
 		//method for language
 		public function gc_load_textdomain() {
 			load_plugin_textdomain(POST_GRID_CAROUSEL_TEXTDOMAIN,false,plugin_basename( dirname( __FILE__ ) ) . '/languages/');
 		}
-
-		
-
-		
 
 		//method for require files
 		public function gc_requires() {
@@ -51,7 +44,6 @@ if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
 			require_once(plugin_dir_path( __FILE__ ).'classes/helper.php');
 		}
 
-		
 		//method for pro version link
 		public function pro_version_plugin_link($links) {
 
@@ -69,10 +61,8 @@ if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
 		public function support_view() {
 			require_once('classes/support.php');
 		}
-		
 
 	} // endclass
-
 
 	if(class_exists('post_grid_and_carousel_ultimate')) { 
 
@@ -87,7 +77,5 @@ if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
 		new adl_gc_shortcode;
 
 		new Adl_widget_post;
-		
-		
-		
+
 	}

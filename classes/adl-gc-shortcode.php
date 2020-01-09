@@ -94,7 +94,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						    pgSlider.owlCarousel({
 						        margin: 30,
 						        mouseDrag:<?php echo !empty($mouse_draggable) && $mouse_draggable == 'off' ? 'false' : 'true';?>,
-						        dots: <?php echo !empty($c_pagination_dots) && $c_pagination_dots == 'off' ? 'false' : 'true';?>,
+						        dots: 'false',
 						        autoplayHoverPause:<?php echo !empty($c_pause_hover) && $c_pause_hover == 'off' ? 'false' : 'true';?>,
 						        autoplay:<?php echo !empty($c_autoplay) && $c_autoplay == 'off' ? 'false' : 'true';?>, 
 						        autoplaySpeed:<?php if(!empty($c_autoplay_speed)) { echo $c_autoplay_speed;}else{ echo 3000;}?>,

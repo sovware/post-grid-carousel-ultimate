@@ -2,8 +2,8 @@
 Contributors: AazzTech
 Tags: post grid, post carousel, post slider, post shortable grid, grid, carousel
 Requires at least: 4.0
-Tested up to: 5.3
-Stable tag: 1.3.4
+Tested up to: 5.4
+Stable tag: 1.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +90,8 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 15. Backend: Custom Widget
 
 == Changelog ==
+= 1.3.5 =
+* Improved: WordPress version
 = 1.3.4 =
 * Fix: Carousel issue
 = 1.3.3 =

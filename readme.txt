@@ -57,7 +57,7 @@ More amazing features available in [__Pro version__](https://aazztech.com/produc
 *   Read more button text edit option
 *   And many more features.
 
-Live demo: <https://aazztech.com/demos/plugins/post-grid-theme-2/>
+Live demo: <https://demo.aazztech.com/plugin/post-grid-theme-1/>
 
 
 == Installation ==

@@ -2,8 +2,8 @@
 Contributors: AazzTech
 Tags: post grid, post carousel, post slider, post shortable grid, grid, carousel
 Requires at least: 4.0
-Tested up to: 5.4
-Stable tag: 1.3.5
+Tested up to: 5.5
+Stable tag: 1.3.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -11,7 +11,7 @@ Use this plugin to display your posts/pages/custom post types in different beaut
 
 == Description ==
 
-Live demo: <https://aazztech.com/demos/plugins/post-grid-theme-1/>
+Live demo: <https://demo.aazztech.com/plugin/post-grid-theme-1/>
 
 Presentation of your posts determines how good they are to your users in the first sight. Do you want to display your posts in a beautiful way so that it attracts your users more? Now you can increase the attractiveness of your posts by using Post Grid & Carousel Ultimate plugin. It is the easiest and the most useful plugin that allows you display your blog posts, pages or any other custom posts in different beautiful grids & carousels. You can use different layouts like Normal Grid, Sortable Grid, and Carousel to display your posts. It is 100% responsive and Mobile friendly. Your posts will display perfectly on any devices. You do not need to be a pro to use this plugin. You can generate dynamic shortcodes just by a few mouse click and then use the shortcode anywhere to display your posts. The interface is extremely clean and easy to understand that a novice user can use this plugin without spending hours of valuable time reading online docs like other low-quality plugins. 
 
@@ -90,6 +90,9 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 15. Backend: Custom Widget
 
 == Changelog ==
+= 1.3.6 =
+* Add: WordPress 5.5 compatibility
+* Tweak: improved some code
 = 1.3.5 =
 * Improved: WordPress version
 = 1.3.4 =

@@ -1,9 +1,9 @@
 === Post Grid & Carousel Ultimate ===
-Contributors: AazzTech
-Tags: post grid, post carousel, post slider, post shortable grid, grid, carousel
+Contributors: wpwax
+Tags: post grid, post carousel, post slider, post sortable grid, grid, carousel
 Requires at least: 4.0
-Tested up to: 5.5
-Stable tag: 1.3.6
+Tested up to: 5.6
+Stable tag: 1.3.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,7 +38,7 @@ Presentation of your posts determines how good they are to your users in the fir
 *   Translation ready.
 *   And many more features.
 
-More amazing features available in [__Pro version__](https://aazztech.com/product/post-grid-carousel-ultimate-pro/).
+More amazing features available in [__Pro version__](https://wpwax.com/product/post-grid-carousel-ultimate-pro/).
 
 = Features of the Pro version =
 *   24 different themes for Grid, Filterable Grid and Masonry!
@@ -90,6 +90,8 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 15. Backend: Custom Widget
 
 == Changelog ==
+= 1.3.7 =
+* Add: WordPress 5.6 compatibility
 = 1.3.6 =
 * Add: WordPress 5.5 compatibility
 * Tweak: improved some code

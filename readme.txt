@@ -2,8 +2,8 @@
 Contributors: wpwax
 Tags: post grid, post carousel, post slider, post sortable grid, grid, carousel
 Requires at least: 4.0
-Tested up to: 5.6
-Stable tag: 1.3.7
+Tested up to: 5.7
+Stable tag: 1.3.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,11 +85,13 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 10. Backend: General Settings
 11. Backend: Carousel Settings
 12. Backend: Grid Settings
-13. Backend: Shortable Grid Settings
+13. Backend: Sortable Grid Settings
 14. Backend: Style Settings
 15. Backend: Custom Widget
 
 == Changelog ==
+= 1.3.8 =
+* Add: WordPress 5.7 compatibility
 = 1.3.7 =
 * Add: WordPress 5.6 compatibility
 = 1.3.6 =

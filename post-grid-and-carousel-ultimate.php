@@ -144,7 +144,8 @@ Final class post_grid_and_carousel_ultimate
     }
 
     public function template_enqueue_file () {
-        wp_register_style( 'wcpcsu-main', PGCU_URL . 'assets/css/style.css' );
+        wp_enqueue_style( 'pgcu-main', PGCU_URL . 'assets/css/style.css' );
+        wp_enqueue_style( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js' );
         
     }
 

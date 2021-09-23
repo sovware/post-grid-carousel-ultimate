@@ -45,6 +45,35 @@
         </tr>
 
         <tr>
+            <th><label for="gc[theme]"><?php esc_html_e('Select Theme', PGCU_TEXTDOMAIN); ?></label></th>
+            <td>
+                <select id="gc[theme]" name="gc[theme]">
+                    <option value="theme_1">Theme-1</option>
+                    <option value="theme_2" <?php if(!empty($theme) && $theme == "theme_2"){ echo "selected"; } ?>>Theme-2</option>
+                    <option value="theme_3" <?php if(!empty($theme) && $theme == "theme_3"){ echo "selected"; } ?>>Theme-3</option>
+                    <option disabled>Theme-4(Pro)</option>
+                    <option disabled>Theme-5(Pro)</option>
+                    <option disabled>Theme-6(Pro)</option>
+                    <option disabled>Theme-7(Pro)</option>
+                    <option disabled>Theme-8(Pro)</option>
+                    <option disabled>Theme-9(Pro)</option>
+                    <option disabled>Theme-10(Pro)</option>
+                    <option disabled>Theme-11(Pro)</option>
+                    <option disabled>Theme-12(Pro)</option>
+                    <option disabled>Theme-13(Pro)</option>
+                    <option disabled>Theme-14(Pro)</option>
+                    <option disabled>Theme-15(Pro)</option>
+                    <option disabled>Theme-16(Pro)</option>
+                    <option disabled>Theme-17(Pro)</option>
+                    <option disabled>Theme-18(Pro)</option>
+                    <option disabled>Theme-19(Pro)</option>
+                    <option disabled>Theme-20(Pro)</option>
+                    <option disabled>Theme-21(Pro)</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
             <th><label for="gc[total_posts]"><?php esc_html_e('Total Posts', PGCU_TEXTDOMAIN); ?></label></th>
             <td>
                 <input type='number' id="gc[total_posts]" name="gc[total_posts]" value="<?php if(empty($total_posts)) {echo '';

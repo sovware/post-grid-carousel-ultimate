@@ -1,20 +1,6 @@
 <div id="tab-3" class="tab-content">
     <table class="form-table">
 
-        <div id="tab-1" class="tab-content">
-            <tr>
-                <th><label for="gc[c_theme]"><?php esc_html_e('Select Theme', PGCU_TEXTDOMAIN); ?></label></th>
-                <td>
-                    <select id="gc[c_theme]" name="gc[c_theme]">
-                            <option value="carousel_theme_1">Theme-1</option>
-                            <option value="carousel_theme_2" <?php if(!empty($c_theme) && $c_theme == "carousel_theme_2"){ echo "selected";}?>>Theme-2</option>
-                            <option value="Carousel_theme_3" <?php if(!empty($c_theme) && $c_theme == "Carousel_theme_3"){ echo "selected";}?>>Theme-3</option>
-                            <option disabled>Theme-4 (Pro)</option>
-                            
-                    </select>
-                </td>
-            </tr>  
-        </div> 
         <tr>
             <th><label for="gc[post_column]"><?php esc_html_e('Post Column', PGCU_TEXTDOMAIN); ?></label></th>
             <td>

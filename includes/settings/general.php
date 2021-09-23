@@ -51,7 +51,7 @@
                     <option value="theme_1">Theme-1</option>
                     <option value="theme_2" <?php if(!empty($theme) && $theme == "theme_2"){ echo "selected"; } ?>>Theme-2</option>
                     <option value="theme_3" <?php if(!empty($theme) && $theme == "theme_3"){ echo "selected"; } ?>>Theme-3</option>
-                    <option disabled>Theme-4(Pro)</option>
+                    <option value="theme_4" <?php if(!empty($theme) && $theme == "theme_4"){ echo "selected"; } ?>>Theme-4</option>
                     <option disabled>Theme-5(Pro)</option>
                     <option disabled>Theme-6(Pro)</option>
                     <option disabled>Theme-7(Pro)</option>

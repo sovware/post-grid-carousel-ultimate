@@ -11,71 +11,167 @@ License: GPLv2 or later
 
 if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
 
-	class post_grid_and_carousel_ultimate
-	{
-		public function __construct() {
-			//after load the plugin
-			add_action('plugins_load',array($this,'gc_load_textdomain'));
+Final class post_grid_and_carousel_ultimate
+{
 
-			//require all file
-			$this->gc_requires();
+    /**
+    *
+    * @since 1.0.0
+    */
+    private static $instance;
 
-			add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array($this, 'pro_version_plugin_link') );
+	/**
+     *custom post
+     *@since 1.0.0
+     */
+    public $custom_post;
 
-			add_action('admin_menu', array($this, 'upgrade_support_submenu_pages_for_gc'));
+	/**
+     * metabox
+     *@since 1.0.0
+     */
+    public $metabox;
 
-		}
+    /**
+     * shortcode
+     *@since 1.0.0
+     */
+    public $shortcode;
 
-		//method for language
-		public function gc_load_textdomain() {
-			load_plugin_textdomain(POST_GRID_CAROUSEL_TEXTDOMAIN,false,plugin_basename( dirname( __FILE__ ) ) . '/languages/');
-		}
+    /**
+     * Main post_grid_and_carousel_ultimate Instance.
+     *
+     *
+     * @since 1.0
+     * @static
+     * @static_var array $instance
+     * @uses instanceof::adl_constants() Setup the constants needed.
+     * @uses instanceof::wcpcsu_include() Include the required files.
+     * @uses instanceof::wcpcsu_load_textdomain() load the language files.
+     * @return object|post_grid_and_carousel_ultimate The one true post_grid_and_carousel_ultimate
+     */
+    public static function instance() {
+        if(!isset(self::$instance) && !(self::$instance instanceof post_grid_and_carousel_ultimate)) {
+            self::$instance = new post_grid_and_carousel_ultimate;
+           
+            self::$instance->adl_constants();
+			self::$instance->include_files();
 
-		//method for require files
-		public function gc_requires() {
-			require_once(plugin_dir_path( __FILE__ ).'classes/config.php');
-			require_once(plugin_dir_path( __FILE__ ).'classes/adl-custom-post.php');
-			require_once(plugin_dir_path( __FILE__ ).'classes/adl-post-grid-carousel-metabox.php');
-			require_once(plugin_dir_path( __FILE__ ).'adl-post-carousel-enqueue.php');
-			require_once(plugin_dir_path( __FILE__ ).'classes/adl-gc-shortcode.php');
-			require_once(plugin_dir_path( __FILE__ ).'gc-mce-shortcode-button.php');
-			require_once(plugin_dir_path( __FILE__ ).'classes/gc-resize.php');
-			require_once(plugin_dir_path( __FILE__ ).'classes/adl-gc-widget.php');
-			require_once(plugin_dir_path( __FILE__ ).'classes/helper.php');
-		}
+			self::$instance->custom_post = new PGCU_Custom_Post();
+			self::$instance->metabox     = new PGCU_Metabox();
+            self::$instance->shortcode   = new PGCU_Shortcode();
 
-		//method for pro version link
-		public function pro_version_plugin_link($links) {
+			add_action('admin_enqueue_scripts',array( self::$instance, 'load_admin_file') );
+            add_action('template_redirect',array( self::$instance, 'template_enqueue_file') );
+			add_action('plugin_loaded',array( self::$instance, 'load_textdomain' ) );
+			add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( self::$instance, 'pro_version_plugin_link') );
 
-		$links[] = '<a href="https://wpwax.com/demos/plugins/post-carousel-theme-4/" target="_blank">Pro Version</a>';
+            add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
+        }
+
+        return self::$instance;
+    }
+
+    /**
+     * Setup plugin constants.
+     * @access private
+     * @since 1.0
+     * @return void
+     */
+    public function adl_constants() {
+        if( ! defined('ABSPATH')) { die( 'direct browsing can not possible'); }
+		if( ! defined('PGCU_TEXTDOMAIN')) { define('PGCU_TEXTDOMAIN','post-grid-and-carousel-ultimate'); }
+		if( ! defined('PGCU_POST_TYPE')) { define('PGCU_POST_TYPE','adl-shortcode'); }
+		// Plugin Folder Path.
+        if ( ! defined( 'PGCU_DIR' ) ) { define( 'PGCU_DIR', plugin_dir_path( __FILE__ ) ); }
+        // Plugin Folder URL.
+        if ( ! defined( 'PGCU_URL' ) ) { define( 'PGCU_URL', plugin_dir_url( __FILE__ ) ); }
+        // Plugin Root File.
+        if ( ! defined( 'PGCU_FILE' ) ) { define( 'PGCU_FILE', __FILE__ ); }
+        if ( ! defined( 'PGCU_BASE' ) ) { define( 'PGCU_BASE', plugin_basename( __FILE__ ) ); }
+        // Plugin Includes Path
+        if ( ! defined('PGCU_INC_DIR') ) { define('PGCU_INC_DIR', PGCU_DIR.'includes/'); }
+        // Plugin Language File Path
+        if ( ! defined('PGCU_LANG_DIR') ) { define('PGCU_LANG_DIR', dirname(plugin_basename( __FILE__ ) ) . '/languages'); }
+    }
+
+	//method for pro version link
+	public function pro_version_plugin_link( $links ) {
+
+		$links[] = '<a href="https://wpwax.com/product/post-grid-carousel-ultimate-pro/" target="_blank">Pro Version</a>';
          return $links;
-     
-		}
-
-		//method for support plugin
-		public function upgrade_support_submenu_pages_for_gc() {
-			add_submenu_page( 'edit.php?post_type=adl-shortcode', esc_html__('Support', POST_GRID_CAROUSEL_TEXTDOMAIN), esc_html__('Usage & Support', POST_GRID_CAROUSEL_TEXTDOMAIN), 'manage_options', 'support', array( $this, 'support_view' ) );
-		}
-
-		//method for submenu page
-		public function support_view() {
-			require_once('classes/support.php');
-		}
-
-	} // endclass
-
-	if(class_exists('post_grid_and_carousel_ultimate')) { 
-
-		new post_grid_and_carousel_ultimate;
-
-		new gc_adl_custom_post;
-
-		new adl_post_grid_carousel_metabox;
-
-		new adl_post_carousel_enqueue;
-
-		new adl_gc_shortcode;
-
-		new Adl_widget_post;
-
 	}
+
+    /**
+     * plugin text domain
+     */
+    public function load_textdomain()
+    {
+        load_plugin_textdomain( PGCU_TEXTDOMAIN, false, PGCU_LANG_DIR );
+    }
+
+    public function upgrade_support_submenu_pages_for_gc() {
+        add_submenu_page( 'edit.php?post_type=adl-shortcode', esc_html__('Support', PGCU_TEXTDOMAIN), esc_html__('Usage & Support', PGCU_TEXTDOMAIN), 'manage_options', 'support', array( $this, 'support_view' ) );
+    }
+
+    public function support_view() {
+        require_once PGCU_INC_DIR . 'support.php';
+    }
+
+    /**
+     * include all require files
+     *
+     * @access private
+     * @since 1.0.0
+     * @return void
+     */
+    public function include_files(){
+
+		require_once PGCU_INC_DIR . 'helper.php';
+        pgcu_load_dependencies( 'all', PGCU_INC_DIR . 'classes/' );
+    }
+
+    public function load_admin_file () {
+        global $typenow;
+
+        if( $typenow == PGCU_POST_TYPE ) {
+            wp_enqueue_script('admin',PLUGINS_URL('admin/admin.js',__FILE__),array('jquery'));
+			wp_enqueue_script( 'adl_color_js', PLUGINS_URL( 'admin/admin.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ) );
+			wp_enqueue_style('admin-css',PLUGINS_URL('admin/admin.css',__FILE__));
+			wp_enqueue_style('wp-color-picker');
+        }
+
+    }
+
+    public function template_enqueue_file () {
+        wp_register_style( 'wcpcsu-main', PGCU_URL . 'assets/css/style.css' );
+        
+    }
+
+    /**
+     * It will serialize and then encode the string using base64_encode() and return the encoded data
+     * @param $data
+     * @return string
+     */
+    public static function serialize_and_encode24( $data )
+    {
+        return base64_encode( serialize( $data ) );
+    }
+
+    /**
+     * It will decode the data using base64_decode() and then unserialize the data and return it
+     * @param string $data Encoded strings that should be decoded and then unserialize
+     * @return mixed
+     */
+    public static function unserialize_and_decode24( $data ){
+        return unserialize( base64_decode( $data ) );
+    }
+
+} //end of class
+
+function PGCU() {
+    return post_grid_and_carousel_ultimate::instance();
+}
+
+PGCU();
+	

@@ -50,9 +50,42 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 
             $layout = !empty($layout) ? $layout : 'carousel';
 			?>
+            <div class="lcsp-withoutTab-content">
+                <div class="cmb2-wrap form-table">
+                    <div id="cmb2-metabox" class="cmb2-metabox cmb-field-list">
+                        <div class="cmb2-metabox-header">
+                            <div class="div">
+                                <h4><span class="fas fa-cog"></span>Settings & Shortcode Generator</h4>
+                            </div>
+                            <div class="div">
+                                <a href="#">
+                                    <p><span class="fas fa-question-circle"></span>Support</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="cmb2-metabox-content">
+                            <div class="cmb2-metabox-card cmb2-metabox-card2">
+                                <h6><?php esc_html_e('Shortcode',PGCU_TEXTDOMAIN); ?></h6>
+                                <p><?php esc_html_e('Copy this shortcode and paste on page or post where you want to display post grid,carousel and sortable grid.Use PHP code to your themes file to display post grid.',PGCU_TEXTDOMAIN); ?>
+                                </p>
+                                <div class="cmb2-metabox-card-textarea">
+                                    <textarea onClick="this.select();">[PGCU <?php echo 'id="'.$post->ID.'"';?>]</textarea>
+                                </div>
+                            </div>
+                            <div class="cmb2-metabox-card cmb2-metabox-card3">
+                                <h6><?php esc_html_e('PHP Code:',PGCU_TEXTDOMAIN); ?></h6>
+                                <div class="cmb2-metabox-card-textarea">
+                                    <textarea
+                                        onClick="this.select();"><?php echo '<?php echo do_shortcode("[PGCU id='; echo "'".$post->ID."']"; echo '"); ?>'; ?></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- end cmb2-metabox -->
+                </div> <!-- end cmb2-wrap -->
+            </div> <!-- end lcsp-tab-2 -->
 			<div id="tabs-container">        
 				<ul class="tabs-menu">
-                    <li class="current"><a href="#tab-1"> <?php esc_html_e('Shortcodes', PGCU_TEXTDOMAIN); ?> </a></li>
+                    
 
 	                <li><a href="#tab-2"> <?php esc_html_e('General Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
@@ -63,21 +96,7 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 	                <li style="display: <?php if($layout == "isotope"){ echo "block";}else{ echo "none";}?>;" id="tab3"><a href="#tab-5"> <?php esc_html_e('Sortable Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
 	                <li><a href="#tab-6"> <?php esc_html_e('Style Settings', PGCU_TEXTDOMAIN); ?> </a></li>
-            	</ul>
-
-                <div id="tab-1" class="tab-content">
-                   
-                    <p><?php esc_html_e('Shortcode',PGCU_TEXTDOMAIN); ?></p>
-                    <p><?php esc_html_e('Copy this shortcode and paste on page or post where you want to display post grid,carousel and sortable grid.Use PHP code to your themes file to display post grid.',PGCU_TEXTDOMAIN); ?></p>
-                    <textarea cols="50" rows="1" style="background:#0074A8; color:#fff" onClick="this.select();" >[PGCU <?php echo 'id="'.$post->ID.'"';?>]</textarea>
-                <br /><br />
-
-                <p><?php esc_html_e('PHP Code:',PGCU_TEXTDOMAIN); ?></p>
-                <textarea cols="60" rows="1" style="background:#0074A8; color:#fff" onClick="this.select();" ><?php echo '<?php echo do_shortcode("[PGCU id='; echo "'".$post->ID."']"; echo '"); ?>'; ?></textarea>  
- 
-
-                
-                </div>    
+            	</ul>   
 
                 <?php 
                 require_once PGCU_INC_DIR . 'settings/general.php'; 

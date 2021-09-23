@@ -1,0 +1,286 @@
+/*
+    Plugin: Post Grid Carousel Ultimate
+    Plugin URI: https://wordpress.org/plugins/post-grid-carousel-ultimate/
+    Author: wpWax
+    Version: 2.0
+*/
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+/* pgcu grid */
+.pgcu-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-top: -25px;
+  min-width: 100%;
+}
+
+.pgcu-row > * {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 25px;
+}
+
+/* pgcu columns */
+.pgcu-column-1 .pgcu-product {
+  flex: 0 0 100%;
+}
+
+.pgcu-column-2 .pgcu-product {
+  flex: 0 0 50%;
+}
+
+.pgcu-column-3 .pgcu-product {
+  flex: 0 0 33.33%;
+}
+
+.pgcu-column-4 .pgcu-product {
+  flex: 0 0 25%;
+}
+
+.pgcu-column-5 .pgcu-product {
+  flex: 0 0 20%;
+}
+
+/* columns in mobile and tablet */
+@media only screen and (max-width: 991px) {
+  .pgcu-column-md-1 .pgcu-product {
+    flex: 0 0 100% !important;
+  }
+  .pgcu-column-md-2 .pgcu-product {
+    flex: 0 0 50%;
+  }
+  .pgcu-column-md-3 .pgcu-product {
+    flex: 0 0 33.33%;
+  }
+  .pgcu-column-md-4 .pgcu-product {
+    flex: 0 0 25%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pgcu-column-sm-1 .pgcu-product {
+    flex: 0 0 100% !important;
+  }
+  .pgcu-column-sm-2 .pgcu-product {
+    flex: 0 0 50%;
+  }
+  .pgcu-column-sm-3 .pgcu-product {
+    flex: 0 0 33.33%;
+  }
+  .pgcu-column-sm-4 .pgcu-product {
+    flex: 0 0 25%;
+    display: flex;
+  }
+}
+
+/* Keyframes */
+@keyframes pgcu-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pgcu-marquee {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/*
+    * Buttons
+    ? Modifiers: --sm, --lg, --rounded, --rounded-circle, --icon-circle, --outlined, --light
+*/
+/* Badges */
+/*===========================
+ Utility Classes
+===========================*/
+.pgcu-text-center {
+  text-align: center;
+}
+
+.pgcu-pos-relative {
+  position: relative;
+}
+
+.pgcu-d-block {
+  display: block;
+}
+
+.pgcu-d-flex {
+  display: flex;
+}
+
+.pgcu-space-between {
+  justify-content: space-between;
+}
+
+.pgcu-flex-center {
+  justify-content: center;
+}
+
+.pgcu-flex-column {
+  flex-direction: column;
+}
+
+.pgcu-flex-align-center {
+  align-items: center;
+}
+
+.pgcu-tr-0 {
+  top: 0;
+  right: 0;
+}
+
+.pgcu-tl-0 {
+  top: 0;
+  left: 0;
+}
+
+.pgcu-br-0 {
+  bottom: 0;
+  right: 0;
+}
+
+.pgcu-bl-0 {
+  bottom: 0;
+  left: 0;
+}
+
+.pgcu-mb-5 {
+  margin-bottom: 5px !important;
+}
+
+.pgcu-mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.pgcu-mb-15 {
+  margin-bottom: 15px !important;
+}
+
+.pgcu-mt-15 {
+  margin-top: 15px !important;
+}
+
+/* Utility responsiveness */
+@media (max-width: 575px) {
+  .wpxu-d-sm-block {
+    display: block;
+  }
+}
+
+/*===========================
+ Modal Styles
+===========================*/
+/*===========================
+ Pagination styles
+===========================*/
+.pgcu-pagination .pagination {
+  margin: 0;
+  padding: 0;
+  border: 0 none;
+  width: 100%;
+  max-width: 100%;
+}
+
+.pgcu-pagination .pagination .nav-links {
+  margin: 25px -5px -5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pgcu-pagination.pgcu-pagination--left .pagination .nav-links {
+  justify-content: flex-start;
+}
+
+.pgcu-pagination.pgcu-pagination--right .pagination .nav-links {
+  justify-content: flex-end;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers {
+  color: var(--pgcu-pagColor) !important;
+  margin: 5px;
+  font-size: 14px;
+  text-decoration: none !important;
+  border: 1px solid var(--pgcu-pagBorderColor) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: var(--pgcu-pagBgColor) !important;
+  width: 34px;
+  min-width: 34px;
+  height: 34px;
+  min-height: 34px;
+  border-radius: 3px;
+  transition: 0.3s ease;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers:before, .pgcu-pagination .pagination .nav-links .page-numbers:after {
+  content: none;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers.prev, .pgcu-pagination .pagination .nav-links .page-numbers.next {
+  position: static;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers svg {
+  fill: var(--pgcu-pagColor) !important;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers:hover svg {
+  fill: var(--pgcu-pagColorHover) !important;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers:hover {
+  background: var(--pgcu-pagBgColorHover) !important;
+  border-color: var(--pgcu-pagBorderColorHover) !important;
+  color: var(--pgcu-pagColorHover) !important;
+}
+
+.pgcu-pagination .pagination .nav-links .page-numbers.current {
+  background: var(--pgcu-pagActiveBgColor) !important;
+  border-color: var(--pgcu-pagActiveBorderColor) !important;
+  color: var(--pgcu-pagActiveColor) !important;
+}
+
+/* Carousel bullets pagination */
+.pgcu-carousel-pagination {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pgcu-carousel-pagination .swiper-pagination-bullet {
+  background: var(--pgcu-dotsColor) !important;
+  opacity: 1;
+}
+
+.pgcu-carousel-pagination .swiper-pagination-bullet-active {
+  background: var(--pgcu-dotsActiveColor) !important;
+}
+
+/*===========================
+ Style: Theme One
+===========================*/
+/*===========================
+ Style: Theme Two
+===========================*/
+/*===========================
+ Style: Theme Three
+===========================*/
+/*===========================
+ Style: Theme Four
+===========================*/

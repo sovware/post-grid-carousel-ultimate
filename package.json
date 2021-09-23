@@ -1,0 +1,24 @@
+{
+  "name": "post-grid-carousel-ultimate",
+  "version": "1.0.0",
+  "description": "=== Post Grid & Carousel Ultimate ===\r Contributors: wpwax\r Tags: post grid, post carousel, post slider, post sortable grid, grid, carousel\r Requires at least: 4.0\r Tested up to: 5.7\r Stable tag: 1.3.8\r License: GPLv2 or later\r License URI: http://www.gnu.org/licenses/gpl-2.0.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch --output-style expanded assets/scss -o assets/css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armanul46/post-grid-carousel-ultimate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Armanul46/post-grid-carousel-ultimate/issues"
+  },
+  "homepage": "https://github.com/Armanul46/post-grid-carousel-ultimate#readme",
+  "dependencies": {
+    "node-sass": "^6.0.1"
+  }
+}

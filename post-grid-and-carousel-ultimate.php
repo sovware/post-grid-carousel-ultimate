@@ -146,7 +146,8 @@ Final class post_grid_and_carousel_ultimate
     public function template_enqueue_file () {
         wp_enqueue_style( 'pgcu-main', PGCU_URL . 'assets/css/style.css' );
         wp_enqueue_style( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js' );
-        
+        wp_enqueue_script( 'pgcu-shuffle', PGCU_URL . 'assets/js/shuffle.min.js', array('jquery') );
+        wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
     }
 
     /**

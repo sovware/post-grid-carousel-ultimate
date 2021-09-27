@@ -6,6 +6,31 @@
 */
 /* Import font */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap");
+:root {
+  /* Default Variables */
+  --pgcu-primaryColor: $primary;
+  --pgcu-borderColor: $borderColor;
+  --pgcu-textColor: $textColor;
+  --pgcu-textLight: $textLight;
+  --pgcu-textDark: $textDark;
+  /* Post Title */
+  --pgcu-titleFontSize: 20px;
+  --pgcu-titleColor: $textDark;
+  --pgcu-titleColorHover: $primary;
+  /* Post Meta */
+  --pgcu-metaFontSize: 14px;
+  --pgcu-metaColor: $textLight;
+  --pgcu-metaColorHover: $primary;
+  /* Read more link */
+  --pgcu-readMoreColor: $textDark;
+  --pgcu-readMoreColorHover: $primary;
+  /* Buttons */
+  --pgcu-buttonColor: $textDark;
+  --pgcu-buttonColorHover: #fff;
+  --pgcu-buttonBg: 
+;
+}
+
 /* pgcu grid */
 .pgcu-row {
   display: flex;
@@ -100,6 +125,10 @@
     ? Modifiers: --sm, --lg, --rounded, --rounded-circle, --icon-circle, --outlined, --light
 */
 /* Badges */
+/*===========================
+ Style: Components
+===========================*/
+/* Post title */
 /*===========================
  Utility Classes
 ===========================*/

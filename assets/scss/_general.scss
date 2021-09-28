@@ -1,0 +1,28 @@
+/* Post card */
+.pgcu-post{
+    @include e(img){
+        @include e(upper-content){
+            position: absolute;
+            @include m(bottom-left){
+                left: 20px;
+                bottom: 15px;
+            }
+        }
+    }
+    @include m(rounded-border){
+        border-radius: 6px;
+        .pgcu-post__img{
+            position: relative;
+            img{
+                border-radius: 6px 6px 0 0;
+                width: 100%;
+            }
+        }
+        .pgcu-post__details{
+            border: 1px solid $borderColor;
+            border-top: 0 none;
+            border-radius: 0 0 6px 6px;
+            transition: 0.3s ease;
+        }
+    }
+}

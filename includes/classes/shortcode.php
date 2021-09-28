@@ -30,7 +30,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$rand = rand();
 
             $layout            = ! empty( $layout ) ? $layout : 'carousel';
-			$theme             = ! empty( $theme ) ? $theme : 'theme_1';
+			$theme             = ! empty( $theme ) ? $theme : 'theme_4';
 			$image_resize_crop = !empty($image_resize_crop) ? $image_resize_crop : "yes";
 			$image_ups		   = !empty($image_ups) ? $image_ups : "yes";
 			$image_width	   = !empty($image_width) ? $image_width : 300;
@@ -40,7 +40,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$post_date	       = !empty($post_date) ? $post_date : '';
 			$post_content	   = !empty($post_content) ? $post_content : '';
 			$post_author_name	   = !empty($post_author_name) ? $post_author_name : '';
-            
+
 			/* $theme = 'carousel_theme_1';
 			if( 'carousel' == $layout ) {
 				$theme = ! empty( $c_theme ) ? $c_theme : 'carousel_theme_1';
@@ -49,12 +49,12 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			} */
 
 			include PGCU_INC_DIR . 'templates/' . $theme . '.php';
-		
-				
+
+
 			$true = ob_get_clean();
 			return $true;
 		}
-		
+
 
 
 	}//end class

@@ -70,21 +70,3 @@
     border-color: var(--pgcu-pagActiveBorderColor) !important;
     color: var(--pgcu-pagActiveColor) !important;
 }
-
-/* Carousel bullets pagination */
-.pgcu-carousel-pagination {
-    margin-top: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-.pgcu-carousel-pagination{
-    .swiper-pagination-bullet{
-        background: var(--pgcu-dotsColor) !important;
-        opacity: 1;
-    }
-    .swiper-pagination-bullet-active {
-        background: var(--pgcu-dotsActiveColor) !important;
-    }
-}

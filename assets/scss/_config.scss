@@ -21,31 +21,49 @@ $textDark: #030213;
 
 :root {
     /* Default Variables */
-    --pgcu-primaryColor: $primary;
-    --pgcu-borderColor: $borderColor;
-    --pgcu-textColor: $textColor;
-    --pgcu-textLight: $textLight;
-    --pgcu-textDark: $textDark;
+    --pgcu-primaryColor: #F31C1C;
+    --pgcu-borderColor: #EBEDF2;
+    --pgcu-textColor: #63666D;
+    --pgcu-textLight: #9C9DAB;
+    --pgcu-textDark: #030213;
 
     /* Post Title */
     --pgcu-titleFontSize: 20px;
-    --pgcu-titleColor: $textDark;
-    --pgcu-titleColorHover: $primary;
+    --pgcu-titleColor: #030213;
+    --pgcu-titleColorHover: #F31C1C;
 
     /* Post Meta */
     --pgcu-metaFontSize: 14px;
-    --pgcu-metaColor: $textLight;
-    --pgcu-metaColorHover: $primary;
+    --pgcu-metaColor: #9C9DAB;
+    --pgcu-metaColorHover: #F31C1C;
+
+    /* Post excerpt */
+    --pgcu-excerptFontSize: 16px;
+    --pgcu-excerptColor: #63666D;
 
     /* Read more link */
-    --pgcu-readMoreColor: $textDark;
-    --pgcu-readMoreColorHover: $primary;
+    --pgcu-readMoreColor: #030213;
+    --pgcu-readMoreColorHover: #F31C1C;
 
     /* Buttons */
-    --pgcu-buttonColor: $textDark;
-    --pgcu-buttonColorHover: #fff;
+    --pgcu-buttonFontSize: 14px;
+    --pgcu-buttonColor: #030213;
+    --pgcu-buttonColorHover: #ffffff;
     --pgcu-buttonBg: #EFEFEF;
-    --pgcu-buttonBgHover: $textDark;
+    --pgcu-buttonBgHover: #030213;
 
-    /*  */
+    /* Pagination */
+    --pgcu-pagColor: #4F515A;
+    --pgcu-pagColorHover: #fff;
+    --pgcu-pagBorderColor: #EFEFEF;
+    --pgcu-pagBorderColorHover: #030213;
+    --pgcu-pagBgColor: #fff;
+    --pgcu-pagBgColorHover: #030213;
+    --pgcu-pagActiveColor: #fff;
+    --pgcu-pagActiveBgColor: #030213;
+    --pgcu-pagActiveBorderColor: #030213;
+
+    /* Badge */
+    --pgcu-badgeColor: #fff;
+    --pgcu-badgeBg: #F31C1C;
 }

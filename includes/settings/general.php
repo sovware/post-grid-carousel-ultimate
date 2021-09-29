@@ -1,3 +1,13 @@
+<?php 
+$post_type            = ! empty( $post_type ) ? $post_type : 'post';
+$term_from            = ! empty( $term_from ) ? $term_from : 'category';
+$display_term         = ! empty( $display_term ) ? $display_term : 'yes';
+$display_title        = ! empty( $display_title ) ? $display_title : 'yes';
+$display_content      = ! empty( $display_content ) ? $display_content : 'yes';
+$display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
+$display_author       = ! empty( $display_author ) ? $display_author : 'yes';
+$display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
+?>
 <!-- General settings -->
 <div id="tab-2" class="adl-tab-content">          
     <div class="cmb2-wrap form-table">
@@ -6,7 +16,7 @@
             <tr>
                 <th><label for="gc[post_type]"><?php esc_html_e('Post type', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <select id="gc[post_type]" name="gc[post_type]">
+                    <select id="pgcu_post_type" name="gc[post_type]">
                         <?php 
                         $custom_posts = get_post_types(array(
                             'public'=>true, 
@@ -17,8 +27,9 @@
                                 unset( $custom_posts[ $ex ] );
                             }
 
-                        if(!empty($custom_posts)) {
-                            foreach($custom_posts as $value){
+                        if( ! empty( $custom_posts ) ) {
+                            foreach( $custom_posts as $value ){
+                                $done = get_object_taxonomies( (object) array( 'post_type' => 'names', 'hide_empty' => true ) );
                                 ?>
 
                                 <option value="<?php echo $value;?>" <?php if(!empty($post_type) && $post_type ==$value){ echo "selected";}?> ><?php echo $value;?></option>
@@ -77,7 +88,7 @@
             <tr>
                 <th><label for="gc[total_posts]"><?php esc_html_e('Total Posts', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" id="gc[total_posts]" name="gc[total_posts]" value="<?php if(empty($total_posts)) {echo '';
+                    <input type='number' class="cmb2-text-medium" id="gc[total_posts]" name="gc[total_posts]" value="<?php if(empty($total_posts)) {echo '12';
                     }else{ echo $total_posts;}?>"/>
                     
                 </td>
@@ -101,6 +112,119 @@
                     </select>
                     
                 </td>
+            </tr>
+            
+            <tr>
+                <th><label for="gc[display_title]"><?php esc_html_e('Display Title', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_title]" id="gc[display_title1]" value="yes" <?php checked( 'yes', $display_title, true ); ?>> 
+                            <label for="gc[display_title1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_title]" id="gc[display_title2]" value="no" <?php checked( 'no', $display_title, true ); ?>> 
+                            <label for="gc[display_title2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[display_content]"><?php esc_html_e('Display Content', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_content]" id="gc[display_content1]" value="yes" <?php checked( 'yes', $display_content, true ); ?>> 
+                            <label for="gc[display_content1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_content]" id="gc[display_content2]" value="no" <?php checked( 'no', $display_content, true ); ?>> 
+                            <label for="gc[display_content2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[display_read_more]"><?php esc_html_e('Display Read more', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_read_more]" id="gc[display_read_more1]" value="yes" <?php checked( 'yes', $display_read_more, true ); ?>> 
+                            <label for="gc[display_read_more1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_read_more]" id="gc[display_read_more2]" value="no" <?php checked( 'no', $display_read_more, true ); ?>> 
+                            <label for="gc[display_read_more2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[display_author]"><?php esc_html_e('Display Author Name', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_author]" id="gc[display_author1]" value="yes" <?php checked( 'yes', $display_author, true ); ?>> 
+                            <label for="gc[display_author1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_author]" id="gc[display_author2]" value="no" <?php checked( 'no', $display_author, true ); ?>> 
+                            <label for="gc[display_author2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[display_date]"><?php esc_html_e('Display Date', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_date]" id="gc[display_date1]" value="yes" <?php checked( 'yes', $display_date, true ); ?>> 
+                            <label for="gc[display_date1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_date]" id="gc[display_date2]" value="no" <?php checked( 'no', $display_date, true ); ?>> 
+                            <label for="gc[display_date2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[display_term]"><?php esc_html_e('Display Term', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_term]" id="gc[display_term1]" value="yes" <?php checked( 'yes', $display_term, true ); ?>> 
+                            <label for="gc[display_term1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_term]" id="gc[display_term2]" value="no" <?php checked( 'no', $display_term, true ); ?>> 
+                            <label for="gc[display_term2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[term_from]"><?php esc_html_e('Term From', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <select class='pgcu_post_type_depend' id="gc[term_from]" name="gc[term_from]">
+                        <?php 
+                        $terms = get_object_taxonomies( (object) array( 'post_type' => $post_type, 'hide_empty' => false ) );
+                        if( $terms ) {
+                            foreach( $terms as $term ) {
+                        ?>
+                        <option value="<?php echo $term; ?>" <?php selected( $term_from, $term ); ?>><?php echo $term; ?></option>
+                       <?php } } ?>
+                    </select>
+                    
+                </td>
+
             </tr>
 
             <tr>

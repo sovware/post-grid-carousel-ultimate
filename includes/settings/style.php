@@ -87,13 +87,6 @@
             </tr>
 
             <tr>
-                <th><label for="gc[post_category]"><?php esc_html_e('Post Category Hide', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[post_category]" id="gc[post_category]" value="off" <?php if( !empty($post_category)) { checked( 'off', $post_category); } ?> />
-                    
-                </td>
-            </tr>
-
-            <tr>
                 <th><label for="gc[read_more]"><?php esc_html_e('Read More Hide', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="checkbox" name="gc[read_more]" id="gc[read_more]" value="off" <?php if( !empty($read_more)) { checked( 'off', $read_more); } ?> />
 

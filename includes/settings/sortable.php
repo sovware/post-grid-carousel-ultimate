@@ -1,3 +1,8 @@
+<?php  
+$post_type            = ! empty( $post_type ) ? $post_type : 'post';
+$g_sort               = ! empty( $g_sort    ) ? $g_sort    : 'category';
+$terms                = get_object_taxonomies( (object) array( 'post_type' => $post_type, 'hide_empty' => false ) );
+?>
 <div id="tab-5" class="adl-tab-content">
     <div class="cmb2-wrap form-table">
 
@@ -6,13 +11,16 @@
             <tr>
                 <th><label for="gc[g_sort]"><?php esc_html_e('Select Sortable Grid Type', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <select id="gc[g_sort]" name="gc[g_sort]">
-                            <option value="cat">Category</option>
-                            <option value="tag" <?php if(!empty($g_sort) && $g_sort == "tag"){ echo "selected";}?>>Tag</option>
-                            
+                    <select id="gc[g_sort]" name="gc[g_sort]" class='pgcu_post_type_depend'>
+                        <?php 
+                        if( $terms ) {
+                            foreach( $terms as $term ) {
+                        ?>
+                        <option value="<?php echo $term; ?>" <?php selected( $g_sort, $term ); ?>><?php echo $term; ?></option>
+                        <?php } } ?>
                     </select>
                 </td>
-            </tr> 
+            </tr>
 
             <tr>
                 <th><label for="gc[grid_menu_back]"><?php esc_html_e('Sortable Menu Background Hover Color', PGCU_TEXTDOMAIN); ?></label></th>

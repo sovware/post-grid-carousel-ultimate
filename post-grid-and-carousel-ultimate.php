@@ -39,6 +39,12 @@ Final class post_grid_and_carousel_ultimate
     public $shortcode;
 
     /**
+     * ajax
+     *@since 1.0.0
+     */
+    public $ajax;
+
+    /**
      * Main post_grid_and_carousel_ultimate Instance.
      *
      *
@@ -60,6 +66,7 @@ Final class post_grid_and_carousel_ultimate
 			self::$instance->custom_post = new PGCU_Custom_Post();
 			self::$instance->metabox     = new PGCU_Metabox();
             self::$instance->shortcode   = new PGCU_Shortcode();
+            self::$instance->ajax        = new PGCU_Ajax();
 
 			add_action('admin_enqueue_scripts',array( self::$instance, 'load_admin_file') );
             add_action('template_redirect',array( self::$instance, 'template_enqueue_file') );
@@ -135,10 +142,15 @@ Final class post_grid_and_carousel_ultimate
         global $typenow;
 
         if( $typenow == PGCU_POST_TYPE ) {
-            wp_enqueue_script('admin',PLUGINS_URL('admin/admin.js',__FILE__),array('jquery'));
+            wp_enqueue_script('admin-js',PLUGINS_URL('admin/admin.js',__FILE__),array('jquery'));
 			wp_enqueue_script( 'adl_color_js', PLUGINS_URL( 'admin/admin.js', __FILE__ ), array( 'jquery', 'wp-color-picker' ) );
 			wp_enqueue_style('admin-css',PLUGINS_URL('admin/admin.css',__FILE__));
 			wp_enqueue_style('wp-color-picker');
+
+            wp_localize_script( 'admin-js', 'pgcu_ajax', array(
+                'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
+                
+            ) );
         }
 
     }

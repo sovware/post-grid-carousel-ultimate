@@ -84,7 +84,7 @@
         position: relative;
         @include e(dropdown){
             position: absolute;
-            width: 150px;
+            width: 130px;
             left: -15px;
             top: 40px;
             box-shadow: 0 0 15px rgba(3,2,19,0.1);
@@ -171,8 +171,11 @@
         &:after{
             content:"";
             position: absolute;
-
         }
+    }
+    @include m(active){
+        background: var(--pgcu-buttonBgHover) !important;
+        color: var(--pgcu-buttonColorHover) !important;
     }
 }
 

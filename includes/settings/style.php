@@ -39,7 +39,7 @@
                 <th><label for="gc[post_content_color]"><?php esc_html_e('Post Content Color', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="text" name="gc[post_content_color]" id="gc[post_content_color]" class="cpa-color-picker" value="<?php if(empty($post_content_color)) { echo "#6e7387";}else{ echo $post_content_color;}?>" />
                     
-                </td> 
+                </td>
             </tr>
 
             <tr>

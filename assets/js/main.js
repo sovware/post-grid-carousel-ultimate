@@ -74,9 +74,10 @@
                     link.addEventListener('click', e=>{
                         e.preventDefault();
                         let _this = e.target;
-                        sortLink.forEach(newLink => {
-                            newLink.classList.remove('pgcu-post-sortable__btn--active');
-                        });
+                        let siblings = link.parentElement.children;
+                        for(let sib of siblings){
+                            sib.classList.remove('pgcu-post-sortable__btn--active');
+                        }
                         _this.classList.add('pgcu-post-sortable__btn--active');
                         let keyword = _this.getAttribute('data-sortable-nav');
                         shuffleInstance.filter(keyword);

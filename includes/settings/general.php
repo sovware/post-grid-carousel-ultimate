@@ -148,6 +148,13 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
             </tr>
 
             <tr>
+                <th><label for="gc[content_word_limit]"><?php esc_html_e('Content Word Limit', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <input type='number' class="cmb2-text-medium" id="gc[content_word_limit]" name="gc[content_word_limit]" value="<?php  echo ! empty( $content_word_limit ) ? $content_word_limit : '16'; ?>"/>
+                </td>
+            </tr>
+
+            <tr>
                 <th><label for="gc[display_read_more]"><?php esc_html_e('Display Read more', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
@@ -161,6 +168,13 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         </li>
                     </ul>
                 </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[read_more_text]"><?php esc_html_e('Read More Text', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <input type='text' class="cmb2-text-medium" id="gc[read_more_text]" name="gc[read_more_text]" value="<?php  echo ! empty( $read_more_text ) ? $read_more_text : 'Read More'; ?>"/>
+                </td>
             </tr>
 
             <tr>

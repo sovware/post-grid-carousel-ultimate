@@ -125,7 +125,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 							$pgcu_img = $aazz_thumb['0'];
 						}
 
-						$get_terms = get_the_terms( get_the_ID(), $term_from );
+						$get_terms  = get_the_terms( get_the_ID(), $term_from );
+						$post_views = get_post_meta( get_the_id(), '_pgcu_post_views_count', true );
 
 							include PGCU_INC_DIR . 'templates/' . $theme . '.php'; 
 						

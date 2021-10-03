@@ -37,7 +37,9 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$display_term         = ! empty( $display_term ) ? $display_term : 'yes';
 			$display_title        = ! empty( $display_title ) ? $display_title : 'yes';
 			$display_content      = ! empty( $display_content ) ? $display_content : 'yes';
+			$content_word_limit   = ! empty( $content_word_limit ) ? $content_word_limit : '16';
 			$display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
+			$read_more_text       = ! empty( $read_more_text ) ? $read_more_text : 'Read More';
 			$read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 			$display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 			$display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
@@ -45,7 +47,6 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
 			$image_height	   = ! empty( $image_height ) ? $image_height : 290;
-			
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
@@ -124,7 +125,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 							$pgcu_img = $aazz_thumb['0'];
 						}
 
-						$get_terms = get_the_terms( get_the_ID(), $term_from );
+						$get_terms  = get_the_terms( get_the_ID(), $term_from );
+						$post_views = get_post_meta( get_the_id(), '_pgcu_post_views_count', true );
 
 							include PGCU_INC_DIR . 'templates/' . $theme . '.php'; 
 						

@@ -1,4 +1,6 @@
 <?php 
+$layout               = ! empty( $layout ) ? $layout : 'carousel';
+$theme                = ! empty( $theme ) ? $theme : 'theme-1';
 $post_type            = ! empty( $post_type ) ? $post_type : 'post';
 $term_from            = ! empty( $term_from ) ? $term_from : 'category';
 $display_term         = ! empty( $display_term ) ? $display_term : 'yes';
@@ -9,7 +11,7 @@ $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 ?>
 <!-- General settings -->
-<div id="tab-2" class="adl-tab-content">          
+<div id="tab-2" class="adl-tab-content">
     <div class="cmb2-wrap form-table">
 
         <table class='cmb2-metabox'>
@@ -47,10 +49,10 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <th><label for="sel5"><?php esc_html_e('Layout', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select  name="gc[layout]" id="sel5">
-                        <option value="carousel">Carousel</option>
-                        <option value="grid" <?php if(!empty($layout) && $layout == "grid"){ echo "selected";}?>>Grid</option>
-                        <option value="isotope" <?php if(!empty($layout) && $layout == "isotope"){ echo "selected";}?>>Sortable Grid</option>
-                        <option disabled>Masonry (Pro)</option>
+                        <option value="carousel" <?php selected( $layout, 'carousel' ); ?>>Carousel</option>
+                        <option value="grid" <?php selected( $layout, 'grid' ); ?> >Grid</option>
+                        <option value="isotope" <?php selected( $layout, 'isotope' ); ?> >Sortable Grid</option>
+                        <option value="masonry" <?php selected( $layout, 'masonry' ); ?> >Masonry</option>
                     </select>
                     
                 </td>
@@ -60,27 +62,27 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <th><label for="gc[theme]"><?php esc_html_e('Select Theme', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select id="gc[theme]" name="gc[theme]">
-                        <option value="theme-1">Theme-1</option>
-                        <option value="theme-2" <?php if(!empty($theme) && $theme == "theme-2"){ echo "selected"; } ?>>Theme-2</option>
-                        <option value="theme-3" <?php if(!empty($theme) && $theme == "theme-3"){ echo "selected"; } ?>>Theme-3</option>
-                        <option value="theme-4" <?php if(!empty($theme) && $theme == "theme-4"){ echo "selected"; } ?>>Theme-4</option>
-                        <option disabled>Theme-5(Pro)</option>
-                        <option disabled>Theme-6(Pro)</option>
-                        <option disabled>Theme-7(Pro)</option>
-                        <option disabled>Theme-8(Pro)</option>
-                        <option disabled>Theme-9(Pro)</option>
-                        <option disabled>Theme-10(Pro)</option>
-                        <option disabled>Theme-11(Pro)</option>
-                        <option disabled>Theme-12(Pro)</option>
-                        <option disabled>Theme-13(Pro)</option>
-                        <option disabled>Theme-14(Pro)</option>
-                        <option disabled>Theme-15(Pro)</option>
-                        <option disabled>Theme-16(Pro)</option>
-                        <option disabled>Theme-17(Pro)</option>
-                        <option disabled>Theme-18(Pro)</option>
-                        <option disabled>Theme-19(Pro)</option>
-                        <option disabled>Theme-20(Pro)</option>
-                        <option disabled>Theme-21(Pro)</option>
+                        <option value="theme-1" <?php selected( $theme, 'theme-1' ); ?>>Theme-1</option>
+                        <option value="theme-2" <?php selected( $theme, 'theme-2' ); ?>>Theme-2</option>
+                        <option value="theme-3" <?php selected( $theme, 'theme-3' ); ?>>Theme-3</option>
+                        <option value="theme-4" <?php selected( $theme, 'theme-4' ); ?>>Theme-4</option>
+                        <option value="theme-5" <?php selected( $theme, 'theme-5' ); ?>>Theme-5</option>
+                        <option value="theme-6" <?php selected( $theme, 'theme-6' ); ?>>Theme-6</option>
+                        <option value="theme-7" <?php selected( $theme, 'theme-7' ); ?>>Theme-7</option>
+                        <option value="theme-8" <?php selected( $theme, 'theme-8' ); ?>>Theme-8</option>
+                        <option value="theme-9" <?php selected( $theme, 'theme-9' ); ?>>Theme-9</option>
+                        <option value="theme-10" <?php selected( $theme, 'theme-10' ); ?>>Theme-10</option>
+                        <option value="theme-11" <?php selected( $theme, 'theme-11' ); ?>>Theme-11</option>
+                        <option value="theme-12" <?php selected( $theme, 'theme-12' ); ?>>Theme-12</option>
+                        <option value="theme-13" <?php selected( $theme, 'theme-13' ); ?>>Theme-13</option>
+                        <option value="theme-14" <?php selected( $theme, 'theme-14' ); ?>>Theme-14</option>
+                        <option value="theme-15" <?php selected( $theme, 'theme-15' ); ?>>Theme-15</option>
+                        <option value="theme-16" <?php selected( $theme, 'theme-16' ); ?>>Theme-16</option>
+                        <option value="theme-17" <?php selected( $theme, 'theme-17' ); ?>>Theme-17</option>
+                        <option value="theme-18" <?php selected( $theme, 'theme-18' ); ?>>Theme-18</option>
+                        <option value="theme-19" <?php selected( $theme, 'theme-19' ); ?>>Theme-19</option>
+                        <option value="theme-20" <?php selected( $theme, 'theme-20' ); ?>>Theme-20</option>
+                        <option value="theme-21" <?php selected( $theme, 'theme-21' ); ?>>Theme-21</option>
                     </select>
                 </td>
             </tr>
@@ -101,14 +103,14 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                     <select id="gc[post_from]" name="gc[post_from]">
                         <option value="latest" <?php if(!empty($post_from) && $post_from == "latest"){ echo "selected";}?>>Latest Posts</option>
                         <option value="older" <?php if(!empty($post_from) && $post_from == "older"){ echo "selected";}?>>Older Posts</option>
-                        <option disabled>Feature Posts (Pro)</option>
-                        <option disabled>Populer Posts (Pro)</option>
-                        <option disabled>Random Posts (Pro)</option>
-                        <option disabled>Posts by Category (Pro)</option>
-                        <option disabled>Posts by Id (Pro)</option>
-                        <option disabled>Posts by Tag (Pro)</option>
-                        <option disabled>Posts by Year (Pro)</option>
-                        <option disabled>Posts by Month (Pro)</option>
+                        <option disabled>Feature Posts </option>
+                        <option disabled>Populer Posts </option>
+                        <option disabled>Random Posts </option>
+                        <option disabled>Posts by Category </option>
+                        <option disabled>Posts by Id </option>
+                        <option disabled>Posts by Tag </option>
+                        <option disabled>Posts by Year </option>
+                        <option disabled>Posts by Month </option>
                     </select>
                     
                 </td>

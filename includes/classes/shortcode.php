@@ -44,7 +44,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
 			$image_hight	   = ! empty( $image_hight ) ? $image_hight : 290;
-			
+
 			$layout_second_div_class = 'pgcu-row pgcu-column-3';
 			$layout_third_div_class  = '';
 			if( 'carousel' == $layout ) {
@@ -79,21 +79,24 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 		    $posts = new WP_Query( $args );
 
-			if( $posts->have_posts() ) { 
-				
+			if( $posts->have_posts() ) {
+
 				?>
 
-				<div class="pgcu-header-title">
+				<div class="pgcu-header-title" style="
+					--pgcu-headerFontSize: 24px;
+					--pgcu-headerFontColor: #030213;
+				">
 					<h2>Header Title</h2>
 				</div>
 
 				<div class="pgcu-posts pgcu-theme-1 <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
-					data-pgcu-items="4" 
-					data-pgcu-margin="30" 
-					data-pgcu-loop="true" 
-					data-pgcu-perslide="2" 
-					data-pgcu-speed="3000" 
+					data-pgcu-items="4"
+					data-pgcu-margin="30"
+					data-pgcu-loop="true"
+					data-pgcu-perslide="2"
+					data-pgcu-speed="3000"
 					data-pgcu-autoplay='
 					{
 						"delay": "2000",
@@ -108,7 +111,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						"992": {"slidesPerView": "3", "spaceBetween": "30", "slidesPerGroup":"1"},
 						"1200": {"slidesPerView": "4", "spaceBetween": "30", "slidesPerGroup":"1"}
 					}'
-				<?php } ?>	
+				<?php } ?>
 				>
 
 					<?php if( 'isotope' == $layout ) {
@@ -119,9 +122,9 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						<?php include PGCU_INC_DIR . 'templates/' . $theme . '.php'; ?>
 					</div>
 
-						<?php 
+						<?php
 						if( 'carousel' == $layout ) {
-							include PGCU_INC_DIR . 'templates/navigation/navigation.php'; 
+							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 						}
 						?>
 
@@ -129,8 +132,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 
 			<?php
-				
-			}	
+
+			}
 
 			$true = ob_get_clean();
 			return $true;

@@ -5,6 +5,7 @@ $display_term         = ! empty( $display_term ) ? $display_term : 'yes';
 $display_title        = ! empty( $display_title ) ? $display_title : 'yes';
 $display_content      = ! empty( $display_content ) ? $display_content : 'yes';
 $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
+$read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 ?>
@@ -160,6 +161,18 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         </li>
                     </ul>
                 </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[read_more_type]"><?php esc_html_e('Read More Type', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <select class='pgcu_post_type_depend' id="gc[read_more_type]" name="gc[read_more_type]">
+                        <option value="link" <?php selected( $read_more_type, 'link' ); ?>>Link Type</option>
+                        <option value="button" <?php selected( $read_more_type, 'button' ); ?>>Button Type</option>
+                    </select>
+                    
+                </td>
+
             </tr>
 
             <tr>

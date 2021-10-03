@@ -190,3 +190,10 @@ function PGCU() {
 }
 
 PGCU();
+
+function pgcu_image_cropping( $attachmentId, $width, $height, $crop = true, $quality = 100 )
+{
+    $resizer = new PGCU_Image_Resizer( $attachmentId );
+
+    return $resizer->resize( $width, $height, $crop, $quality );
+}

@@ -38,6 +38,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$display_title        = ! empty( $display_title ) ? $display_title : 'yes';
 			$display_content      = ! empty( $display_content ) ? $display_content : 'yes';
 			$display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
+			$read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 			$display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 			$display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 
@@ -45,18 +46,9 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
 			$image_hight	   = ! empty( $image_hight ) ? $image_hight : 290;
 			
-			$layout_second_div_class = 'pgcu-row pgcu-column-3';
-			$layout_third_div_class  = '';
-			if( 'carousel' == $layout ) {
-				$layout_second_div_class = 'swiper-wrapper';
-				$layout_third_div_class  = 'swiper-slide';
-			} elseif( 'sortable' == $layout_second_div_class ) {
-				$layout_second_div_class = 'pgcu-post-sortable';
-				$layout_third_div_class  = '';
-			}
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
-			$paged 			    = pgcu_get_paged_num();
+			$paged 			  = pgcu_get_paged_num();
 
 			$args = array();
 		    $common_args = [
@@ -116,7 +108,26 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						} ?>
 
     				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>">
-						<?php include PGCU_INC_DIR . 'templates/' . $theme . '.php'; ?>
+
+						<?php 
+						while( $posts->have_posts() ) : $posts->the_post();
+
+						$thumb = get_post_thumbnail_id();
+						// crop the image if the cropping is enabled.
+						if ( 'yes' === $image_resize_crop ){
+							$pgcu_img = pgcu_image_cropping( $thumb, $image_width, $image_hight, true, 100 )['url'];
+						}else{
+							$aazz_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'large' );
+							$pgcu_img = $aazz_thumb['0'];
+						}
+
+						$get_terms = get_the_terms( get_the_ID(), $term_from );
+
+							include PGCU_INC_DIR . 'templates/' . $theme . '.php'; 
+						
+						endwhile;
+						?>
+						
 					</div>
 
 						<?php 

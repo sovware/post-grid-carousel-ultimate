@@ -29,6 +29,7 @@
 
 /* Post card */
 .pgcu-post{
+    background: #fff;
     @include e(img){
         @include e(upper-content){
             position: absolute;

@@ -1,4 +1,4 @@
-<?php 
+<?php
 $post_type            = ! empty( $post_type ) ? $post_type : 'post';
 $term_from            = ! empty( $term_from ) ? $term_from : 'category';
 $display_term         = ! empty( $display_term ) ? $display_term : 'yes';
@@ -10,7 +10,7 @@ $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 ?>
 <!-- General settings -->
-<div id="tab-2" class="adl-tab-content">          
+<div id="tab-2" class="adl-tab-content">
     <div class="cmb2-wrap form-table">
 
         <table class='cmb2-metabox'>
@@ -18,9 +18,9 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <th><label for="gc[post_type]"><?php esc_html_e('Post type', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select id="pgcu_post_type" name="gc[post_type]">
-                        <?php 
+                        <?php
                         $custom_posts = get_post_types(array(
-                            'public'=>true, 
+                            'public'=>true,
                             ));
                         $exclude    = array( 'adl-shortcode','attachment', 'revision', 'nav_menu_item' );
 
@@ -37,9 +37,9 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                                 <?php
                             }
                         }
-                        ?>  
+                        ?>
                     </select>
-                    
+
                 </td>
 
             </tr>
@@ -53,7 +53,7 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option value="isotope" <?php if(!empty($layout) && $layout == "isotope"){ echo "selected";}?>>Sortable Grid</option>
                         <option disabled>Masonry (Pro)</option>
                     </select>
-                    
+
                 </td>
             </tr>
 
@@ -91,11 +91,11 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <input type='number' class="cmb2-text-medium" id="gc[total_posts]" name="gc[total_posts]" value="<?php if(empty($total_posts)) {echo '12';
                     }else{ echo $total_posts;}?>"/>
-                    
+
                 </td>
             </tr>
 
-            <tr>            
+            <tr>
                 <th><label for="gc[post_from]"><?php esc_html_e('Display Post From', PGCU_TEXTDOMAIN); ?></label>
                 </th>
                 <td>
@@ -111,24 +111,24 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option disabled>Posts by Year (Pro)</option>
                         <option disabled>Posts by Month (Pro)</option>
                     </select>
-                    
+
                 </td>
             </tr>
-            
+
             <tr>
                 <th><label for="gc[display_title]"><?php esc_html_e('Display Title', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_title]" id="gc[display_title1]" value="yes" <?php checked( 'yes', $display_title, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_title]" id="gc[display_title1]" value="yes" <?php checked( 'yes', $display_title, true ); ?>>
                             <label for="gc[display_title1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_title]" id="gc[display_title2]" value="no" <?php checked( 'no', $display_title, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_title]" id="gc[display_title2]" value="no" <?php checked( 'no', $display_title, true ); ?>>
                             <label for="gc[display_title2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                </td>    
+                </td>
             </tr>
 
             <tr>
@@ -136,15 +136,15 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_content]" id="gc[display_content1]" value="yes" <?php checked( 'yes', $display_content, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_content]" id="gc[display_content1]" value="yes" <?php checked( 'yes', $display_content, true ); ?>>
                             <label for="gc[display_content1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_content]" id="gc[display_content2]" value="no" <?php checked( 'no', $display_content, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_content]" id="gc[display_content2]" value="no" <?php checked( 'no', $display_content, true ); ?>>
                             <label for="gc[display_content2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                </td>    
+                </td>
             </tr>
 
             <tr>
@@ -159,32 +159,24 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_read_more]" id="gc[display_read_more1]" value="yes" <?php checked( 'yes', $display_read_more, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_read_more]" id="gc[display_read_more1]" value="yes" <?php checked( 'yes', $display_read_more, true ); ?>>
                             <label for="gc[display_read_more1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_read_more]" id="gc[display_read_more2]" value="no" <?php checked( 'no', $display_read_more, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_read_more]" id="gc[display_read_more2]" value="no" <?php checked( 'no', $display_read_more, true ); ?>>
                             <label for="gc[display_read_more2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                </td>    
-            </tr>
-
-            <tr>
-                <th><label for="gc[read_more_text]"><?php esc_html_e('Read More Text', PGCU_TEXTDOMAIN); ?></label></th>
-                <td>
-                    <input type='text' class="cmb2-text-medium" id="gc[read_more_text]" name="gc[read_more_text]" value="<?php  echo ! empty( $read_more_text ) ? $read_more_text : 'Read More'; ?>"/>
                 </td>
             </tr>
 
-            <tr>
+            <tr class="gc-read-more-type-section">
                 <th><label for="gc[read_more_type]"><?php esc_html_e('Read More Type', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select class='pgcu_post_type_depend' id="gc[read_more_type]" name="gc[read_more_type]">
                         <option value="link" <?php selected( $read_more_type, 'link' ); ?>>Link Type</option>
                         <option value="button" <?php selected( $read_more_type, 'button' ); ?>>Button Type</option>
                     </select>
-    
                 </td>
 
             </tr>
@@ -194,15 +186,15 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_author]" id="gc[display_author1]" value="yes" <?php checked( 'yes', $display_author, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_author]" id="gc[display_author1]" value="yes" <?php checked( 'yes', $display_author, true ); ?>>
                             <label for="gc[display_author1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_author]" id="gc[display_author2]" value="no" <?php checked( 'no', $display_author, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_author]" id="gc[display_author2]" value="no" <?php checked( 'no', $display_author, true ); ?>>
                             <label for="gc[display_author2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                </td>    
+                </td>
             </tr>
 
             <tr>
@@ -210,15 +202,15 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_date]" id="gc[display_date1]" value="yes" <?php checked( 'yes', $display_date, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_date]" id="gc[display_date1]" value="yes" <?php checked( 'yes', $display_date, true ); ?>>
                             <label for="gc[display_date1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_date]" id="gc[display_date2]" value="no" <?php checked( 'no', $display_date, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_date]" id="gc[display_date2]" value="no" <?php checked( 'no', $display_date, true ); ?>>
                             <label for="gc[display_date2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                </td>    
+                </td>
             </tr>
 
             <tr>
@@ -226,22 +218,22 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_term]" id="gc[display_term1]" value="yes" <?php checked( 'yes', $display_term, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_term]" id="gc[display_term1]" value="yes" <?php checked( 'yes', $display_term, true ); ?>>
                             <label for="gc[display_term1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_term]" id="gc[display_term2]" value="no" <?php checked( 'no', $display_term, true ); ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_term]" id="gc[display_term2]" value="no" <?php checked( 'no', $display_term, true ); ?>>
                             <label for="gc[display_term2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                </td>    
+                </td>
             </tr>
 
             <tr>
                 <th><label for="gc[term_from]"><?php esc_html_e('Term From', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select class='pgcu_post_type_depend' id="gc[term_from]" name="gc[term_from]">
-                        <?php 
+                        <?php
                         $terms = get_object_taxonomies( (object) array( 'post_type' => $post_type, 'hide_empty' => false ) );
                         if( $terms ) {
                             foreach( $terms as $term ) {
@@ -249,7 +241,7 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option value="<?php echo $term; ?>" <?php selected( $term_from, $term ); ?>><?php echo $term; ?></option>
                        <?php } } ?>
                     </select>
-                    
+
                 </td>
 
             </tr>
@@ -259,18 +251,18 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[image_resize_crop]" id="gc[image_resize_crop1]" value="yes" <?php if(empty($image_resize_crop) || 'no' !== $image_resize_crop) { echo 'checked'; } ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[image_resize_crop]" id="gc[image_resize_crop1]" value="yes" <?php if(empty($image_resize_crop) || 'no' !== $image_resize_crop) { echo 'checked'; } ?>>
                             <label for="gc[image_resize_crop1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[image_resize_crop]" id="gc[image_resize_crop2]" value="no" <?php if (!empty($image_resize_crop)) { checked('no', $image_resize_crop); } ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[image_resize_crop]" id="gc[image_resize_crop2]" value="no" <?php if (!empty($image_resize_crop)) { checked('no', $image_resize_crop); } ?>>
                             <label for="gc[image_resize_crop2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                    
+
                     <p class="description">If the product images are not in the same size, this feature is helpful. It automatically resizes and crops. Note: your image must be higher than/equal to the cropping size set below. Otherwise, you may need to enable image upscaling feature from the settings below.</p>
                 </td>
-                        
+
             </tr>
 
             <tr>
@@ -279,18 +271,18 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[image_ups]" id="gc[image_ups]" value="yes" <?php if(empty($image_ups) || 'no' !== $image_ups) { echo 'checked'; } ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[image_ups]" id="gc[image_ups]" value="yes" <?php if(empty($image_ups) || 'no' !== $image_ups) { echo 'checked'; } ?>>
                             <label for="gc[image_ups]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                         <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[image_ups]" id="gc[image_ups]" value="no" <?php if (!empty($image_ups)) { checked('no', $image_ups); } ?>> 
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[image_ups]" id="gc[image_ups]" value="no" <?php if (!empty($image_ups)) { checked('no', $image_ups); } ?>>
                             <label for="gc[image_ups]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
-                    
+
                     <p class="description"><?php esc_html_e('If the product image is less than the cropping size set above then by default, image will break. However, you can solve this problem by enabling upscaling.', PGCU_TEXTDOMAIN); ?></p>
                 </td>
-                        
+
             </tr>
 
             <tr>
@@ -313,6 +305,6 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 
         </table>
 
-    </div>	
+    </div>
 
 </div>

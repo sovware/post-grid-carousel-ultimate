@@ -41,14 +41,14 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
             // Add a nonce field so we can check for it later.
             wp_nonce_field( 'aps_meta_save', 'gc_meta_save_nonce' );
 
-            $get_value = get_post_meta($post->ID,'gc',true);
-            
+            $get_value = get_post_meta( $post->ID,'gc',true );
+            $get_value = post_grid_and_carousel_ultimate::unserialize_and_decode24( $get_value );
 
             $gc_value = is_array($get_value) ? $get_value : array();
 
             extract($gc_value);
 
-            $layout = !empty($layout) ? $layout : 'carousel';
+            $layout = ! empty( $layout ) ? $layout : 'carousel';
 			?>
             <div class="lcsp-withoutTab-content">
                 <div class="cmb2-wrap form-table">
@@ -108,22 +108,39 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 		}
 
         //save  all posts
-        public function gc_adl_save_meta_box( $post_id ) {
+        public function gc_adl_save_meta_box ($post_id)
+        {
+            // vail if the security check fails
+            if ( ! $this->wcpscu_security_check('gc_meta_save_nonce', 'aps_meta_save', $post_id))
+                return;
 
-            // Perform checking for before saving
-            $is_autosave = wp_is_post_autosave( $post_id );
-            $is_revision = wp_is_post_revision( $post_id );
-            $is_valid_nonce = ( isset( $_POST['gc_meta_save_nonce'] ) && wp_verify_nonce( $_POST['gc_meta_save_nonce'], 'aps_meta_save' ) ? 'true': 'false');
 
-            if ( $is_autosave || $is_revision || !$is_valid_nonce ) return;
-            // Is the user allowed to edit the post or page?
-            if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+            // save the meta data if it is our post type lcg_mainpost post type
+            if ( ! empty( $_POST['post_type'] ) && ( PGCU_POST_TYPE == $_POST['post_type'] ) ) {
 
-            $val    = isset( $_POST['gc'] ) ? $_POST['gc'] : '';
-            $value  = is_array( $val ) ? $val : array();
+                $gc = ! empty( $_POST['gc'] ) ? post_grid_and_carousel_ultimate::serialize_and_encode24( $_POST['gc'] ) : post_grid_and_carousel_ultimate::serialize_and_encode24(array());
 
-            update_post_meta( $post_id,'gc',$value );
+                //save the meta value
+                update_post_meta($post_id, "gc", $gc);
 
+            }
+        }
+
+        //security check
+        private function wcpscu_security_check($nonce_name, $action, $post_id){
+            // checks are divided into 3 parts for readability.
+            if ( !empty( $_POST[$nonce_name] ) && wp_verify_nonce( $_POST[$nonce_name], $action ) ) {
+                return true;
+            }
+            // If this is an autosave, our form has not been submitted, so we don't want to do anything. returns false
+            if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+                return false;
+            }
+            // Check the user's permissions.
+            if ( current_user_can( 'edit_post', $post_id ) ) {
+                return true;
+            }
+            return false;
         }
 
 		

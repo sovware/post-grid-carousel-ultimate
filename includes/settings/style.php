@@ -2,12 +2,6 @@
     <div class="cmb2-wrap form-table">
 
         <table class="cmb2-metabox">
-            <tr>
-                <th><label for="gc[post_title]"><?php esc_html_e('Post Title Hide', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[post_title]" id="gc[post_title]" value="off" <?php if( !empty($post_title)) { checked( 'off', $post_title); } ?> />
-                    
-                </td>
-            </tr>
 
             <tr>
                 <th><label for="gc[post_title_color]"><?php esc_html_e('Post Title Color', PGCU_TEXTDOMAIN); ?></label></th>
@@ -25,71 +19,9 @@
             </tr>
 
             <tr>
-                <th><label for="gc[post_title_alignment]"><?php esc_html_e('Post Title Alignment', PGCU_TEXTDOMAIN); ?></label>
-                </th>
-
-                <td>    
-                    
-                    <select id="gc[post_title_alignment]" name="gc[post_title_alignment]">
-                                <option>Default</option>
-                                <option disabled>Left (Pro)</option>
-                                <option disabled>Right (Pro)</option>
-                                <option disabled>Center (Pro)</option>
-                                <option disabled>Justify (Pro)</option>   
-                    </select>
-                        
-                </td>
-            </tr>
-
-            <tr>
-                <th><label for="gc[post_content]"><?php esc_html_e('Post Content Hide', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[post_content]" id="gc[post_content]" value="off" <?php if( !empty($post_content)) { checked( 'off', $post_content); } ?> />
-                    
-                </td>
-            </tr>
-
-            <tr>
                 <th><label for="gc[post_content_color]"><?php esc_html_e('Post Content Color', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="text" name="gc[post_content_color]" id="gc[post_content_color]" class="cpa-color-picker" value="<?php if(empty($post_content_color)) { echo "#6e7387";}else{ echo $post_content_color;}?>" />
                     
-                </td> 
-            </tr>
-
-            <tr>
-                <th><label for="gc[post_content_alignment]"><?php esc_html_e('Post Content Alignment', PGCU_TEXTDOMAIN); ?></label>
-                </th>
-
-                <td>    
-                    
-                    <select id="gc[post_content_alignment]" name="gc[post_content_alignment]">
-                                <option value="">Default</option>
-                                <option disabled>Left (Pro)</option>
-                                <option disabled>Right (Pro)</option>
-                                <option disabled>Center (Pro)</option>
-                                <option disabled>Justify (Pro)</option>   </select>
-                    
-                </td>
-
-            </tr>
-
-            <tr>
-                <th><label for="gc[post_author_name]"><?php esc_html_e('Post Author Name Hide', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[post_author_name]" id="gc[post_author_name]" value="off" <?php if( !empty($post_author_name)) { checked( 'off', $post_author_name); } ?> />
-                    
-                </td>
-            </tr>
-
-            <tr>
-                <th><label for="gc[post_date]"><?php esc_html_e('Post Date Hide', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[post_date]" id="gc[post_date]" value="off" <?php if( !empty($post_date)) { checked( 'off', $post_date); } ?> />
-                    
-                </td>
-            </tr>
-
-            <tr>
-                <th><label for="gc[read_more]"><?php esc_html_e('Read More Hide', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[read_more]" id="gc[read_more]" value="off" <?php if( !empty($read_more)) { checked( 'off', $read_more); } ?> />
-
                 </td>
             </tr>
 
@@ -97,7 +29,7 @@
                 <th><label for="gc[read_more_color]"><?php esc_html_e('Read More Color', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="text" name="gc[read_more_color]" id="gc[read_more_color]" class="cpa-color-picker" value="<?php if(empty($read_more_color)) { echo "#33330E";}else{ echo $read_more_color;}?>" />
                     
-                </td> 
+                </td>
             </tr>
 
             <tr>

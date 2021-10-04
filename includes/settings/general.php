@@ -184,7 +184,7 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option value="link" <?php selected( $read_more_type, 'link' ); ?>>Link Type</option>
                         <option value="button" <?php selected( $read_more_type, 'button' ); ?>>Button Type</option>
                     </select>
-                    
+    
                 </td>
 
             </tr>

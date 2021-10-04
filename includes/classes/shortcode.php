@@ -47,6 +47,15 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
 			$image_height	   = ! empty( $image_height ) ? $image_height : 290;
+			
+			$navigation              		=   ! empty( $navigation  ) ? $navigation  : 'yes';
+			$navigation_position     		=   ! empty( $navigation_position  ) ? $navigation_position  : 'middle';
+			$navigation_arrow_color	 		=	! empty( $navigation_arrow_color ) ? $navigation_arrow_color : '#030517';
+			$navigation_arrow_hover_color	=	! empty( $navigation_arrow_hover_color ) ? $navigation_arrow_hover_color : '#fff';
+			$navigation_back_color			=	! empty( $navigation_back_color ) ? $navigation_back_color : '#f5f5f5';
+			$navigation_back_hover_color	=	! empty( $navigation_back_hover_color ) ? $navigation_back_hover_color : '#F31C1C';
+			$navigation_border_color		=	! empty( $navigation_border_color ) ? $navigation_border_color : '#f5f5f5';
+			$navigation_border_hover_color	=	! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C';
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
@@ -107,9 +116,15 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				<?php } ?>
 				>
 
-					<?php if( 'isotope' == $layout ) {
+					<?php 
+					if( 'isotope' == $layout ) {
 						include PGCU_INC_DIR . 'templates/sortable/sortable.php';
-						} ?>
+					} elseif( 'carousel' == $layout && ( 'top-left' == $navigation_position || 'top-right' == $navigation_position ) ) {
+						include PGCU_INC_DIR . 'templates/navigation/navigation.php';
+					}
+						
+						?>
+
 
     				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>">
 
@@ -118,7 +133,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 						$thumb = get_post_thumbnail_id();
 						// crop the image if the cropping is enabled.
-						if ( 'yes' === $image_resize_crop ){
+						if( 'yes' === $image_resize_crop ){
 							$pgcu_img = pgcu_image_cropping( $thumb, $image_width, $image_height, true, 100 )['url'];
 						}else{
 							$aazz_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'large' );
@@ -136,7 +151,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					</div>
 
 						<?php
-						if( 'carousel' == $layout ) {
+						if( 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
 							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 						}
 						?>

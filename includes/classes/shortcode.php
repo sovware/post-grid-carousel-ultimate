@@ -47,7 +47,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
 			$image_height	   = ! empty( $image_height ) ? $image_height : 290;
-			
+
 			$navigation              		=   ! empty( $navigation  ) ? $navigation  : 'yes';
 			$navigation_position     		=   ! empty( $navigation_position  ) ? $navigation_position  : 'middle';
 			$navigation_arrow_color	 		=	! empty( $navigation_arrow_color ) ? $navigation_arrow_color : '#030517';
@@ -62,18 +62,18 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$pagi_color                 = ! empty( $pagi_color ) ? $pagi_color : '#333';
 			$pagi_border_color          = ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4';
 			$pagi_back_color            = ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff';
-	
+
 			$pagi_hover_color           = ! empty( $pagi_hover_color ) ? $pagi_hover_color : '#fff';
 			$pagi_hover_border_color    = ! empty( $pagi_hover_border_color ) ? $pagi_hover_border_color : '#ff5500';
 			$pagi_hover_back_color      = ! empty( $pagi_hover_back_color ) ? $pagi_hover_back_color : '#ff5500';
-	
+
 			$pagi_active_color          = ! empty( $pagi_active_color ) ? $pagi_active_color : '#fff';
 			$pagi_active_border_color   = ! empty( $pagi_active_border_color ) ? $pagi_active_border_color : '#ff5500';
 			$pagi_active_back_color     = ! empty( $pagi_active_back_color ) ? $pagi_active_back_color : '#ff5500';
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
-				
+
 			$g_sort           = ! empty( $g_sort    ) ? $g_sort    : 'category';
 			$terms			   = get_terms( array(
 				'taxonomy' => $g_sort,
@@ -142,19 +142,19 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				<?php } ?>
 				>
 
-					<?php 
+					<?php
 					if( 'isotope' == $layout ) {
 						include PGCU_INC_DIR . 'templates/sortable/sortable.php';
 					} elseif( 'carousel' == $layout && ( 'top-left' == $navigation_position || 'top-right' == $navigation_position ) ) {
 						include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 					}
-						
+
 						?>
 
 
     				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>">
 
-						<?php 
+						<?php
 						while( $posts->have_posts() ) : $posts->the_post();
 
 						$thumb = get_post_thumbnail_id();
@@ -170,10 +170,10 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						$post_views = get_post_meta( get_the_id(), '_pgcu_post_views_count', true );
 
 						include PGCU_INC_DIR . 'templates/' . $theme . '.php';
-						
+
 						endwhile;
 						?>
-						
+
 					</div>
 
 						<?php

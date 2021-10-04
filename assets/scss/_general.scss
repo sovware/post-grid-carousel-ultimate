@@ -29,7 +29,6 @@
 
 /* Post card */
 .pgcu-post{
-    background: #fff;
     @include e(img){
         @include e(upper-content){
             position: absolute;
@@ -54,6 +53,10 @@
             border-radius: 0 0 6px 6px;
             transition: 0.3s ease;
         }
+    }
+    @include e(content){
+        background: #fff;
+        border-radius: 6px;
     }
 }
 

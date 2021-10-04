@@ -99,10 +99,6 @@
 }
 
 /* Post card */
-.pgcu-post {
-  background: #fff;
-}
-
 .pgcu-post__img__upper-content {
   position: absolute;
 }
@@ -130,6 +126,11 @@
   border-top: 0 none;
   border-radius: 0 0 6px 6px;
   transition: 0.3s ease;
+}
+
+.pgcu-post__content {
+  background: #fff;
+  border-radius: 6px;
 }
 
 /* Carousel default */

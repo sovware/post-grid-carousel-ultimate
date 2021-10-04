@@ -58,6 +58,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$navigation_border_hover_color	=	! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C';
 
 			//grid pagination settings
+			$display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
 			$pagi_color                 = ! empty( $pagi_color ) ? $pagi_color : '#333';
 			$pagi_border_color          = ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4';
 			$pagi_back_color            = ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff';
@@ -72,6 +73,13 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
+				
+			$g_sort           = ! empty( $g_sort    ) ? $g_sort    : 'category';
+			$terms			   = get_terms( array(
+				'taxonomy' => $g_sort,
+				'hide_empty' => false,
+			) );
+
 
 			$args = array();
 		    $common_args = [
@@ -166,7 +174,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						<?php
 						if( 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
 							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
-						}elseif( 'grid' == $layout ) {
+						}elseif( 'grid' == $layout && 'yes' == $display_pagination ) {
 							include PGCU_INC_DIR . 'templates/pagination/pagination.php';
 						}
 						?>

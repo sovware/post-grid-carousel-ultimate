@@ -875,6 +875,8 @@
 
 .pgcu-pagination .pagination .nav-links .page-numbers svg {
   fill: var(--pgcu-pagColor) !important;
+  transition: 0.3s ease;
+  width: 12px;
 }
 
 .pgcu-pagination .pagination .nav-links .page-numbers:hover svg {

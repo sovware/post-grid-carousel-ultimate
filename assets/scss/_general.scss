@@ -54,6 +54,10 @@
             transition: 0.3s ease;
         }
     }
+    @include e(content){
+        background: #fff;
+        border-radius: 6px;
+    }
 }
 
 /* Carousel default */

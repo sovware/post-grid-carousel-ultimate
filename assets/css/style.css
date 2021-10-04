@@ -128,6 +128,11 @@
   transition: 0.3s ease;
 }
 
+.pgcu-post__content {
+  background: #fff;
+  border-radius: 6px;
+}
+
 /* Carousel default */
 .pgcu-carousel {
   position: relative;
@@ -557,6 +562,93 @@
   pointer-events: all;
 }
 
+.pgcu-post__meta__categories {
+  display: flex;
+  align-items: center;
+  margin: -3px !important;
+}
+
+.pgcu-post__meta__categories > a {
+  margin: 3px;
+  text-decoration: none !important;
+}
+
+.pgcu-post__meta__categories > a:first-child:after {
+  content: ',';
+}
+
+.pgcu-post__meta__categories-more {
+  line-height: 0.5;
+  position: relative;
+}
+
+.pgcu-post__meta__categories-more span {
+  display: block;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.pgcu-post__meta__categories-more span svg {
+  width: 9px;
+  height: 9px;
+  fill: var(--pgcu-textLight);
+  transition: 0.3s ease;
+}
+
+.pgcu-post__meta__categories-more div {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  background: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  right: -12px;
+  bottom: calc(100% + 10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s ease;
+}
+
+.pgcu-post__meta__categories-more div:before {
+  position: absolute;
+  content: '';
+  border-right: 7px solid transparent;
+  border-left: 7px solid transparent;
+  border-top: 9px solid #fff;
+  right: 10px;
+  bottom: -9px;
+}
+
+.pgcu-post__meta__categories-more div:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 15px;
+  left: 0;
+  bottom: -13px;
+  background: transparent;
+}
+
+.pgcu-post__meta__categories-more div a {
+  display: block;
+  line-height: 1;
+  text-decoration: none !important;
+}
+
+.pgcu-post__meta__categories-more div a:not(:last-child) {
+  margin-bottom: 5px;
+}
+
+.pgcu-post__meta__categories-more:hover span svg {
+  fill: var(--pgcu-primaryColor);
+}
+
+.pgcu-post__meta__categories-more:hover span + div {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+
 /* Post Excerpt */
 .pgcu-post__excerpt {
   color: var(--pgcu-excerptColor);
@@ -783,6 +875,8 @@
 
 .pgcu-pagination .pagination .nav-links .page-numbers svg {
   fill: var(--pgcu-pagColor) !important;
+  transition: 0.3s ease;
+  width: 12px;
 }
 
 .pgcu-pagination .pagination .nav-links .page-numbers:hover svg {

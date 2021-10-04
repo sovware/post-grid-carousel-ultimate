@@ -68,12 +68,13 @@ Final class post_grid_and_carousel_ultimate
             self::$instance->shortcode   = new PGCU_Shortcode();
             self::$instance->ajax        = new PGCU_Ajax();
 
-			add_action('admin_enqueue_scripts',array( self::$instance, 'load_admin_file') );
-            add_action('template_redirect',array( self::$instance, 'template_enqueue_file') );
-			add_action('plugin_loaded',array( self::$instance, 'load_textdomain' ) );
+			add_action( 'admin_enqueue_scripts', array( self::$instance, 'load_admin_file') );
+            add_action( 'template_redirect', array( self::$instance, 'template_enqueue_file') );
+			add_action( 'plugin_loaded', array( self::$instance, 'load_textdomain' ) );
 			add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( self::$instance, 'pro_version_plugin_link') );
 
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
+            add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
         }
 
         return self::$instance;
@@ -81,7 +82,7 @@ Final class post_grid_and_carousel_ultimate
 
     /**
      * Setup plugin constants.
-     * @access private
+     * @access public
      * @since 1.0
      * @return void
      */
@@ -115,6 +116,35 @@ Final class post_grid_and_carousel_ultimate
     public function load_textdomain()
     {
         load_plugin_textdomain( PGCU_TEXTDOMAIN, false, PGCU_LANG_DIR );
+    }
+
+    public function set_post_views($postID) {
+    /*@todo; add option to verify the user using his/her IP address so that reloading the page multiple times by the same user does not increase his post view of the same post on the same day.*/
+        $count_key = '_pgcu_post_views_count';
+        $count = get_post_meta( $postID, $count_key, true );
+        if('' == $count){
+            delete_post_meta( $postID, $count_key );
+            add_post_meta( $postID, $count_key, '0' );
+        }else{
+            $count++;
+            update_post_meta( $postID, $count_key, $count );
+        }
+    
+    }
+
+    /**
+     * Track the posts view to show popular posts based on number of views
+     * @param $postID
+     */
+    public function track_post_views( $postID ) {
+        // vail if user is logged in or if the post is not single.
+        if ( ! is_single() || is_user_logged_in() ) return;
+
+        if ( empty ( $postID ) ) {
+            global $post;
+            $postID = $post->ID;
+        }
+        $this->set_post_views( $postID );
     }
 
     public function upgrade_support_submenu_pages_for_gc() {
@@ -158,9 +188,11 @@ Final class post_grid_and_carousel_ultimate
     public function template_enqueue_file () {
         wp_enqueue_style( 'pgcu-main', PGCU_URL . 'assets/css/style.css' );
         wp_enqueue_style( 'pgcu-swiper-css', PGCU_URL . 'assets/css/swiper-bundle.min.css' );
-        wp_enqueue_script( 'pgcu-shuffle', PGCU_URL . 'assets/js/shuffle.min.js', array('jquery') );
+        wp_enqueue_script( 'pgcu-ajax', PGCU_URL . 'assets/js/ajax.js', array('jquery'), '', true );
         wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
         wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery') );
+
+        
 
     }
 
@@ -190,3 +222,10 @@ function PGCU() {
 }
 
 PGCU();
+
+function pgcu_image_cropping( $attachmentId, $width, $height, $crop = true, $quality = 100 )
+{
+    $resizer = new PGCU_Image_Resizer( $attachmentId );
+
+    return $resizer->resize( $width, $height, $crop, $quality );
+}

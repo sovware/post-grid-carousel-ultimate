@@ -1,3 +1,9 @@
+<?php  
+$autoplay                =   ! empty( $autoplay ) ? $autoplay : 'yes';
+$pause_hover             =   ! empty( $pause_hover ) ? $pause_hover : 'no';
+$navigation              =   ! empty( $navigation  ) ? $navigation  : 'yes';
+$navigation_position     =   ! empty( $navigation_position  ) ? $navigation_position  : 'middle';
+?>
 <div id="tab-3" class="adl-tab-content">
 
     <div class="cmb2-wrap form-table">
@@ -14,7 +20,6 @@
                 <th><label for="gc[post_column_tablet]"><?php esc_html_e('Post column on Tablet', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <input type='number' class="cmb2-text-medium" name="gc[post_column_tablet]" id="gc[post_column_tablet]" value="<?php if(empty($post_column_tablet)) { echo intval(2);}else{ echo $post_column_tablet;}?>" />
-                    
                 </td>
             </tr>
 
@@ -25,13 +30,21 @@
                     
                 </td>
             </tr>  
+
             <tr>
-                <th><label for="gc[c_autoplay]"><?php esc_html_e('Autoplay Pause', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" id="gc[c_autoplay]" name="gc[c_autoplay]" value="off" <?php if( !empty($c_autoplay)) { checked( 'off', $c_autoplay); } ?>/>
-                    
-                    
-                </td>
-                
+                <th><label for="gc[autoplay]"><?php esc_html_e('Autoplay', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[autoplay]" id="gc[autoplay1]" value="yes" <?php checked( 'yes', $autoplay, true ); ?>> 
+                            <label for="gc[autoplay1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[autoplay]" id="gc[autoplay2]" value="no" <?php checked( 'no', $autoplay, true ); ?>> 
+                            <label for="gc[autoplay2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
             </tr>
 
             <tr>
@@ -48,24 +61,95 @@
                     
                 </td>
                 
-            </tr>
-
-            <tr>
-                <th><label for="gc[c_pause_hover]"><?php esc_html_e('Pause on Hover', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" id="gc[c_pause_hover]" name="gc[c_pause_hover]" value="on" <?php if( !empty($c_pause_hover)) { checked( 'on', $c_pause_hover); } ?> />
-                    
-                </td>
-                
-            </tr>                              
-
+            </tr>    
             
             <tr>
-                <th><label for="gc[mouse_draggable]"><?php esc_html_e('Mouse Draggable', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="checkbox" name="gc[mouse_draggable]" id="gc[mouse_draggable]" value="off" <?php if( !empty($mouse_draggable)) { checked( 'off', $mouse_draggable); } ?>/>
+                <th><label for="gc[pause_hover]"><?php esc_html_e('Pause on Hover', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[pause_hover]" id="gc[pause_hover1]" value="yes" <?php checked( 'yes', $pause_hover, true ); ?>> 
+                            <label for="gc[pause_hover1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[pause_hover]" id="gc[pause_hover2]" value="no" <?php checked( 'no', $pause_hover, true ); ?>> 
+                            <label for="gc[pause_hover2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation]"><?php esc_html_e('Navigation', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[navigation]" id="gc[navigation1]" value="yes" <?php checked( 'yes', $navigation, true ); ?>> 
+                            <label for="gc[navigation1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[navigation]" id="gc[navigation2]" value="no" <?php checked( 'no', $navigation, true ); ?>> 
+                            <label for="gc[navigation2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation_position]"><?php esc_html_e('Navigation Position', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <select class='pgcu_post_type_depend' id="gc[navigation_position]" name="gc[navigation_position]">
+                        <option value="top-left" <?php selected( $navigation_position, 'top-left' ); ?>>Top Left</option>
+                        <option value="top-right" <?php selected( $navigation_position, 'top-right' ); ?>>Top Right</option>
+                        <option value="middle" <?php selected( $navigation_position, 'middle' ); ?>>Middle</option>
+                        <option value="bottom-left" <?php selected( $navigation_position, 'bottom-left' ); ?>>Bottom Left</option>
+                        <option value="bottom-right" <?php selected( $navigation_position, 'bottom-right' ); ?>>Bottom Right</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation_arrow_color]"><?php esc_html_e('Navigation Arrow Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[navigation_arrow_color]" id="gc[navigation_arrow_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_arrow_color ) ? $navigation_arrow_color : '#030517'; ?>" />
+                    
+                </td> 
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation_arrow_hover_color]"><?php esc_html_e('Navigation Arrow Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[navigation_arrow_hover_color]" id="gc[navigation_arrow_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_arrow_hover_color ) ? $navigation_arrow_hover_color : '#fff'; ?>" />
                     
                 </td>
-                
             </tr>
+
+            <tr>
+                <th><label for="gc[navigation_back_color]"><?php esc_html_e('Navigation Background Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[navigation_back_color]" id="gc[navigation_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_back_color ) ? $navigation_back_color : '#f5f5f5'; ?>" />
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation_back_hover_color]"><?php esc_html_e('Navigation Background Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[navigation_back_hover_color]" id="gc[navigation_back_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_back_hover_color ) ? $navigation_back_hover_color : '#F31C1C'; ?>" />
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation_border_color]"><?php esc_html_e('Navigation Border Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[navigation_border_color]" id="gc[navigation_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_border_color ) ? $navigation_border_color : '#f5f5f5'; ?>" />
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="gc[navigation_border_hover_color]"><?php esc_html_e('Navigation Border Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[navigation_border_hover_color]" id="gc[navigation_border_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C'; ?>" />
+                    
+                </td>
+            </tr>
+
         </table>
     </div>
     

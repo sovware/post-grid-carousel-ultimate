@@ -43,6 +43,7 @@ class PGCU_Ajax
         $value = is_array( $data ) ? $data : array();
         extract( $value );
 
+        $layout               = ! empty( $layout ) ? $layout : 'carousel';
         $theme                = ! empty( $theme ) ? $theme : 'theme-1';
         $post_type            = ! empty( $post_type ) ? $post_type : 'post';
         $term_from            = ! empty( $term_from ) ? $term_from : 'category';
@@ -60,15 +61,17 @@ class PGCU_Ajax
         $image_width	   = ! empty( $image_width ) ? $image_width : 300;
         $image_height	   = ! empty( $image_height ) ? $image_height : 290;
 
-        $g_sort               = ! empty( $g_sort    ) ? $g_sort    : 'category';
+        $g_sort            = ! empty( $g_sort    ) ? $g_sort    : 'category';
 
-        $query['tax_query'] = array( 
-            array(
-            'taxonomy' => $g_sort,
-            'field' => 'term_id',
-            'terms' => $term_id,
-            )
-        );
+        if( 'all' != $term_id ) {
+            $query['tax_query'] = array( 
+                array(
+                'taxonomy' => $g_sort,
+                'field' => 'term_id',
+                'terms' => $term_id,
+                )
+            );
+        }
 
         // it is always better to use WP_Query but not here
         query_posts( $query );

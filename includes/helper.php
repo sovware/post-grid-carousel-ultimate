@@ -62,3 +62,30 @@ if ( ! function_exists('load_all_files') ) {
         }
     }
 }
+ 
+if( ! function_exists('pgcu_pagination') ) {
+    /**
+     * Prints pagination for custom post
+     * @param object|WP_Query $custom_post_query
+     * @param int $paged
+     *
+     * @return string
+     */
+    function pgcu_pagination( $custom_post_query, $paged = 1 )
+    {
+        $navigation = '';
+        $largeNumber = 999999999; // we need a large number here
+        $links = paginate_links( array(
+            'base' => str_replace( $largeNumber, '%#%', esc_url( get_pagenum_link( $largeNumber ) ) ),
+            'format' => '?paged=%#%',
+            'current' => max( 1, $paged ),
+            'total' => $custom_post_query->max_num_pages,
+            'prev_text' => apply_filters('pgcu_pagination_prev_text', '<img src="' .  PGCU_URL . 'assets/img/arrow-left.svg" alt="" class="wpcu-svg">'),
+            'next_text' => apply_filters('pgcu_pagination_next_text', '<img src="' .  PGCU_URL . 'assets/img/arrow-right.svg" alt="" class="wpcu-svg">'),
+        ) );
+        if( $links ) {
+            $navigation = _navigation_markup($links, 'pagination', ' ');
+        }
+        return apply_filters('pgcu_pagination', $navigation, $links, $custom_post_query, $paged);
+    }
+}

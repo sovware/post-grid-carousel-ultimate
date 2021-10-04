@@ -1,4 +1,6 @@
-<!-- all grid content -->
+<?php  
+$display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
+?>
 <div id="tab-4" class="adl-tab-content">
     <div class="cmb2-wrap form-table">
 
@@ -44,46 +46,55 @@
             </tr>
 
             <tr>
-                <th>
-                    <label for="gc[pagi_hide]"><?php esc_html_e('Pagination Hide', PGCU_TEXTDOMAIN); ?></label>
-                </th>
+                <th><label for="gc[display_pagination]"><?php esc_html_e('Display Pagination', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <label class="switch"> 
-                        <input type="checkbox" name="gc[pagi_hide]" id="gc[pagi_hide]" value="true" <?php if( !empty($pagi_hide)) { checked( 'true', $pagi_hide); } ?>>
-                        <span class="slider round"></span>
-                    </label>
-                        
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_pagination]" id="gc[display_pagination1]" value="yes" <?php checked( 'yes', $display_pagination, true ); ?>>
+                            <label for="gc[display_pagination1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_pagination]" id="gc[display_pagination2]" value="no" <?php checked( 'no', $display_pagination, true ); ?>>
+                            <label for="gc[display_pagination2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
                 </td>
             </tr>
 
             <tr>
                 <th>
-                    <label for="gc[pagi_text_color]"><?php esc_html_e('Pagination Text Color', PGCU_TEXTDOMAIN); ?></label>
+                    <label for="gc[pagi_color]"><?php esc_html_e('Pagination Color', PGCU_TEXTDOMAIN); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_text_color]" class="cpa-color-picker" value="<?php if(empty($pagi_text_color)) { echo "#000000";}else{ echo $pagi_text_color;}?>" />
-                    
+                    <input type="text" name="gc[pagi_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_color ) ? $pagi_color : '#333'; ?>" />
                 </td>
-                
             </tr>   
 
             <tr>
                 <th>
-                    <label for="gc[pagi_text_hover_color]"><?php esc_html_e('Pagination Text Hover Color', PGCU_TEXTDOMAIN); ?></label>
+                    <label for="gc[pagi_border_color]"><?php esc_html_e( 'Pagination Border Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_text_hover_color]" class="cpa-color-picker" value="<?php if(empty($pagi_text_hover_color)) { echo "#FF0000";}else{ echo $pagi_text_hover_color;}?>" />
-                    
+                    <input type="text" name="gc[pagi_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4'; ?>" />
                 </td>
-                
-            </tr>  
+            </tr>
 
             <tr>
                 <th>
-                    <label for="gc[pagi_text_active_color]"><?php esc_html_e('Pagination Active Text Color', PGCU_TEXTDOMAIN); ?></label>
+                    <label for="gc[pagi_back_color]"><?php esc_html_e('Pagination Background Color', PGCU_TEXTDOMAIN); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_text_active_color]" class="cpa-color-picker" value="<?php if(empty($pagi_text_active_color)) { echo "#ffffff";}else{ echo $pagi_text_active_color;}?>" />
+                    <input type="text" name="gc[pagi_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff'; ?>" />
+                </td>
+                
+            </tr> 
+
+            <tr>
+                <th>
+                    <label for="gc[pagi_hover_color]"><?php esc_html_e( 'Pagination Hover Color', PGCU_TEXTDOMAIN ); ?></label>
+                </th>
+                <td>
+                    <input type="text" name="gc[pagi_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_hover_color ) ? $pagi_hover_color : '#fff'; ?>" />
                     
                 </td>
                 
@@ -91,14 +102,54 @@
 
             <tr>
                 <th>
-                    <label for="gc[pagi_active_back_color]"><?php esc_html_e('Pagination Active Background Color', PGCU_TEXTDOMAIN); ?></label>
+                    <label for="gc[pagi_hover_border_color]"><?php esc_html_e( 'Pagination Hover Border Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_active_back_color]" class="cpa-color-picker" value="<?php if(empty($pagi_active_back_color)) { echo "#dda146";}else{ echo $pagi_active_back_color;}?>" />
+                    <input type="text" name="gc[pagi_hover_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_hover_border_color ) ? $pagi_hover_border_color : '#ff5500'; ?>" />
                     
                 </td>
                 
-            </tr> 
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="gc[pagi_hover_back_color]"><?php esc_html_e( 'Pagination Hover Background Color', PGCU_TEXTDOMAIN ); ?></label>
+                </th>
+                <td>
+                    <input type="text" name="gc[pagi_hover_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_hover_back_color ) ? $pagi_hover_back_color : '#ff5500'; ?>" />
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="gc[pagi_active_color]"><?php esc_html_e( 'Pagination Active Color', PGCU_TEXTDOMAIN ); ?></label>
+                </th>
+                <td>
+                    <input type="text" name="gc[pagi_active_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_active_color ) ? $pagi_active_color : '#fff'; ?>" />
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="gc[pagi_active_border_color]"><?php esc_html_e( 'Pagination Active Border Color', PGCU_TEXTDOMAIN ); ?></label>
+                </th>
+                <td>
+                    <input type="text" name="gc[pagi_active_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_active_border_color ) ? $pagi_active_border_color : '#ff5500'; ?>" />
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th>
+                    <label for="gc[pagi_active_back_color]"><?php esc_html_e( 'Pagination Active Background Color', PGCU_TEXTDOMAIN ); ?></label>
+                </th>
+                <td>
+                    <input type="text" name="gc[pagi_active_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_active_back_color ) ? $pagi_active_back_color : '#ff5500'; ?>" />
+                    
+                </td>
+            </tr>
 
         </table>
     </div>

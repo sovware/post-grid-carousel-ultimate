@@ -57,6 +57,19 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$navigation_border_color		=	! empty( $navigation_border_color ) ? $navigation_border_color : '#f5f5f5';
 			$navigation_border_hover_color	=	! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C';
 
+			//grid pagination settings
+			$pagi_color                 = ! empty( $pagi_color ) ? $pagi_color : '#333';
+			$pagi_border_color          = ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4';
+			$pagi_back_color            = ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff';
+	
+			$pagi_hover_color           = ! empty( $pagi_hover_color ) ? $pagi_hover_color : '#fff';
+			$pagi_hover_border_color    = ! empty( $pagi_hover_border_color ) ? $pagi_hover_border_color : '#ff5500';
+			$pagi_hover_back_color      = ! empty( $pagi_hover_back_color ) ? $pagi_hover_back_color : '#ff5500';
+	
+			$pagi_active_color          = ! empty( $pagi_active_color ) ? $pagi_active_color : '#fff';
+			$pagi_active_border_color   = ! empty( $pagi_active_border_color ) ? $pagi_active_border_color : '#ff5500';
+			$pagi_active_back_color     = ! empty( $pagi_active_back_color ) ? $pagi_active_back_color : '#ff5500';
+
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
 
@@ -153,6 +166,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						<?php
 						if( 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
 							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
+						}elseif( 'grid' == $layout ) {
+							include PGCU_INC_DIR . 'templates/pagination/pagination.php';
 						}
 						?>
 

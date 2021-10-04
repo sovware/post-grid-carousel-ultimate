@@ -16,10 +16,7 @@
 			data : data,
 			type : 'POST',
 			success : function( data ){
-				if( data ) { 
-					console.log(data)
-					
-				} 
+				$('.pgcu-row').empty().append( data );
 			}
 		});
 	});

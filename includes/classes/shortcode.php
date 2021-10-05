@@ -66,10 +66,13 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$pagi_hover_color           = ! empty( $pagi_hover_color ) ? $pagi_hover_color : '#fff';
 			$pagi_hover_border_color    = ! empty( $pagi_hover_border_color ) ? $pagi_hover_border_color : '#ff5500';
 			$pagi_hover_back_color      = ! empty( $pagi_hover_back_color ) ? $pagi_hover_back_color : '#ff5500';
-
 			$pagi_active_color          = ! empty( $pagi_active_color ) ? $pagi_active_color : '#fff';
 			$pagi_active_border_color   = ! empty( $pagi_active_border_color ) ? $pagi_active_border_color : '#ff5500';
 			$pagi_active_back_color     = ! empty( $pagi_active_back_color ) ? $pagi_active_back_color : '#ff5500';
+
+			$sortable_menu_text_color		    = ! empty( $sortable_menu_text_color ) ? $sortable_menu_text_color : '#4F515A';
+			$sortable_menu_active_back_color	= ! empty( $sortable_menu_active_back_color ) ? $sortable_menu_active_back_color : '#030213';
+			$sortable_menu_active__text_color 	= ! empty( $sortable_menu_active__text_color ) ? $sortable_menu_active__text_color : '#ffffff';
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();

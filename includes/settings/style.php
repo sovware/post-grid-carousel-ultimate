@@ -27,38 +27,47 @@
 
             <tr>
                 <th><label for="gc[read_more_color]"><?php esc_html_e('Read More Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[read_more_color]" id="gc[read_more_color]" class="cpa-color-picker" value="<?php if(empty($read_more_color)) { echo "#33330E";}else{ echo $read_more_color;}?>" />
+                <td><input type="text" name="gc[read_more_color]" id="gc[read_more_color]" class="cpa-color-picker" value="<?php echo ! empty( $read_more_color ) ? $read_more_color : '#030213'; ?>" />
 
                 </td>
             </tr>
 
             <tr>
-                <th><label for="gc[read_more_back_color]"><?php esc_html_e('Read More Background Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[read_more_back_color]" id="gc[read_more_back_color]" class="cpa-color-picker" value="<?php if(empty($read_more_back_color)) { echo "#fff";}else{ echo $read_more_back_color;}?>" />
+                <th><label for="gc[read_more_hover_color]"><?php esc_html_e('Read More Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[read_more_hover_color]" id="gc[read_more_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $read_more_hover_color ) ? $read_more_hover_color : '#F31C1C'; ?>" />
 
                 </td>
             </tr>
 
             <tr>
-                <th><label for="gc[read_more_border_color]"><?php esc_html_e('Read More Border Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[read_more_border_color]" id="gc[read_more_border_color]" class="cpa-color-picker" value="<?php if(empty($read_more_border_color)) { echo "#e4e4ed";}else{ echo $read_more_border_color;}?>" />
+                <th><label for="gc[read_more_button_color]"><?php esc_html_e('Read More Button Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[read_more_button_color]" id="gc[read_more_button_color]" class="cpa-color-picker" value="<?php echo ! empty( $read_more_button_color ) ? $read_more_button_color : '#030213'; ?>" />
 
                 </td>
             </tr>
 
             <tr>
-                <th><label for="gc[read_more_hover_color]"><?php esc_html_e('Read More Hover  Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[read_more_hover_color]" id="gc[read_more_hover_color]" class="cpa-color-picker" value="<?php if(empty($read_more_hover_color)) { echo "#dd3333";}else{ echo $read_more_hover_color;}?>" />
+                <th><label for="gc[read_more_button_hover_color]"><?php esc_html_e('Read More Button Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[read_more_button_hover_color]" id="gc[read_more_button_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $read_more_button_hover_color ) ? $read_more_button_hover_color : '#ffffff'; ?>" />
 
                 </td>
             </tr>
 
             <tr>
-                <th><label for="gc[read_more_hover_back_color]"><?php esc_html_e('Read More Hover Background Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[read_more_hover_back_color]" id="gc[read_more_hover_back_color]" class="cpa-color-picker" value="<?php if(empty($read_more_hover_back_color)) { echo "#1289A7";}else{ echo $read_more_hover_back_color;}?>" />
+                <th><label for="gc[read_more_button_background_color]"><?php esc_html_e('Read More Button Background Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[read_more_button_background_color]" id="gc[read_more_button_background_color]" class="cpa-color-picker" value="<?php echo ! empty( $read_more_button_background_color ) ? $read_more_button_background_color : '#EFEFEF'; ?>" />
 
                 </td>
             </tr>
+
+            <tr>
+                <th><label for="gc[read_more_button_background_hover_color]"><?php esc_html_e('Read More Button Background Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[read_more_button_background_hover_color]" id="gc[read_more_button_background_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $read_more_button_background_hover_color ) ? $read_more_button_background_hover_color : '#030213'; ?>" />
+
+                </td>
+            </tr>
+
+            
         </table>
 
     </div>

@@ -5,7 +5,7 @@
 
             <tr>
                 <th><label for="gc[post_title_color]"><?php esc_html_e('Post Title Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[post_title_color]" id="gc[post_title_color]" class="cpa-color-picker" value="<?php if(empty($post_title_color)) { echo "#33330E";}else{ echo $post_title_color;}?>" />
+                <td><input type="text" name="gc[post_title_color]" id="gc[post_title_color]" class="cpa-color-picker" value="<?php echo ! empty( $post_title_color ) ? $post_title_color : '#030213'; ?>" />
 
                 </td>
 
@@ -13,14 +13,14 @@
 
             <tr>
                 <th><label for="gc[post_title_hover_color]"><?php esc_html_e('Post Title Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[post_title_hover_color]" id="gc[post_title_hover_color]" class="cpa-color-picker" value="<?php if(empty($post_title_hover_color)) { echo "#1289A7";}else{ echo $post_title_hover_color;}?>" >
+                <td><input type="text" name="gc[post_title_hover_color]" id="gc[post_title_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $post_title_hover_color ) ? $post_title_hover_color : '#F31C1C'; ?>" >
 
                 </td>
             </tr>
 
             <tr>
                 <th><label for="gc[post_content_color]"><?php esc_html_e('Post Content Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[post_content_color]" id="gc[post_content_color]" class="cpa-color-picker" value="<?php if(empty($post_content_color)) { echo "#6e7387";}else{ echo $post_content_color;}?>" />
+                <td><input type="text" name="gc[post_content_color]" id="gc[post_content_color]" class="cpa-color-picker" value="<?php echo ! empty( $post_content_color ) ? $post_content_color : '#63666D'; ?>" />
 
                 </td>
             </tr>

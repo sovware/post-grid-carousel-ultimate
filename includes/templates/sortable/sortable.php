@@ -1,8 +1,8 @@
 <?php if( $terms ) { ?>
 <div class="pgcu-post-sortable__nav" style="
-    --pgcu-sortMenuTextColor: <?php echo $sortable_menu_text_color; ?>;
-    --pgcu-sortMenuActiveBackColor: <?php echo $sortable_menu_active_back_color; ?>;
-    --pgcu-sortMenuActiveTextColor: <?php echo $sortable_menu_active__text_color; ?>;
+    --pgcu-sortableBtnColor: <?php echo $sortable_menu_text_color; ?>;
+    --pgcu-sortableBtnActiveBg: <?php echo $sortable_menu_active_back_color; ?>;
+    --pgcu-sortableBtnActiveColor: <?php echo $sortable_menu_active__text_color; ?>;
 ">
     <a href="" class="pgcu-post-sortable__btn pgcu-post-sortable__btn--active" data-sortable-nav="all">All (<?php echo $posts->found_posts; ?>)</a>
 

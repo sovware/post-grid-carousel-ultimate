@@ -74,6 +74,16 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$sortable_menu_active_back_color	= ! empty( $sortable_menu_active_back_color ) ? $sortable_menu_active_back_color : '#030213';
 			$sortable_menu_active__text_color 	= ! empty( $sortable_menu_active__text_color ) ? $sortable_menu_active__text_color : '#ffffff';
 
+			$post_title_color 				       = ! empty( $post_title_color ) ? $post_title_color : '#030213';
+			$post_title_hover_color 		       = ! empty( $post_title_hover_color ) ? $post_title_hover_color : '#F31C1C';
+			$post_content_color 	    	  	   = ! empty( $post_content_color ) ? $post_content_color : '#63666D';
+			$read_more_color 	    		  	   = ! empty( $read_more_color ) ? $read_more_color : '#030213';
+			$read_more_hover_color 	    	  	   = ! empty( $read_more_hover_color ) ? $read_more_hover_color : '#F31C1C';
+			$read_more_button_color     	  	   = ! empty( $read_more_button_color ) ? $read_more_button_color : '#030213';
+			$read_more_button_hover_color     	   = ! empty( $read_more_button_hover_color ) ? $read_more_button_hover_color : '#ffffff';
+			$read_more_button_background_color     = ! empty( $read_more_button_background_color ) ? $read_more_button_background_color : '#EFEFEF';
+			$read_more_button_background_hover_color     = ! empty( $read_more_button_background_hover_color ) ? $read_more_button_background_hover_color : '#030213';
+
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
 				
@@ -155,7 +165,18 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>">
+    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>" style="
+					--pgcu-titleColor: <?php echo $post_title_color; ?>;
+    				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
+					--pgcu-excerptColor: <?php echo $post_content_color; ?>;
+					--pgcu-readMoreColor: <?php echo $read_more_color; ?>;
+    				--pgcu-readMoreColorHover: <?php echo $read_more_hover_color; ?>;
+					--pgcu-buttonFontSize: 14px;
+					--pgcu-buttonColor: <?php echo $read_more_button_color; ?>;
+					--pgcu-buttonColorHover: <?php echo $read_more_button_hover_color; ?>;
+					--pgcu-buttonBg: <?php echo $read_more_button_background_color; ?>;
+					--pgcu-buttonBgHover: <?php echo $read_more_button_background_hover_color; ?>;
+				">
 
 						<?php 
 						while( $posts->have_posts() ) : $posts->the_post();

@@ -26,10 +26,10 @@
 
             }
             if ($(this).val() == 'carousel') {
-                console.log("yes")
-                $("#tab2").css('display', 'block');
-                // $("#tab1").css('display', 'block');
+                $("#tab2").css('display', 'none');
+                $("#tab1").css('display', 'block');
                 $("#tab3").css('display', 'none');
+                $("#tab4").css('display', 'none');
 
             }
         });

@@ -36,6 +36,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$term_from            = ! empty( $term_from ) ? $term_from : 'category';
 			$display_term         = ! empty( $display_term ) ? $display_term : 'yes';
 			$display_title        = ! empty( $display_title ) ? $display_title : 'yes';
+			$display_header_title = ! empty( $display_header_title ) ? $display_header_title : 'no';
+			$header_title 	 	  = ! empty( $header_title ) ? $header_title : '';
 			$display_content      = ! empty( $display_content ) ? $display_content : 'yes';
 			$content_word_limit   = ! empty( $content_word_limit ) ? $content_word_limit : '16';
 			$display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
@@ -73,7 +75,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$sortable_menu_text_color		    = ! empty( $sortable_menu_text_color ) ? $sortable_menu_text_color : '#4F515A';
 			$sortable_menu_active_back_color	= ! empty( $sortable_menu_active_back_color ) ? $sortable_menu_active_back_color : '#030213';
 			$sortable_menu_active__text_color 	= ! empty( $sortable_menu_active__text_color ) ? $sortable_menu_active__text_color : '#ffffff';
-
+			
+			$header_title_color 		= ! empty( $header_title_color ) ? $header_title_color : '#030213';
 			$post_title_color 				       = ! empty( $post_title_color ) ? $post_title_color : '#030213';
 			$post_title_hover_color 		       = ! empty( $post_title_hover_color ) ? $post_title_hover_color : '#F31C1C';
 			$post_content_color 	    	  	   = ! empty( $post_content_color ) ? $post_content_color : '#63666D';
@@ -120,17 +123,15 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				'query'   => json_encode( $posts->query_vars ), // everything about your loop is here
 			) );
 
-			if( $posts->have_posts() ) {
-
-				?>
-
+			if( $posts->have_posts() ) { ?>
+				<?php if( 'yes' == $display_header_title ) { ?>
 				<div class="pgcu-posts__header" style="
 					--pgcu-headerFontSize: 24px;
-    				--pgcu-headerFontColor: #030213;
+    				--pgcu-headerFontColor: <?php echo $header_title_color; ?>;
 				">
-					<h2>Header Title</h2>
+					<h2><?php echo $header_title; ?></h2>
 				</div>
-
+				<?php } ?>
 				<div class="pgcu-posts pgcu-theme-1 <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
 					data-pgcu-items="4"

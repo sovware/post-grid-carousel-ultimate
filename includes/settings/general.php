@@ -2,6 +2,7 @@
 $post_type            = ! empty( $post_type ) ? $post_type : 'post';
 $term_from            = ! empty( $term_from ) ? $term_from : 'category';
 $display_term         = ! empty( $display_term ) ? $display_term : 'yes';
+$display_header_title  = ! empty( $display_header_title ) ? $display_header_title : 'no';
 $display_title        = ! empty( $display_title ) ? $display_title : 'yes';
 $display_content      = ! empty( $display_content ) ? $display_content : 'yes';
 $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
@@ -111,6 +112,30 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option disabled>Posts by Year </option>
                         <option disabled>Posts by Month </option>
                     </select>
+
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="gc[display_header_title]"><?php esc_html_e('Display Header Title', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[display_header_title]" id="gc[display_header_title1]" value="yes" <?php checked( 'yes', $display_header_title, true ); ?>>
+                            <label for="gc[display_header_title1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[display_header_title]" id="gc[display_header_title2]" value="no" <?php checked( 'no', $display_header_title, true ); ?>>
+                            <label for="gc[display_header_title2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr class='pgcu_header_title'>
+                <th><label for="gc[header_title]"><?php esc_html_e('Header Title', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <input type='text' class="cmb2-text-medium" id="gc[header_title]" name="gc[header_title]" value="<?php echo ! empty( $header_title ) ? $header_title : ''; ?>"/>
 
                 </td>
             </tr>

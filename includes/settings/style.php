@@ -4,6 +4,14 @@
         <table class="cmb2-metabox">
 
             <tr>
+                <th><label for="gc[header_title_color]"><?php esc_html_e('Header Title Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="text" name="gc[header_title_color]" id="gc[header_title_color]" class="cpa-color-picker" value="<?php echo ! empty( $header_title_color ) ? $header_title_color : '#030213'; ?>" />
+
+                </td>
+
+            </tr>
+
+            <tr>
                 <th><label for="gc[post_title_color]"><?php esc_html_e('Post Title Color', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="text" name="gc[post_title_color]" id="gc[post_title_color]" class="cpa-color-picker" value="<?php echo ! empty( $post_title_color ) ? $post_title_color : '#030213'; ?>" />
 

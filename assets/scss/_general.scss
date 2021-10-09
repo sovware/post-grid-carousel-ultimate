@@ -30,6 +30,13 @@
 /* Post card */
 .pgcu-post{
     @include e(img){
+        > a{
+            display: block;
+            img{
+                width: 100%;
+                max-width: 100%;
+            }
+        }
         @include e(upper-content){
             position: absolute;
             @include m(bottom-left){

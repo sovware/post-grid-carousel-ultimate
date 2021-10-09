@@ -1,0 +1,52 @@
+/*===========================
+ Style: Theme Ten
+===========================*/
+.pgcu-theme-10{
+    .pgcu-post{
+        @include e(content){
+            background: none;
+        }
+        @include e(img){
+            a img{
+                border-radius: 6px;
+            }
+        }
+        @include e(title){
+            margin-bottom: 12px !important;
+        }
+        @include e(excerpt){
+            margin-bottom: 14px !important;
+        }
+        @include e(author){
+            margin-bottom: 14px;
+        }
+        @include e(details){
+            padding-top: 16px;
+            .pgcu-post__meta__categories{
+                a{
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: var(--pgcu-categoryColor);
+                    &:hover{
+                        color: var(--pgcu-categoryColorHover);
+                    }
+                }
+            }
+            .pgcu-post__meta__categories-more{
+                a{
+                    color: #4F515A;
+                }
+            }
+            .pgcu-post__meta__ert{
+                display: flex;
+                align-items: center;
+                svg{
+                    width: 14px;
+                    height: 14px;
+                    fill: #9C9DAB;
+                    margin-right: 8px;
+                }
+            }
+        }
+    }
+}

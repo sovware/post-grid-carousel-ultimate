@@ -1,0 +1,22 @@
+/*===========================
+ Style: Theme Six
+===========================*/
+.pgcu-theme-6{
+    .pgcu-post{
+        @include e(content){
+            background: none;
+        }
+        @include e(title){
+            margin-top: 16px !important;
+        }
+        @include e(meta){
+            margin-top: 7px !important;
+        }
+        @include e(excerpt){
+            margin-top: 12px;
+        }
+        .pgcu-button{
+            margin-top: 20px;
+        }
+    }
+}

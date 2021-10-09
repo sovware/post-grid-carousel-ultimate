@@ -121,7 +121,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					<h2>Header Title</h2>
 				</div>
 
-				<div class="pgcu-posts pgcu-theme-1 <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
+				<div class="pgcu-posts pgcu-theme-5 <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
 					data-pgcu-items="4"
 					data-pgcu-margin="30"
@@ -155,7 +155,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>">
+    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-4'; ?>">
 
 						<?php
 						while( $posts->have_posts() ) : $posts->the_post();

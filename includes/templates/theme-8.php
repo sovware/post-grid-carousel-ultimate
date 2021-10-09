@@ -14,7 +14,7 @@
 
             <?php if( 'yes' == $display_title ) { ?>
                 <h2 class="pgcu-post__title">
-                    <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a> 
+                    <a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?></a>
                 </h2>
             <?php } ?>
 
@@ -38,6 +38,9 @@
                         </div>
                     </li>
 
+                    <li class="pgcu-post__meta__ert"> <!-- ert: Estimated reading time -->
+                        <span>6 Min Read</span>
+                    </li>
             </ul>
 
             <?php if( 'yes' == $display_content ) { ?>

@@ -1,0 +1,28 @@
+/*===========================
+ Style: Theme Eleven
+===========================*/
+.pgcu-theme-11{
+    .pgcu-post{
+        @include e(content){
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(#A2A4C1, 0.2);
+        }
+        @include e(img){
+            a img{
+                border-radius: 6px;
+            }
+        }
+        @include e(details){
+            margin-top: 16px;
+        }
+        @include e(meta__categories){
+            margin-bottom: 10px !important;
+        }
+        @include e(title){
+            margin-bottom: 12px !important;
+        }
+        @include e(meta-boxed){
+            margin-top: 20px;
+        }
+    }
+}

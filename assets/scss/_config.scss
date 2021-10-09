@@ -39,6 +39,7 @@ $textDark: #030213;
     /* Post Meta */
     --pgcu-metaFontSize: 14px;
     --pgcu-metaColor: #9C9DAB;
+    --pgcu-metaColorDark: #4F515A;
     --pgcu-metaColorHover: #F31C1C;
 
     /* Post excerpt */
@@ -88,4 +89,8 @@ $textDark: #030213;
     --pgcu-navBgColorHover: #F31C1C;
     --pgcu-navBorderColor: #f5f5f5;
     --pgcu-navBorderColorHover: #F31C1C;
+
+    /* Category */
+    --pgcu-categoryColor: #F31C1C;
+    --pgcu-categoryColorHover: #030517;
 }

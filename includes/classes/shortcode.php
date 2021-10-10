@@ -186,7 +186,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>" style="
+    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-grid-'. $post_id .' pgcu-column-3'; ?>" style="
 					--pgcu-titleColor: <?php echo $post_title_color; ?>;
     				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
 					--pgcu-excerptColor: <?php echo $post_content_color; ?>;

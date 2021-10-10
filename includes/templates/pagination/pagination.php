@@ -17,6 +17,6 @@
     </div>
 <?php } elseif( 'ajax' == $pagination_type ) { ?>
     <div class="pgcu-loadmore-btn">
-        <div class='pgcu_load_more' data-id='<?php echo $post_id; ?>'>Load More</div>
+        <div class='pgcu-button pgcu-button--rounded' data-id='<?php echo $post_id; ?>'>Load More</div>
     </div>
-<?php } ?>    
+<?php } ?>

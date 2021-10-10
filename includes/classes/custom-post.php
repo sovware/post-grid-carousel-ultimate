@@ -62,7 +62,6 @@ if( !defined('ABSPATH')) { die('direct browsing can not possible');}
             $columns['cb']   = '<input type="checkbox" />';
             $columns['title']   = esc_html__('Post Name', PGCU_TEXTDOMAIN);
             $columns['post_grid_carousel_sc_1']   = esc_html__('Post Shortcode', PGCU_TEXTDOMAIN);
-            $columns['post_grid_carousel_sc_2']   = esc_html__('Shortcode for Template File', PGCU_TEXTDOMAIN);
             $columns['date']   = esc_html__('Created at', PGCU_TEXTDOMAIN);
             return $columns;
 		}
@@ -72,10 +71,6 @@ if( !defined('ABSPATH')) { die('direct browsing can not possible');}
 			switch( $column_name ){
                 case 'post_grid_carousel_sc_1': ?>
                     <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" >[pgcu id="<?php echo $post_id;?>"]</textarea>
-                    <?php
-                    break;
-                case 'post_grid_carousel_sc_2': ?>
-                    <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" ><?php echo "<?php pgcu('{$post_id}'); ?>"; ?></textarea>
                     <?php
                     break;
 

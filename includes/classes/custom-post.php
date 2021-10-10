@@ -15,8 +15,8 @@ if( !defined('ABSPATH')) { die('direct browsing can not possible');}
 
 		//method for custom post type
 		public function gc_adl_custom_post_type() {
-			
-				
+
+
 
 				$shortcode_label = array(
 					'name'               => _x( 'Shortcodes', 'post type general name', PGCU_TEXTDOMAIN ),
@@ -53,7 +53,7 @@ if( !defined('ABSPATH')) { die('direct browsing can not possible');}
 				);
 
 				register_post_type( PGCU_POST_TYPE, $short_args );
-			
+
 		}
 
 		//method for shortcode columns
@@ -70,7 +70,7 @@ if( !defined('ABSPATH')) { die('direct browsing can not possible');}
 		public function gc_adl_manage_shortcode_columns( $column_name, $post_id ) {
 			switch( $column_name ){
                 case 'post_grid_carousel_sc_1': ?>
-                    <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" >[pgcu id="<?php echo $post_id;?>"]</textarea>
+                    <textarea  style="background:#0074A8; color:#fff;" rows="1" onClick="this.select();" >[pgcu id="<?php echo $post_id;?>"]</textarea>
                     <?php
                     break;
 

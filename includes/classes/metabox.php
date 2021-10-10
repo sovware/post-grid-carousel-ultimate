@@ -10,7 +10,7 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 
             //save post
             add_action('save_post', array( $this,'gc_adl_save_meta_box') );
-			
+
 
 		}
 
@@ -26,18 +26,18 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 		}
 
         //Function that will check if value is a valid HEX color.
-        public function check_color( $value ) { 
-             
-            if ( preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) { // if user insert a HEX color with #     
+        public function check_color( $value ) {
+
+            if ( preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) { // if user insert a HEX color with #
                 return true;
             }
-             
+
             return false;
         }
 
 		//output of shortcode metabox
 		public function outpost_shortcode_metabox_markup( $post ){
-            
+
             // Add a nonce field so we can check for it later.
             wp_nonce_field( 'aps_meta_save', 'gc_meta_save_nonce' );
 
@@ -50,61 +50,31 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 
             $layout = ! empty( $layout ) ? $layout : 'carousel';
 			?>
-            <div class="lcsp-withoutTab-content">
-                <div class="cmb2-wrap form-table">
-                    <div id="cmb2-metabox" class="cmb2-metabox cmb-field-list">
-                        <div class="cmb2-metabox-header">
-                            <div class="div">
-                                <h4><span class="fas fa-cog"></span>Settings & Shortcode Generator</h4>
-                            </div>
-                            <div class="div">
-                                <a href="#">
-                                    <p><span class="fas fa-question-circle"></span>Support</p>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="cmb2-metabox-content">
-                            <div class="cmb2-metabox-card cmb2-metabox-card2">
-                                <h6><?php esc_html_e('Shortcode',PGCU_TEXTDOMAIN); ?></h6>
-                                <p><?php esc_html_e('Copy this shortcode and paste on page or post where you want to display post grid,carousel and sortable grid.Use PHP code to your themes file to display post grid.',PGCU_TEXTDOMAIN); ?>
-                                </p>
-                                <div class="cmb2-metabox-card-textarea">
-                                    <textarea onClick="this.select();">[pgcu <?php echo 'id="'.$post->ID.'"';?>]</textarea>
-                                </div>
-                            </div>
-                            <div class="cmb2-metabox-card cmb2-metabox-card3">
-                                <h6><?php esc_html_e('PHP Code:',PGCU_TEXTDOMAIN); ?></h6>
-                                <div class="cmb2-metabox-card-textarea">
-                                    <textarea
-                                        onClick="this.select();"><?php echo '<?php echo do_shortcode("[pgcu id='; echo "'".$post->ID."']"; echo '"); ?>'; ?></textarea>
-                                </div>
-                            </div>
-                        </div>
-                    </div> <!-- end cmb2-metabox -->
-                </div> <!-- end cmb2-wrap -->
-            </div> <!-- end lcsp-tab-2 -->
-			<div id="tabs-container">        
-				<ul class="tabs-menu">
-                    
+			<div id="tabs-container">
+                <div class="lcsp-tabs-menu-wrapper">
+                    <ul class="lcsp-tabs-menu">
+                        <li class="current"><a href="#tab-1"> <?php esc_html_e('Shortcodes', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li><a href="#tab-2"> <?php esc_html_e('General Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+                        <li><a href="#tab-2"> <?php esc_html_e('General Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li style="display: <?php if($layout == "grid" || $layout == "isotope"){ echo "none";}else{ echo "block";}?>;" id="tab1"><a href="#tab-3"> <?php esc_html_e('Carousel Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+                        <li style="display: <?php if($layout == "grid" || $layout == "isotope"){ echo "none";}else{ echo "block";}?>;" id="tab1"><a href="#tab-3"> <?php esc_html_e('Carousel Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li style="display: <?php if($layout == "grid"){ echo "block";}else{ echo "none";}?>;" id="tab2"><a href="#tab-4"> <?php esc_html_e('Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+                        <li style="display: <?php if($layout == "grid"){ echo "block";}else{ echo "none";}?>;" id="tab2"><a href="#tab-4"> <?php esc_html_e('Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li style="display: <?php if($layout == "isotope"){ echo "block";}else{ echo "none";}?>;" id="tab3"><a href="#tab-5"> <?php esc_html_e('Sortable Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+                        <li style="display: <?php if($layout == "isotope"){ echo "block";}else{ echo "none";}?>;" id="tab3"><a href="#tab-5"> <?php esc_html_e('Sortable Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li><a href="#tab-6"> <?php esc_html_e('Style Settings', PGCU_TEXTDOMAIN); ?> </a></li>
-            	</ul>   
-
-                <?php 
-                require_once PGCU_INC_DIR . 'settings/general.php'; 
-                require_once PGCU_INC_DIR . 'settings/grid.php'; 
+                        <li><a href="#tab-6"> <?php esc_html_e('Style Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+                    </ul>
+                    <a href="#" class="lcsp-support"><span class="fas fa-question-circle"></span>Support</a>
+                </div>
+                <?php
+                require_once PGCU_INC_DIR . 'settings/get-shortcodes.php';
+                require_once PGCU_INC_DIR . 'settings/general.php';
+                require_once PGCU_INC_DIR . 'settings/grid.php';
                 require_once PGCU_INC_DIR . 'settings/carousel.php';
                 require_once PGCU_INC_DIR . 'settings/sortable.php';
                 require_once PGCU_INC_DIR . 'settings/style.php';
-               
+
 		}
 
         //save  all posts
@@ -143,6 +113,6 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
             return false;
         }
 
-		
+
 
 	} // end class

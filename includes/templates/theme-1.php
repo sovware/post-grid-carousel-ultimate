@@ -40,6 +40,7 @@
                                 <?php foreach( array_slice( $get_terms, 2 ) as $term ) { ?>
                                     <a><?php echo $term->name; ?></a>
                                 <?php } ?>
+                                
                                 </div>
                             </div>
                         <?php } ?>

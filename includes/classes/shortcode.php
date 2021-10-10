@@ -186,7 +186,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-grid-'. $post_id .' pgcu-column-3'; ?>" style="
+    				<div class="<?php //echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-grid-'. $post_id .' pgcu-column-4'; ?> pgcu-masonry pgcu-masonry-col-4" style="
 					--pgcu-titleColor: <?php echo $post_title_color; ?>;
     				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
 					--pgcu-excerptColor: <?php echo $post_content_color; ?>;
@@ -215,7 +215,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						$post_views = get_post_meta( get_the_id(), '_pgcu_post_views_count', true );
 						$author_id  = get_the_author_meta('ID');
                         $author_img    = get_avatar_url( $author_id, array('size' => 38) );
-						
+
 						include PGCU_INC_DIR . 'templates/' . $theme . '.php';
 
 						endwhile;

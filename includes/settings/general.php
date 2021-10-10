@@ -9,6 +9,7 @@ $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'ye
 $read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
+$post_from            = ! empty( $post_from   ) ? $post_from   : 'latest';
 ?>
 <!-- General settings -->
 <div id="tab-2" class="adl-tab-content" style="display: none;">
@@ -96,23 +97,139 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
             </tr>
 
             <tr>
-                <th><label for="gc[post_from]"><?php esc_html_e('Display Post From', PGCU_TEXTDOMAIN); ?></label>
+                <th>
+                    <label for="gc[post_from]"><?php _e('Display Posts From', 'post-grid-carousel-ultimate-pro'); ?></label>
                 </th>
-                <td>
-                    <select id="gc[post_from]" name="gc[post_from]">
-                        <option value="latest" <?php if(!empty($post_from) && $post_from == "latest"){ echo "selected";}?>>Latest Posts</option>
-                        <option value="older" <?php if(!empty($post_from) && $post_from == "older"){ echo "selected";}?>>Older Posts</option>
-                        <option disabled>Feature Posts </option>
-                        <option disabled>Populer Posts </option>
-                        <option disabled>Random Posts </option>
-                        <option disabled>Posts by Category </option>
-                        <option disabled>Posts by Id </option>
-                        <option disabled>Posts by Tag </option>
-                        <option disabled>Posts by Year </option>
-                        <option disabled>Posts by Month </option>
-                    </select>
 
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list">
+                        <li>
+                            <input type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type1" 
+                            value="latest" <?php checked('latest', $post_from, true); ?>> 
+                            <label for="aps_posts_type1"><?php esc_html_e('Latest Posts', PGCU_TEXTDOMAIN); ?></label></li>
+
+                        <li>
+                            <input type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type2" 
+                            value="older" <?php checked('older', $post_from, true); ?>> 
+                            <label for="aps_posts_type2"><?php esc_html_e('Older Posts', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+
+                        <li>
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type3" 
+                            value="featured" <?php checked('featured', $post_from, true); ?>> 
+                            <label for="aps_posts_type3"><?php esc_html_e('Featured Posts', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+
+                        <li>
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type9" 
+                            value="popular_post" <?php checked('popular_post', $post_from, true); ?>> 
+                            <label for="aps_posts_type9"><?php esc_html_e('Popular Posts', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+
+                        <li>
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type9" 
+                            value="random_post" <?php checked('random_post', $post_from, true); ?>> 
+                            <label for="aps_posts_type9"><?php esc_html_e('Random Posts', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+
+                        <li><input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type4" 
+                            value="category" <?php checked('category', $post_from, true); ?>> 
+                            <label for="aps_posts_type4"><?php esc_html_e('Posts by Category', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <input type="text" 
+                        class="cmb2-text-medium adl-radio" 
+                        name="gc[post_by_cat]" 
+                        id="aps_posts_bycategory" 
+                        value="<?php if(!empty($post_by_cat)) { echo $post_by_cat; } else { echo ''; } ?>" 
+                        placeholder="e.g. wordpress, php, news">
+
+                        <li class="postsbyidw">
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type5" 
+                            value="postsbyid" <?php checked('postsbyid', $post_from, true); ?>> 
+                            <label for="aps_posts_type5"><?php esc_html_e('Posts by ID', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <input type="text" 
+                        class="cmb2-text-medium adl-radio" 
+                        name="gc[posts_by_id]" 
+                        id="aps_posts_byID" 
+                        value="<?php if(!empty($posts_by_id)) { echo $posts_by_id; } else { echo ''; } ?>" 
+                        placeholder="e.g. 1, 5, 10">
+
+
+
+                        <li>
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type6" 
+                            value="postsbytag" <?php checked('postsbytag', $post_from, true); ?>> 
+                            <label for="aps_posts_type6"><?php esc_html_e('Posts by Tags', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <input type="text" 
+                        class="cmb2-text-medium adl-radio" 
+                        name="gc[posts_by_tag]" 
+                        id="aps_posts_byTag" 
+                        value="<?php if(!empty($posts_by_tag)) { echo $posts_by_tag; } else { echo ''; } ?>" 
+                        placeholder="e.g. food, tree, water">
+
+                        <li>
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type7" 
+                            value="postsbyyear" <?php checked('postsbyyear', $post_from, true); ?>> 
+                            <label for="aps_posts_type7"><?php esc_html_e('Posts by Year', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <input type="text" 
+                        class="cmb2-text-medium adl-radio" 
+                        name="gc[posts_by_year]" 
+                        id="aps_posts_by_year" 
+                        value="<?php if(!empty($posts_by_year)) { echo $posts_by_year; } else { echo ''; } ?>" 
+                        placeholder="e.g. 2016">
+
+                        <li>
+                            <input  type="radio" 
+                            class="cmb2-option" 
+                            name="gc[post_from]" 
+                            id="aps_posts_type8" 
+                            value="postsbymonth" <?php checked('postsbymonth', $post_from, true); ?>> <label for="aps_posts_type8"><?php esc_html_e('Posts by Month', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <input type="text" 
+                        class="cmb2-text-small lfm" 
+                        name="gc[posts_from_month]" 
+                        id="aps_posts_from_month" 
+                        value="<?php if(!empty($posts_from_month)) { echo $posts_from_month; } else { echo ''; } ?>" 
+                        placeholder="e.g. 0-11">
+                        <input type="text" 
+                        class="cmb2-text-small lfm" 
+                        name="gc[posts_from_month_year]" 
+                        id="aps_posts_from_month_year" 
+                        value="<?php if(!empty($posts_from_month_year)) { echo $posts_from_month_year; } else { echo ''; } ?>"
+                        placeholder="2016">
+                    </ul>
                 </td>
+
             </tr>
 
             <tr>

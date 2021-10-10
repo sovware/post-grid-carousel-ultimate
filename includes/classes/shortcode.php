@@ -101,6 +101,16 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$read_more_button_background_color     = ! empty( $read_more_button_background_color ) ? $read_more_button_background_color : '#EFEFEF';
 			$read_more_button_background_hover_color     = ! empty( $read_more_button_background_hover_color ) ? $read_more_button_background_hover_color : '#030213';
 
+
+			$layout_class = '';
+			if( 'carousel' == $layout ) {
+				$layout_class = 'swiper-wrapper';
+			} elseif( 'grid' == $layout || 'isotop' == $layout ) {
+				$layout_class = 'pgcu-row  pgcu-column-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . '';
+			} elseif( 'masonry' == $layout ) {
+				$layout_class = 'pgcu-masonry pgcu-masonry-col-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . '';
+			}
+
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
 
@@ -235,7 +245,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php //echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-grid-'. $post_id .' pgcu-column-4'; ?> pgcu-masonry pgcu-masonry-col-4" style="
+    				<div class="pgcu-grid-<?php echo $post_id; ?> <?php echo $layout_class; ?>; ?> pgcu-masonry pgcu-masonry-col-4" style="
 					--pgcu-titleColor: <?php echo $post_title_color; ?>;
     				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
 					--pgcu-excerptColor: <?php echo $post_content_color; ?>;

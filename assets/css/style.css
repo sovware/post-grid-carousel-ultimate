@@ -682,6 +682,10 @@
   content: ',';
 }
 
+.pgcu-post__meta__categories > a:last-child:after {
+  content: none;
+}
+
 .pgcu-post__meta__categories--badge > a:not(.pgcu-post__badge) {
   color: var(--pgcu-categoryColor);
   position: relative;
@@ -754,6 +758,7 @@
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s ease;
   display: block !important;
+  min-width: 100px;
 }
 
 .pgcu-post__meta__categories-more div:before {

@@ -196,6 +196,9 @@
             &:first-child:after{
                 content: ',';
             }
+            &:last-child:after{
+                content: none;
+            }
         }
         @include m(badge){
             > a:not(.pgcu-post__badge){
@@ -263,6 +266,7 @@
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             transition: 0.3s ease;
             display: block !important;
+            min-width: 100px;
             &:before{
                 position: absolute;
                 content: '';

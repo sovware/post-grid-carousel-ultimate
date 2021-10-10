@@ -12,7 +12,7 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 $post_from            = ! empty( $post_from   ) ? $post_from   : 'latest';
 ?>
 <!-- General settings -->
-<div id="tab-2" class="adl-tab-content">
+<div id="tab-2" class="adl-tab-content" style="display: none;">
     <div class="cmb2-wrap form-table">
 
         <table class='cmb2-metabox'>

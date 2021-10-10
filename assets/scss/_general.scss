@@ -30,11 +30,25 @@
 /* Post card */
 .pgcu-post{
     @include e(img){
+        overflow: hidden;
+        > a{
+            display: block;
+            img{
+                width: 100%;
+                max-width: 100%;
+            }
+        }
         @include e(upper-content){
             position: absolute;
             @include m(bottom-left){
                 left: 20px;
                 bottom: 15px;
+            }
+            @include m(bottom){
+                width: 100%;
+                padding: 20px;
+                left: 0;
+                bottom: 0;
             }
         }
     }
@@ -57,6 +71,20 @@
     @include e(content){
         background: #fff;
         border-radius: 6px;
+        @include m(center){
+            .pgcu-post__meta__categories{
+                justify-content: center;
+            }
+            .pgcu-post__title{
+                text-align: center;
+            }
+            .pgcu-post__meta{
+                justify-content: center;
+            }
+            .pgcu-post__details{
+                text-align: center;
+            }
+        }
     }
 }
 

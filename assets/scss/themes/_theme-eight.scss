@@ -1,0 +1,19 @@
+/*===========================
+ Style: Theme Eight
+===========================*/
+.pgcu-theme-8{
+    .pgcu-post{
+        @include e(title){
+            margin-bottom: 12px !important;
+        }
+        @include e(meta){
+            margin-bottom: 16px !important;
+        }
+        @include e(excerpt){
+            margin-bottom: 14px !important;
+        }
+        @include e(details){
+            padding: 20px;
+        }
+    }
+}

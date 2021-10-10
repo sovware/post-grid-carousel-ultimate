@@ -1,0 +1,23 @@
+/*===========================
+ Style: Theme Fifteen
+===========================*/
+.pgcu-theme-15{
+    .pgcu-post{
+        @include e(content){
+            box-shadow: 0 5px 20px rgba(#A2A4C1, 0.2);
+        }
+        @include e(title){
+            margin-bottom: 20px !important;
+        }
+        @include e(details){
+            padding: 20px;
+        }
+        @include e(excerpt){
+            margin-bottom: 20px;
+        }
+        @include e(author){
+            border-top: 1px solid #EFEFEF;
+            padding-top: 16px;
+        }
+    }
+}

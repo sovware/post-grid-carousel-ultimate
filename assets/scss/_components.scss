@@ -41,7 +41,42 @@
 
         }
     }
+    @include e(ert){
+        display: flex;
+        align-items: center;
+        span{
+            font-size: 14px;
+            color: var(--pgcu-metaColor);
+            display: block;
+        }
+    }
+    @include e(author){
+        display: flex;
+        align-items: center;
+        span{
+            display: inline-block;
+            font-size: 14px;
+            margin-right: 4px;
+            color: var(--pgcu-metaColor);
+        }
+    }
     @include m(dots){
+        li:not(:last-child){
+            position: relative;
+            &:after{
+                content:"";
+                position: absolute;
+                right: -2px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: var(--pgcu-textLight);
+            }
+        }
+    }
+    @include m(divider){
         li:not(:last-child){
             position: relative;
             &:after{
@@ -50,12 +85,17 @@
                 right: 0;
                 top: 50%;
                 transform: translateY(-50%);
-                width: 4px;
-                height: 4px;
+                width: 1px;
+                height: 14px;
                 border-radius: 50%;
-                background: var(--pgcu-textLight);
+                background: #E4E4ED;
             }
-
+        }
+        .pgcu-post__meta__author{
+            a{
+                color: var(--pgcu-metaColorDark);
+                font-weight: 500;
+            }
         }
     }
     @include m(has-icon){
@@ -77,6 +117,14 @@
                 height: 14px;
                 fill: var(--pgcu-metaColor);
                 margin-right: 8px;
+            }
+        }
+        .pgcu-post__meta__categories{
+            margin: 0 !important;
+            > a{
+                &:nth-child(2):after{
+                    content: ',';
+                }
             }
         }
     }
@@ -144,8 +192,46 @@
         > a{
             margin: 3px;
             text-decoration: none !important;
+            font-size: 14px;
             &:first-child:after{
                 content: ',';
+            }
+        }
+        @include m(badge){
+            > a:not(.pgcu-post__badge){
+                color: var(--pgcu-categoryColor);
+                position: relative;
+                margin: 3px 9px;
+                &:before{
+                    content:"";
+                    position: absolute;
+                    width: calc(100% + 12px);
+                    height: 24px;
+                    left: -6px;
+                    top: 0;
+                    background: var(--pgcu-categoryColor);
+                    opacity: 0.1;
+                    border-radius: 3px;
+                }
+                &:after{
+                    content:none !important;
+                }
+            }
+            .pgcu-post__badge{
+                color: #fff !important;
+                &:after{
+                    content:none !important;
+                }
+            }
+            .pgcu-post__meta__categories-more{
+                a{
+                    font-size: 14px;
+                    color: #4F515A;
+                    transition: 0.3s ease;
+                    &:hover{
+                        color: var(--pgcu-metaColorHover);
+                    }
+                }
             }
         }
     }
@@ -161,6 +247,7 @@
                 height: 9px;
                 fill: var(--pgcu-textLight);
                 transition: 0.3s ease;
+                margin-right: 0;
             }
         }
         div{
@@ -175,6 +262,7 @@
             bottom: calc(100% + 10px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             transition: 0.3s ease;
+            display: block !important;
             &:before{
                 position: absolute;
                 content: '';
@@ -235,6 +323,8 @@
     align-items: center;
     justify-content: center;
     text-decoration: none !important;
+    transition: 0.3s ease;
+    line-height: 38px;
     &:hover{
         background: var(--pgcu-buttonBgHover) !important;
         color: var(--pgcu-buttonColorHover) !important;
@@ -298,4 +388,30 @@
     padding: 0 5px;
     line-height: 24px;
     display: inline-block;
+}
+
+/* Post author bottom */
+.pgcu-post__author{
+    >div{
+        margin-right: 10px;
+    }
+    img{
+        border-radius: 50%;
+    }
+    .pgcu-post__meta__author{
+        a{
+            font-size: 14px;
+            font-weight: 500;
+            color: #030213;
+            text-decoration: none !important;
+            transition: 0.3s ease;
+        }
+    }
+}
+
+/* Meta box */
+.pgcu-post__meta-boxed{
+    border-radius: 8px;
+    background: #F8F8F8;
+    padding: 10px 15px;
 }

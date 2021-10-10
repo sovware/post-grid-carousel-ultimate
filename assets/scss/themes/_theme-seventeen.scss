@@ -1,0 +1,60 @@
+/*===========================
+ Style: Theme Seventeen
+===========================*/
+.pgcu-theme-17{
+    .pgcu-post{
+        @include e(img){
+            position: relative;
+            &:before{
+                content:"";
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                left: 0;
+                bottom: 0;
+                transition: 0.3s ease;
+                background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+            }
+            @include e(upper-content){
+                @include m(bottom){
+                    bottom: -60px;
+                    transition: 0.3s ease;
+                }
+            }
+        }
+        @include e(meta__categories){
+            margin-bottom: 7px !important;
+        }
+        @include e(title){
+            margin-bottom: 7px !important;
+        }
+        @include e(meta){
+            margin-bottom: 17px !important;
+            transition: 0.3s ease;
+            a, span{
+                color: #fff;
+                opacity: 0.6;
+            }
+            @include e(author){
+                a{
+                    color: #fff;
+                    font-weight: 500;
+                    opacity: 1;
+                }
+            }
+        }
+        @include e(content){
+            &:hover{
+                .pgcu-post__img:before{
+                    height: 100%;
+                }
+                .pgcu-post__img__upper-content--bottom{
+                    bottom: 0;
+                }
+                .pgcu-post__meta{
+                    margin-bottom: 7px !important;
+                }
+            }
+        }
+    }
+}

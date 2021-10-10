@@ -10,7 +10,7 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 
             //save post
             add_action('save_post', array( $this,'gc_adl_save_meta_box') );
-			
+
 
 		}
 
@@ -26,18 +26,18 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 		}
 
         //Function that will check if value is a valid HEX color.
-        public function check_color( $value ) { 
-             
-            if ( preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) { // if user insert a HEX color with #     
+        public function check_color( $value ) {
+
+            if ( preg_match( '/^#[a-f0-9]{6}$/i', $value ) ) { // if user insert a HEX color with #
                 return true;
             }
-             
+
             return false;
         }
 
 		//output of shortcode metabox
 		public function outpost_shortcode_metabox_markup( $post ){
-            
+
             // Add a nonce field so we can check for it later.
             wp_nonce_field( 'aps_meta_save', 'gc_meta_save_nonce' );
 
@@ -83,9 +83,9 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
                     </div> <!-- end cmb2-metabox -->
                 </div> <!-- end cmb2-wrap -->
             </div> <!-- end lcsp-tab-2 -->
-			<div id="tabs-container">        
+			<div id="tabs-container">
 				<ul class="tabs-menu">
-                    
+                    <li ><a href="#tab-0"> <?php esc_html_e('Shortcodes', PGCU_TEXTDOMAIN); ?> </a></li>
 
 	                <li><a href="#tab-2"> <?php esc_html_e('General Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
@@ -96,15 +96,15 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 	                <li style="display: <?php if( $layout == "isotope" ){ echo "block";}else{ echo "none";}?>;" id="tab3"><a href="#tab-5"> <?php esc_html_e('Sortable Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
 	                <li><a href="#tab-6"> <?php esc_html_e('Style Settings', PGCU_TEXTDOMAIN); ?> </a></li>
-            	</ul>   
+            	</ul>
 
-                <?php 
-                require_once PGCU_INC_DIR . 'settings/general.php'; 
-                require_once PGCU_INC_DIR . 'settings/grid.php'; 
+                <?php
+                require_once PGCU_INC_DIR . 'settings/general.php';
+                require_once PGCU_INC_DIR . 'settings/grid.php';
                 require_once PGCU_INC_DIR . 'settings/carousel.php';
                 require_once PGCU_INC_DIR . 'settings/sortable.php';
                 require_once PGCU_INC_DIR . 'settings/style.php';
-               
+
 		}
 
         //save  all posts
@@ -143,6 +143,6 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
             return false;
         }
 
-		
+
 
 	} // end class

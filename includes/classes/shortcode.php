@@ -72,6 +72,10 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$post_column_tablet      =   ! empty( $post_column_tablet ) ? $post_column_tablet : '2';
 			$post_column_mobile      =   ! empty( $post_column_mobile ) ? $post_column_mobile : '1';
 
+			$g_column                   = ! empty( $g_column   ) ? $g_column   : '3';
+			$g_tablet                   = ! empty( $g_tablet   ) ? $g_tablet   : '2';
+			$g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
+
 			//grid pagination settings
 			$display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
 			$pagination_type            = ! empty( $pagination_type   ) ? $pagination_type   : 'number';
@@ -100,6 +104,16 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$read_more_button_hover_color     	   = ! empty( $read_more_button_hover_color ) ? $read_more_button_hover_color : '#ffffff';
 			$read_more_button_background_color     = ! empty( $read_more_button_background_color ) ? $read_more_button_background_color : '#EFEFEF';
 			$read_more_button_background_hover_color     = ! empty( $read_more_button_background_hover_color ) ? $read_more_button_background_hover_color : '#030213';
+
+
+			$layout_class = '';
+			if( 'carousel' == $layout ) {
+				$layout_class = 'swiper-wrapper';
+			} elseif( 'grid' == $layout || 'isotope' == $layout ) {
+				$layout_class = 'pgcu-row  pgcu-column-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . '';
+			} elseif( 'masonry' == $layout ) {
+				$layout_class = 'pgcu-masonry pgcu-masonry-col-' . $g_column . ' pgcu-masonry-column-md-' . $g_tablet . ' pgcu-masonry-column-sm-' . $g_mobile . '';
+			}
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
@@ -199,7 +213,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				<?php } ?>
 				<div class="pgcu-posts  <?php echo  'yes' == $marquee ? 'pgcu-carousel--marquee' : ''; ?> pgcu-<?php echo $theme; ?> <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
-					data-pgcu-items="4"
+					data-pgcu-items="<?php echo $post_column; ?>"
 					data-pgcu-margin="30"
 					data-pgcu-loop="<?php echo ( 'yes' == $repeat_post ) ? 'true' : 'false'; ?>"
 					data-pgcu-perslide="2"
@@ -235,7 +249,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php //echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-grid-'. $post_id .' pgcu-column-4'; ?> pgcu-masonry pgcu-masonry-col-4" style="
+    				<div class="pgcu-grid-<?php echo $post_id; ?> <?php echo $layout_class; ?>" style="
 					--pgcu-titleColor: <?php echo $post_title_color; ?>;
     				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
 					--pgcu-excerptColor: <?php echo $post_content_color; ?>;
@@ -275,7 +289,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						<?php
 						if( 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
 							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
-						}elseif( 'grid' == $layout && 'yes' == $display_pagination ) {
+						}elseif( ( 'grid' == $layout || 'masonry' == $layout ) && 'yes' == $display_pagination ) {
 							include PGCU_INC_DIR . 'templates/pagination/pagination.php';
 						}
 						?>

@@ -17,6 +17,13 @@
                 $("#tab3").css('display', 'none');
 
             }
+            if ($(this).val() == 'masonry') {
+
+                $("#tab2").css('display', 'block');
+                $("#tab1").css('display', 'none');
+                $("#tab3").css('display', 'none');
+
+            }
             if ($(this).val() == 'isotope') {
 
                 $("#tab2").css('display', 'none');
@@ -34,8 +41,8 @@
             }
         });
 
-        /* Read more type color option */
-        $('.gc-read-more-type-section .pgcu_post_type_depend').on('change', function(){
+         /* Read more type color option */
+         $('.gc-read-more-type-section .pgcu_post_type_depend').on('change', function(){
             if($(this).val() === 'link'){
                 $('.read_more_link_color_option').show();
                 $('.read_more_button_color_option').hide();
@@ -51,7 +58,6 @@
             $('.read_more_link_color_option').hide();
             $('.read_more_button_color_option').show();
         }
-
 
         $("#pgcu_post_type").change(function() {
               var data = {
@@ -145,7 +151,7 @@
     });
 
 
-    // show if it is checked
+// show if it is checked
     if( $('input[id=aps_posts_type1]').is(':checked') ) {
         $('#aps_latest_posts_bycategory, .specific-categories.latest').fadeIn();
     }
@@ -167,7 +173,6 @@
     if( $('input[id=aps_posts_type8]').is(':checked') ) {
         $('#aps_posts_from_month, #aps_posts_from_month_year').fadeIn();
     }
-
 
 
 

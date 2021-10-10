@@ -6,7 +6,7 @@
             <h3>Usage</h3>
                 <p>Using Post Grid and Carousel Ultimate plugin is very easy. Just follow the following steps and you are ready to go.</p>
                 <p>1. Click the 'New Grid/Carousel' and customize different options of the carousel and click on the 'Publish' button.</p>
-                <p>2. Copy the shortcode from the first shortcode tab. For example: [post_grid_carousel id="14"]</p>
+                <p>2. Copy the shortcode from the first shortcode tab. For example: [pgcu id="14"]</p>
                 <p>3. Paste the shortcode on any page or post where you would like to display the Grid/Carousel.</p>
             <br>
 

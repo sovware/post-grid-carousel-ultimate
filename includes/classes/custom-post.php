@@ -71,11 +71,11 @@ if( !defined('ABSPATH')) { die('direct browsing can not possible');}
 		public function gc_adl_manage_shortcode_columns( $column_name, $post_id ) {
 			switch( $column_name ){
                 case 'post_grid_carousel_sc_1': ?>
-                    <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" >[post_grid_carousel id="<?php echo $post_id;?>"]</textarea>
+                    <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" >[pgcu id="<?php echo $post_id;?>"]</textarea>
                     <?php
                     break;
                 case 'post_grid_carousel_sc_2': ?>
-                    <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" ><?php echo "<?php post_grid_carousel('{$post_id}'); ?>"; ?></textarea>
+                    <textarea  style="background:#0074A8; color:#fff;" cols="50" rows="1" onClick="this.select();" ><?php echo "<?php pgcu('{$post_id}'); ?>"; ?></textarea>
                     <?php
                     break;
 

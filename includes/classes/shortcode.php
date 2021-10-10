@@ -59,6 +59,17 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$navigation_border_color		=	! empty( $navigation_border_color ) ? $navigation_border_color : '#f5f5f5';
 			$navigation_border_hover_color	=	! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C';
 
+			$autoplay                =   ! empty( $autoplay ) ? $autoplay : 'yes';
+			$pause_hover             =   ! empty( $pause_hover ) ? $pause_hover : 'no';
+			$repeat_post             =   ! empty( $repeat_post ) ? $repeat_post : 'yes';
+			$c_autoplay_speed 		 =	 ! empty( $c_autoplay_speed ) ? $c_autoplay_speed : '2000';
+			$c_autoplay_time 		 =	 ! empty( $c_autoplay_time ) ? $c_autoplay_time : '2000';
+			
+			$post_column             =   ! empty( $post_column ) ? $post_column : '3';
+			$post_column_laptop      =   ! empty( $post_column_laptop ) ? $post_column_laptop : '3';
+			$post_column_tablet      =   ! empty( $post_column_tablet ) ? $post_column_tablet : '2';
+			$post_column_mobile      =   ! empty( $post_column_mobile ) ? $post_column_mobile : '1';
+
 			//grid pagination settings
 			$display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
 			$pagi_color                 = ! empty( $pagi_color ) ? $pagi_color : '#333';
@@ -136,22 +147,26 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				<?php if( 'carousel' == $layout ) { ?>
 					data-pgcu-items="4"
 					data-pgcu-margin="30"
-					data-pgcu-loop="true"
+					data-pgcu-loop="<?php echo ( 'yes' == $repeat_post ) ? 'true' : 'false'; ?>"
 					data-pgcu-perslide="2"
-					data-pgcu-speed="3000"
+					data-pgcu-speed="<?php echo $c_autoplay_speed; ?>"
 					data-pgcu-autoplay='
+					<?php if( 'yes' == $autoplay ) { ?>
 					{
-						"delay": "2000",
-						"pauseOnMouseEnter": true,
+						"delay": "<?php echo $c_autoplay_time; ?>",
+						"pauseOnMouseEnter": <?php echo ( 'yes' == $pause_hover ) ? "true" : "false"; ?>,
 						"disableOnInteraction": false,
 						"stopOnLastSlide": true,
 						"reverseDirection": false
 					}
+					<?php } else { ?>
+						false
+					<?php } ?>
 				' data-pgcu-responsive='{
-						"0": {"slidesPerView": "1", "spaceBetween": "20", "slidesPerGroup":"1"},
-						"768": {"slidesPerView": "2", "spaceBetween": "30", "slidesPerGroup":"1"},
-						"992": {"slidesPerView": "3", "spaceBetween": "30", "slidesPerGroup":"1"},
-						"1200": {"slidesPerView": "4", "spaceBetween": "30", "slidesPerGroup":"1"}
+						"0": {"slidesPerView": "<?php echo $post_column_mobile; ?>", "spaceBetween": "20", "slidesPerGroup":"1"},
+						"768": {"slidesPerView": "<?php echo $post_column_tablet; ?>", "spaceBetween": "30", "slidesPerGroup":"1"},
+						"992": {"slidesPerView": "<?php echo $post_column_laptop; ?>", "spaceBetween": "30", "slidesPerGroup":"1"},
+						"1200": {"slidesPerView": "<?php echo $post_column; ?>", "spaceBetween": "30", "slidesPerGroup":"1"}
 					}'
 				<?php } ?>
 				>

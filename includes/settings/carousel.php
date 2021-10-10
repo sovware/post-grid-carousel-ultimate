@@ -1,6 +1,7 @@
 <?php  
 $autoplay                =   ! empty( $autoplay ) ? $autoplay : 'yes';
 $pause_hover             =   ! empty( $pause_hover ) ? $pause_hover : 'no';
+$repeat_post             =   ! empty( $repeat_post ) ? $repeat_post : 'yes';
 $navigation              =   ! empty( $navigation  ) ? $navigation  : 'yes';
 $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_position  : 'middle';
 ?>
@@ -12,21 +13,29 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             <tr>
                 <th><label for="gc[post_column]"><?php esc_html_e('Post Column', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column]" value="<?php if(empty($post_column)) { echo intval(3);}else{ echo $post_column;}?>"/>
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column]" value="<?php echo ! empty( $post_column ) ? $post_column : '3'; ?>"/>
                     
-                </td>
-            </tr>
-            <tr>
-                <th><label for="gc[post_column_tablet]"><?php esc_html_e('Post column on Tablet', PGCU_TEXTDOMAIN); ?></label></th>
-                <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column_tablet]" id="gc[post_column_tablet]" value="<?php if(empty($post_column_tablet)) { echo intval(2);}else{ echo $post_column_tablet;}?>" />
                 </td>
             </tr>
 
             <tr>
+                <th><label for="gc[post_column_laptop]"><?php esc_html_e('Post Column on Laptop', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column_laptop]" value="<?php echo ! empty( $post_column_laptop ) ? $post_column_laptop : '3'; ?>"/>
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="gc[post_column_tablet]"><?php esc_html_e('Post column on Tablet', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column_tablet]" id="gc[post_column_tablet]" value="<?php echo ! empty( $post_column_tablet ) ? $post_column_tablet : '2'; ?>" />
+                </td>
+            </tr>
+            <tr>
                 <th><label for="gc[post_column_mobile]"><?php esc_html_e('Post column on Mobile', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column_mobile]" id="gc[post_column_mobile]" value="<?php if(empty($post_column_mobile)) { echo intval(1);}else{ echo $post_column_mobile;}?>" />
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column_mobile]" id="gc[post_column_mobile]" value="<?php echo ! empty( $post_column_mobile ) ? $post_column_mobile : '1'; ?>" />
                     
                 </td>
             </tr>  
@@ -48,22 +57,6 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             </tr>
 
             <tr>
-                <th><label for="gc[c_autoplay_speed]"><?php esc_html_e('Autoplay Speed', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_speed]" name="gc[c_autoplay_speed]" value="<?php if(empty($c_autoplay_speed)) { echo intval(3000);}else{ echo $c_autoplay_speed;}?>"/><span class="description">(Millisecond)</span>
-                    
-                </td>
-                
-            </tr>
-
-            <tr>
-                <th><label for="gc[c_autoplay_time]"><?php esc_html_e('Autoplay Timeout', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_time]" name="gc[c_autoplay_time]" value="<?php if(empty($c_autoplay_time)) { echo intval(2000);}else{ echo $c_autoplay_time;}?>"/><span class="description">(Millisecond)</span>
-                    
-                </td>
-                
-            </tr>    
-            
-            <tr>
                 <th><label for="gc[pause_hover]"><?php esc_html_e('Pause on Hover', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
@@ -78,6 +71,38 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
                     </ul>
                 </td>    
             </tr>
+
+            <tr>
+                <th><label for="gc[repeat_post]"><?php esc_html_e('Repeat Post', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[repeat_post]" id="gc[repeat_post1]" value="yes" <?php checked( 'yes', $repeat_post, true ); ?>> 
+                            <label for="gc[repeat_post1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[repeat_post]" id="gc[repeat_post2]" value="no" <?php checked( 'no', $repeat_post, true ); ?>> 
+                            <label for="gc[repeat_post2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
+                <th><label for="gc[c_autoplay_speed]"><?php esc_html_e('Slide Speed', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_speed]" name="gc[c_autoplay_speed]" value="<?php echo ! empty( $c_autoplay_speed ) ? $c_autoplay_speed : '2000'; ?>"/><span class="description">(Millisecond)</span>
+                    
+                </td>
+                
+            </tr>
+
+            <tr>
+                <th><label for="gc[c_autoplay_time]"><?php esc_html_e('Slide Timeout', PGCU_TEXTDOMAIN); ?></label></th>
+                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_time]" name="gc[c_autoplay_time]" value="<?php echo ! empty( $c_autoplay_time ) ? $c_autoplay_time : '2000'; ?>"/><span class="description">(Millisecond)</span>
+                    
+                </td>
+                
+            </tr>    
 
             <tr>
                 <th><label for="gc[navigation]"><?php esc_html_e('Navigation', PGCU_TEXTDOMAIN); ?></label></th>

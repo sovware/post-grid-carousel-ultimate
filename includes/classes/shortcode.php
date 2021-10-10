@@ -143,7 +143,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					<h2><?php echo $header_title; ?></h2>
 				</div>
 				<?php } ?>
-				<div class="pgcu-posts pgcu-theme-1 <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
+				<div class="pgcu-posts pgcu-<?php echo $theme; ?> <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
 					data-pgcu-items="4"
 					data-pgcu-margin="30"

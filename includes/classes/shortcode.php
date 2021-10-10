@@ -70,6 +70,10 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$post_column_tablet      =   ! empty( $post_column_tablet ) ? $post_column_tablet : '2';
 			$post_column_mobile      =   ! empty( $post_column_mobile ) ? $post_column_mobile : '1';
 
+			$g_column                   = ! empty( $g_column   ) ? $g_column   : '3';
+			$g_tablet                   = ! empty( $g_tablet   ) ? $g_tablet   : '2';
+			$g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
+
 			//grid pagination settings
 			$display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
 			$pagi_color                 = ! empty( $pagi_color ) ? $pagi_color : '#333';
@@ -181,7 +185,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-3'; ?>" style="
+    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . ''; ?>" style="
 					--pgcu-titleColor: <?php echo $post_title_color; ?>;
     				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
 					--pgcu-excerptColor: <?php echo $post_content_color; ?>;

@@ -1,5 +1,8 @@
 <?php  
 $display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
+$g_column                   = ! empty( $g_column   ) ? $g_column   : '3';
+$g_tablet                   = ! empty( $g_tablet   ) ? $g_tablet   : '2';
+$g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
 ?>
 <div id="tab-4" class="adl-tab-content">
     <div class="cmb2-wrap form-table">
@@ -10,10 +13,10 @@ $display_pagination         = ! empty( $display_pagination   ) ? $display_pagina
                 <th><label for="gc[g_column]"><?php esc_html_e('Select Columns', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select id="gc[g_column]" name="gc[g_column]">
-                        <option value="3">Column-3</option>
-                        <option value="1" <?php if(!empty($g_column) && $g_column == "1"){ echo "selected";}?>>Column-1</option>
-                        <option value="2" <?php if(!empty($g_column) && $g_column == "2"){ echo "selected";}?>>Column-2</option>
-                        <option value="4" <?php if(!empty($g_column) && $g_column == "4"){ echo "selected";}?>>Column-4</option>
+                        <option value="1" <?php selected( $g_column, '1' ); ?>>Column-1</option>
+                        <option value="2" <?php selected( $g_column, '2' ); ?>>Column-2</option>
+                        <option value="3" <?php selected( $g_column, '3' ); ?>>Column-3</option>
+                        <option value="4" <?php selected( $g_column, '4' ); ?>>Column-4</option>
                     </select>
                     
                 </td>
@@ -23,10 +26,10 @@ $display_pagination         = ! empty( $display_pagination   ) ? $display_pagina
                 <th><label for="gc[g_tablet]"><?php esc_html_e('Select Columns for Tablet', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select id="gc[g_tablet]" name="gc[g_tablet]">
-                        <option value="2">Column-2</option>
-                        <option value="1" <?php if(!empty($g_tablet) && $g_tablet == "1"){ echo "selected";}?>>Column-1</option>
-                        <option value="3" <?php if(!empty($g_tablet) && $g_tablet == "3"){ echo "selected";}?>>Column-3</option>
-                        <option value="4" <?php if(!empty($g_tablet) && $g_tablet == "4"){ echo "selected";}?>>Column-4</option>
+                        <option value="1" <?php selected( $g_tablet, '1' ); ?>>Column-1</option>
+                        <option value="2" <?php selected( $g_tablet, '2' ); ?>>Column-2</option>
+                        <option value="3" <?php selected( $g_tablet, '3' ); ?>>Column-3</option>
+                        <option value="4" <?php selected( $g_tablet, '4' ); ?>>Column-4</option>
                     </select>
                     
                 </td>
@@ -36,10 +39,10 @@ $display_pagination         = ! empty( $display_pagination   ) ? $display_pagina
                 <th><label for="gc[g_mobile]"><?php esc_html_e('Select Columns for Mobile', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <select id="gc[g_mobile]" name="gc[g_mobile]">
-                        <option value="1">Column-1</option>
-                        <option value="2" <?php if(!empty($g_mobile) && $g_mobile == "2"){ echo "selected";}?>>Column-2</option>
-                        <option value="3" <?php if(!empty($g_mobile) && $g_mobile == "3"){ echo "selected";}?>>Column-3</option>
-                        <option value="4" <?php if(!empty($g_mobile) && $g_mobile == "4"){ echo "selected";}?>>Column-4</option>
+                        <option value="1" <?php selected( $g_mobile, '1' ); ?>>Column-1</option>
+                        <option value="2" <?php selected( $g_mobile, '2' ); ?>>Column-2</option>
+                        <option value="3" <?php selected( $g_mobile, '3' ); ?>>Column-3</option>
+                        <option value="4" <?php selected( $g_mobile, '4' ); ?>>Column-4</option>
                     </select>
                     
                 </td>

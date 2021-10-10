@@ -207,66 +207,110 @@ body.post-type-adl-shortcode {
     font-family: "Roboto", sans-serif;
 }
 
-.tabs-menu {
+.lcsp-tabs-menu-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-top: 30px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
+}
+.lcsp-tabs-menu-wrapper .lcsp-support{
+    color: #5A5F7D;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.lcsp-tabs-menu-wrapper .lcsp-support span{
+    display: inline-block;
+    margin-right: 4px;
+}
+
+.lcsp-tabs-menu {
+    margin: 0;
     clear: both;
     max-width: max-content;
     background: white;
-    padding: 6px;
-    border-radius: 4px;
-    box-shadow: 0 3px 5px rgba(173, 180, 210, 0.05);
+    padding: 0;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 3px 5px rgba(173, 180, 210, .05);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.tabs-menu li {
+.lcsp-tabs-menu li {
     float: left;
     margin-bottom: 0;
-    padding: 8px 15px;
+    padding: 11px 15px;
     font-weight: 500;
     line-height: 24px;
     font-size: 14px;
-    border-radius: 4px;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid #E3E6EF;
 }
 
-.tabs-menu li:not(:last-child) {
-    margin-right: 15px;
+.lcsp-tabs-menu li {
+    margin-right: -1px;
 }
 
-.tabs-menu a:active,
-.tabs-menu a:focus,
-.tabs-menu .current a:active,
-.tabs-menu .current a:focus {
+.lcsp-tabs-menu li.current{
+    margin-right: 0;
+}
+
+.lcsp-tabs-menu a:active,
+.lcsp-tabs-menu a:focus,
+.lcsp-tabs-menu .current a:active,
+.lcsp-tabs-menu .current a:focus {
     box-shadow: none;
 }
 
-.tabs-menu li a {
-    color: #5a5f7d;
+.lcsp-tabs-menu li a {
+    color: #5A5F7D;
     text-decoration: none;
     display: flex;
     align-items: center;
 }
 
-.tabs-menu li a span {
+.lcsp-tabs-menu li a span {
     font-size: 15px;
     margin-right: 6px;
-    color: #a1a8c6;
+    color: #A1A8C6;
 }
 
-.tabs-menu li.current {
+.lcsp-tabs-menu li.current {
     position: relative;
-    background-color: rgba(131, 78, 255, 0.15);
+    background-color: #fff;
     z-index: 5;
+    border-right-color: #E3E6EF;
+    border-color: transparent;
+    position: relative;
+}
+.lcsp-tabs-menu li.current:not(:first-child){
+    border-left-color: #E3E6EF;
+}
+.lcsp-tabs-menu li.current:last-child{
+    border-right-color: #E3E6EF;
+}
+.lcsp-tabs-menu li.current::before{
+    position: absolute;
+    content: '';
+    width: calc(100% + 2px);
+    height: 2px;
+    border-radius: 4px;
+    background: #834EFF;
+    top: -1px;
+    left: -1px;
 }
 
-.tabs-menu .current a span,
-.tabs-menu .current a {
-    color: #834eff;
+.lcsp-tabs-menu .current a span,
+.lcsp-tabs-menu .current a {
+    color: #834EFF;
 }
 
 .cmb2-wrap input.cmb2-text-small,
@@ -934,17 +978,16 @@ ul.lcs_pro_features {
     flex-basis: 0;
     flex-grow: 1;
     max-width: 100%;
-    text-align: center;
-    padding: 40px 75px;
+    padding: 30px 40px;
 }
 
 .cmb2-metabox-card2 {
-    border-right: 1px solid #f1f2f6;
+    border-right: 1px solid #F1F2F6;
 }
 
 .cmb2-metabox-card h6 {
     font-size: 17px;
-    color: #272b41;
+    color: #272B41;
     font-weight: 500;
     line-height: 24px;
     margin: 0;
@@ -954,20 +997,20 @@ ul.lcs_pro_features {
     font-size: 15px;
     font-weight: 400;
     line-height: 24px;
-    color: #5a5f7d;
+    color: #5A5F7D;
     margin: 0;
     margin-top: 17px;
 }
 
 .cmb2-metabox-card textarea {
-    border: 1px solid #e3e6ef;
-    background-color: #f4f5f7;
+    border: 1px solid #E3E6EF;
+    background-color: #F4F5F7;
     font-size: 14px;
     font-weight: 400;
     line-height: 25px;
     padding: 6px 40px;
     height: 41px;
-    color: #272b41;
+    color: #272B41;
     white-space: normal;
     display: flex;
     align-items: center;
@@ -979,19 +1022,16 @@ ul.lcs_pro_features {
 }
 
 .cmb2-metabox-card2 textarea {
-    width: 230px;
+    width: 183px;
     max-width: 100%;
 }
 
 .cmb2-metabox-card3 textarea {
-    width: 440px;
+    width: 377px;
     max-width: 100%;
 }
 
 .cmb2-metabox-card-textarea {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-top: 18px;
 }
 

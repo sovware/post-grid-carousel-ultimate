@@ -11,7 +11,7 @@ $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 ?>
 <!-- General settings -->
-<div id="tab-2" class="adl-tab-content">
+<div id="tab-2" class="adl-tab-content" style="display: none;">
     <div class="cmb2-wrap form-table">
 
         <table class='cmb2-metabox'>

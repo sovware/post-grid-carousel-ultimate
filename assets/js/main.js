@@ -90,31 +90,22 @@
         grid = document.querySelectorAll(".pgcu-masonry");
         grid.forEach(elm =>{
             function resizeGridItem(item) {
-                rowHeight = parseInt(window.getComputedStyle(elm).getPropertyValue('grid-auto-rows'));
-                rowGap = parseInt(window.getComputedStyle(elm).getPropertyValue('grid-row-gap'));
-                rowSpan = Math.ceil((item.querySelector('.pgcu-post__content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+                let rowHeight = parseInt(window.getComputedStyle(elm).getPropertyValue('grid-auto-rows'));
+                let rowGap = parseInt(window.getComputedStyle(elm).getPropertyValue('grid-row-gap'));
+                let rowSpan = Math.ceil((item.querySelector('.pgcu-post__content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+                console.log(rowSpan);
                 item.style.gridRowEnd = "span " + rowSpan;
             }
 
             function resizeAllGridItems() {
-                allItems = elm.getElementsByClassName("pgcu-post");
+                let allItems = elm.querySelectorAll(".pgcu-post");
                 for (x = 0; x < allItems.length; x++) {
                     resizeGridItem(allItems[x]);
                 }
             }
 
-            function resizeInstance(instance) {
-                item = instance.elements[0];
-                resizeGridItem(item);
-            }
-
             window.onload = resizeAllGridItems();
             window.addEventListener("resize", resizeAllGridItems);
-
-            allItems = elm.getElementsByClassName("pgcu-post");
-            for (x = 0; x < allItems.length; x++) {
-                imagesLoaded(allItems[x], resizeInstance);
-            }
         })
     })
 

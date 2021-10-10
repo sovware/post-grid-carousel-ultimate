@@ -22,7 +22,7 @@
 	});
 
 	$('.pgcu_load_more').click(function(){
- 
+		var append_class = '.pgcu-grid-'+$(this).attr('data-id');
 		var button = $(this),
 		    data = {
 			'action': 'pgcu_loadmore',
@@ -41,7 +41,7 @@
 			success : function( data ){
                 button.text('Load More');
 				if( data ) { 
-					$('.pgcu-row').append(data); // insert new posts
+					$(append_class).append(data); // insert new posts
 					pgcu_ajax.current_page++;
  
 					if ( pgcu_ajax.current_page == pgcu_ajax.max_page ) 

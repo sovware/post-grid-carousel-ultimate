@@ -73,7 +73,6 @@ Final class post_grid_and_carousel_ultimate
 			add_action( 'plugin_loaded', array( self::$instance, 'load_textdomain' ) );
 			add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( self::$instance, 'pro_version_plugin_link') );
 
-            add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
         }
 
@@ -145,14 +144,6 @@ Final class post_grid_and_carousel_ultimate
             $postID = $post->ID;
         }
         $this->set_post_views( $postID );
-    }
-
-    public function upgrade_support_submenu_pages_for_gc() {
-        add_submenu_page( 'edit.php?post_type=adl-shortcode', esc_html__('Support', PGCU_TEXTDOMAIN), esc_html__('Usage & Support', PGCU_TEXTDOMAIN), 'manage_options', 'support', array( $this, 'support_view' ) );
-    }
-
-    public function support_view() {
-        require_once PGCU_INC_DIR . 'support.php';
     }
 
     /**

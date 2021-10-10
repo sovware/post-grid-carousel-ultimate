@@ -24,6 +24,7 @@
                     font-weight: 500;
                     color: var(--pgcu-categoryColor);
                     text-transform: uppercase;
+                    transition: 0.3s ease;
                     &:hover{
                         color: var(--pgcu-categoryColorHover);
                     }

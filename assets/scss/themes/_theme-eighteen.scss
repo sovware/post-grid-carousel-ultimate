@@ -1,0 +1,45 @@
+/*===========================
+ Style: Theme Eighteen
+===========================*/
+.pgcu-theme-18{
+    .pgcu-post{
+        @include e(img){
+            position: relative;
+            &:before{
+                content:"";
+                position: absolute;
+                width: 100%;
+                height: 50%;
+                left: 0;
+                bottom: 0;
+                transition: 0.3s ease;
+                background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0));
+            }
+        }
+        @include e(meta__categories){
+            margin-bottom: 7px !important;
+        }
+        @include e(title){
+            margin-bottom: 7px !important;
+            a{
+                &:hover{
+                    text-decoration: underline !important;
+                }
+            }
+        }
+        @include e(meta){
+            transition: 0.3s ease;
+            span{
+                color: #fff;
+                opacity: 0.6;
+            }
+        }
+        @include e(content){
+            &:hover{
+                .pgcu-post__img:before{
+                    height: 100%;
+                }
+            }
+        }
+    }
+}

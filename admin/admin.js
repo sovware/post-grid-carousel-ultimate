@@ -17,6 +17,13 @@
                 $("#tab3").css('display', 'none');
 
             }
+            if ($(this).val() == 'masonry') {
+
+                $("#tab2").css('display', 'block');
+                $("#tab1").css('display', 'none');
+                $("#tab3").css('display', 'none');
+
+            }
             if ($(this).val() == 'isotope') {
 
                 $("#tab2").css('display', 'none');

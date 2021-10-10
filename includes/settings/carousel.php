@@ -3,7 +3,9 @@ $autoplay                =   ! empty( $autoplay ) ? $autoplay : 'yes';
 $pause_hover             =   ! empty( $pause_hover ) ? $pause_hover : 'no';
 $repeat_post             =   ! empty( $repeat_post ) ? $repeat_post : 'yes';
 $navigation              =   ! empty( $navigation  ) ? $navigation  : 'yes';
+$marquee                 =   ! empty( $marquee  ) ? $marquee  : 'no';
 $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_position  : 'middle';
+$scrool_direction        = ! empty( $scrool_direction ) ? $scrool_direction : 'right_left';
 ?>
 <div id="tab-3" class="adl-tab-content">
 
@@ -89,6 +91,22 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             </tr>
 
             <tr>
+                <th><label for="gc[marquee]"><?php esc_html_e('Marquee', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[marquee]" id="gc[marquee1]" value="yes" <?php checked( 'yes', $marquee, true ); ?>> 
+                            <label for="gc[marquee1]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                        <li>
+                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[marquee]" id="gc[marquee2]" value="no" <?php checked( 'no', $marquee, true ); ?>> 
+                            <label for="gc[marquee2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
+                        </li>
+                    </ul>
+                </td>    
+            </tr>
+
+            <tr>
                 <th><label for="gc[c_autoplay_speed]"><?php esc_html_e('Slide Speed', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_speed]" name="gc[c_autoplay_speed]" value="<?php echo ! empty( $c_autoplay_speed ) ? $c_autoplay_speed : '2000'; ?>"/><span class="description">(Millisecond)</span>
                     
@@ -103,6 +121,17 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
                 </td>
                 
             </tr>    
+
+            <tr>
+                <th><label for="sel5"><?php esc_html_e('Scroll Direction', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <select  name="gc[scrool_direction]">
+                        <option value="right_left" <?php selected( $scrool_direction, 'right_left' ); ?>>Right to Left</option>
+                        <option value="left_right" <?php selected( $scrool_direction, 'grid' ); ?> >Left to Right</option>
+                    </select>
+
+                </td>
+            </tr>
 
             <tr>
                 <th><label for="gc[navigation]"><?php esc_html_e('Navigation', PGCU_TEXTDOMAIN); ?></label></th>

@@ -12,6 +12,75 @@ class PGCU_Ajax
         add_action('wp_ajax_pgcu_sortable', array( $this, 'sortable_ajax_handler') ); // wp_ajax_{action}
         add_action('wp_ajax_nopriv_pgcu_sortable', array( $this, 'sortable_ajax_handler') );
 
+        add_action('wp_ajax_pgcu_loadmore', array( $this, 'loadmore_ajax_handler') ); // wp_ajax_{action}
+        add_action('wp_ajax_nopriv_pgcu_loadmore', array( $this, 'loadmore_ajax_handler') );
+
+    }
+
+    function loadmore_ajax_handler(){
+ 
+        // prepare our arguments for the query
+        $args = json_decode( stripslashes( $_POST['query'] ), true );
+        $args['paged'] = $_POST['page'] + 1; // we need next page to be loaded
+        $args['post_status'] = 'publish';
+        $post_id    = ! empty( isset( $_POST['id'] ) ) ? $_POST['id'] : '';
+        $data 	    = get_post_meta( $post_id, 'gc', true );
+        $data       = post_grid_and_carousel_ultimate::unserialize_and_decode24( $data );
+        $value      = is_array( $data ) ? $data : array();
+        extract( $value );
+     
+        $layout               = ! empty( $layout ) ? $layout : 'carousel';
+        $theme                = ! empty( $theme ) ? $theme : 'theme-1';
+        $post_type            = ! empty( $post_type ) ? $post_type : 'post';
+        $term_from            = ! empty( $term_from ) ? $term_from : 'category';
+        $display_term         = ! empty( $display_term ) ? $display_term : 'yes';
+        $display_title        = ! empty( $display_title ) ? $display_title : 'yes';
+        $display_content      = ! empty( $display_content ) ? $display_content : 'yes';
+        $content_word_limit   = ! empty( $content_word_limit ) ? $content_word_limit : '16';
+        $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
+        $read_more_text       = ! empty( $read_more_text ) ? $read_more_text : 'Read More';
+        $read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
+        $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
+        $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
+
+        $image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
+        $image_width	   = ! empty( $image_width ) ? $image_width : 300;
+        $image_height	   = ! empty( $image_height ) ? $image_height : 290;
+
+        $g_sort            = ! empty( $g_sort    ) ? $g_sort    : 'category';
+        // it is always better to use WP_Query but not here
+        query_posts( $args );
+
+       
+     
+        if( have_posts() ) :
+     
+            // run the loop
+            while( have_posts() ): the_post();
+
+            $thumb = get_post_thumbnail_id();
+            // crop the image if the cropping is enabled.
+            if( 'yes' === $image_resize_crop ){
+                $pgcu_img = pgcu_image_cropping( $thumb, $image_width, $image_height, true, 100 )['url'];
+            }else{
+                $aazz_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'large' );
+                $pgcu_img = $aazz_thumb['0'];
+            }
+
+            $get_terms  = get_the_terms( get_the_ID(), $term_from );
+            $post_views = get_post_meta( get_the_id(), '_pgcu_post_views_count', true );
+     
+                // look into your theme code how the posts are inserted, but you can use your own HTML of course
+                // do you remember? - my example is adapted for Twenty Seventeen theme
+                include PGCU_INC_DIR . 'templates/' . $theme . '.php';
+                // for the test purposes comment the line above and uncomment the below one
+                // the_title();
+     
+     
+            endwhile;
+     
+        endif;
+        die; // here we exit the script and even no wp_reset_query() required!
     }
 
     function post_type_ajax_handler(){

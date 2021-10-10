@@ -62,6 +62,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$autoplay                =   ! empty( $autoplay ) ? $autoplay : 'yes';
 			$pause_hover             =   ! empty( $pause_hover ) ? $pause_hover : 'no';
 			$repeat_post             =   ! empty( $repeat_post ) ? $repeat_post : 'yes';
+			$marquee                 =   ! empty( $marquee  ) ? $marquee  : 'no';
+			$scrool_direction        = ! empty( $scrool_direction ) ? $scrool_direction : 'right_left';
 			$c_autoplay_speed 		 =	 ! empty( $c_autoplay_speed ) ? $c_autoplay_speed : '2000';
 			$c_autoplay_time 		 =	 ! empty( $c_autoplay_time ) ? $c_autoplay_time : '2000';
 
@@ -72,6 +74,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 			//grid pagination settings
 			$display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
+			$pagination_type            = ! empty( $pagination_type   ) ? $pagination_type   : 'number';
 			$pagi_color                 = ! empty( $pagi_color ) ? $pagi_color : '#333';
 			$pagi_border_color          = ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4';
 			$pagi_back_color            = ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff';
@@ -132,6 +135,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			wp_localize_script( 'pgcu-ajax', 'pgcu_ajax', array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
 				'query'   => json_encode( $posts->query_vars ), // everything about your loop is here
+				'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
+            	'max_page' => $posts->max_num_pages
 			) );
 
 			if( $posts->have_posts() ) { ?>
@@ -143,7 +148,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					<h2><?php echo $header_title; ?></h2>
 				</div>
 				<?php } ?>
-				<div class="pgcu-posts pgcu-<?php echo $theme; ?> <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
+				<div class="pgcu-posts  <?php echo  'yes' == $marquee ? 'pgcu-carousel--marquee' : ''; ?> pgcu-<?php echo $theme; ?> <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
 					data-pgcu-items="4"
 					data-pgcu-margin="30"
@@ -157,7 +162,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						"pauseOnMouseEnter": <?php echo ( 'yes' == $pause_hover ) ? "true" : "false"; ?>,
 						"disableOnInteraction": false,
 						"stopOnLastSlide": true,
-						"reverseDirection": false
+						"reverseDirection": <?php echo 'right_left' == $scrool_direction ? 'false' : 'true';?>
 					}
 					<?php } else { ?>
 						false

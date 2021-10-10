@@ -89,11 +89,11 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 
 	                <li><a href="#tab-2"> <?php esc_html_e('General Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li style="display: <?php if($layout == "grid" || $layout == "isotope"){ echo "none";}else{ echo "block";}?>;" id="tab1"><a href="#tab-3"> <?php esc_html_e('Carousel Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+	                <li style="display: <?php if( $layout == "grid" || $layout == "isotope" || $layout == "masonry" ){ echo "none";}else{ echo "block";}?>;" id="tab1"><a href="#tab-3"> <?php esc_html_e('Carousel Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li style="display: <?php if($layout == "grid"){ echo "block";}else{ echo "none";}?>;" id="tab2"><a href="#tab-4"> <?php esc_html_e('Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+	                <li style="display: <?php if( $layout == "grid" || $layout == "masonry" ){ echo "block";}else{ echo "none";}?>;" id="tab2"><a href="#tab-4"> <?php esc_html_e('Grid / Masonry Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
-	                <li style="display: <?php if($layout == "isotope"){ echo "block";}else{ echo "none";}?>;" id="tab3"><a href="#tab-5"> <?php esc_html_e('Sortable Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
+	                <li style="display: <?php if( $layout == "isotope" ){ echo "block";}else{ echo "none";}?>;" id="tab3"><a href="#tab-5"> <?php esc_html_e('Sortable Grid Settings', PGCU_TEXTDOMAIN); ?> </a></li>
 
 	                <li><a href="#tab-6"> <?php esc_html_e('Style Settings', PGCU_TEXTDOMAIN); ?> </a></li>
             	</ul>   

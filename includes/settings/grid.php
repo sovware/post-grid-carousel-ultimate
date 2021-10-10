@@ -1,5 +1,6 @@
 <?php  
 $display_pagination         = ! empty( $display_pagination   ) ? $display_pagination   : 'yes';
+$pagination_type            = ! empty( $pagination_type   ) ? $pagination_type   : 'number';
 ?>
 <div id="tab-4" class="adl-tab-content">
     <div class="cmb2-wrap form-table">
@@ -58,6 +59,17 @@ $display_pagination         = ! empty( $display_pagination   ) ? $display_pagina
                             <label for="gc[display_pagination2]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
                         </li>
                     </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <th><label for="sel5"><?php esc_html_e('Pagination Type', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <select  name="gc[pagination_type]">
+                        <option value="number" <?php selected( $pagination_type, 'number' ); ?>>Number Pagination</option>
+                        <option value="ajax" <?php selected( $pagination_type, 'ajax' ); ?> >Ajax Pagination</option>
+                    </select>
+
                 </td>
             </tr>
 

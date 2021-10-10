@@ -17,13 +17,6 @@
                 $("#tab3").css('display', 'none');
 
             }
-            if ($(this).val() == 'masonry') {
-
-                $("#tab2").css('display', 'block');
-                $("#tab1").css('display', 'none');
-                $("#tab3").css('display', 'none');
-
-            }
             if ($(this).val() == 'isotope') {
 
                 $("#tab2").css('display', 'none');
@@ -84,6 +77,82 @@
                 }
             })
         })
+
+
+        // Post Query Type. all all extra input field by default
+    $('#aps_posts_bycategory, #aps_posts_byID, #aps_posts_byTag, #aps_posts_by_year, #aps_posts_from_month, #aps_posts_from_month_year, .specific-categories').hide();
+
+    $('input[type="radio"]').click(function() {
+        if($(this).attr('id') == 'aps_posts_type4') {
+            $('#aps_posts_bycategory, .specific-categories.category').fadeIn();
+        }
+        else {
+            $('#aps_posts_bycategory, .specific-categories.category').hide();
+        }
+    });
+
+
+
+    $('input[type="radio"]').click(function() {
+        if($(this).attr('id') == 'aps_posts_type5') {
+            $('#aps_posts_byID, .id').fadeIn();
+        }
+        else {
+            $('#aps_posts_byID, .id').hide();
+        }
+    });
+    $('input[type="radio"]').click(function() {
+        if($(this).attr('id') == 'aps_posts_type6') {
+            $('#aps_posts_byTag, .tags').fadeIn();
+        }
+        else {
+            $('#aps_posts_byTag, .tags').hide();
+        }
+    });
+    $('input[type="radio"]').click(function() {
+        if($(this).attr('id') == 'aps_posts_type7') {
+            $('#aps_posts_by_year, .year').fadeIn();
+        }
+        else {
+            $('#aps_posts_by_year, .year').hide();
+        }
+    });
+    $('input[type="radio"]').click(function() {
+        if($(this).attr('id') == 'aps_posts_type8') {
+            $('#aps_posts_from_month, #aps_posts_from_month_year').fadeIn();
+        }
+        else {
+            $('#aps_posts_from_month, #aps_posts_from_month_year').hide();
+        }
+    });
+
+
+    // show if it is checked
+    if( $('input[id=aps_posts_type1]').is(':checked') ) {
+        $('#aps_latest_posts_bycategory, .specific-categories.latest').fadeIn();
+    }
+    if( $('input[id=aps_posts_type2]').is(':checked') ) {
+        $('#aps_oldest_posts_bycategory, .specific-categories.oldest').fadeIn();
+    }
+    if( $('input[id=aps_posts_type4]').is(':checked') ) {
+        $('#aps_posts_bycategory, .specific-categories.category').fadeIn();
+    }
+    if( $('input[id=aps_posts_type5]').is(':checked') ) {
+        $('#aps_posts_byID').fadeIn();
+    }
+    if( $('input[id=aps_posts_type6]').is(':checked') ) {
+        $('#aps_posts_byTag').fadeIn();
+    }
+    if( $('input[id=aps_posts_type7]').is(':checked') ) {
+        $('#aps_posts_by_year').fadeIn();
+    }
+    if( $('input[id=aps_posts_type8]').is(':checked') ) {
+        $('#aps_posts_from_month, #aps_posts_from_month_year').fadeIn();
+    }
+
+
+
+
     });
 
 

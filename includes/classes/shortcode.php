@@ -119,16 +119,65 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 		        'paged'			 => $paged
 
 		    ];
-		    if ( 'latest' == $post_from ) { $args = $common_args; }
-		    elseif ('older' == $post_from) {
-		        $older_args = [
-		            'orderby'   => 'date',
-		            'order'     => 'ASC',
-		        ];
-		        $args = array_merge($common_args, $older_args);
-		    }else {
-		        $args = $common_args;
-		    }
+		     // for testing, setting this equal
+			 if ( 'latest' == $post_from ) { $args = $common_args; }
+			 elseif('random_post' == $post_from) { 
+				 $random = [
+				 'orderby'=>'rand',
+				 ];
+				 $args = array_merge($common_args, $random);
+			 }
+			 elseif ('category' == $post_from) {
+				 $categories = [
+					 'category_name' => $post_by_cat,
+				 ];
+				 $args = array_merge($common_args, $categories);
+			 } elseif ('older' == $post_from) {
+				 $older_args = [
+					 'orderby'   => 'date',
+					 'order'     => 'ASC',
+				 ];
+				 $args = array_merge($common_args, $older_args);
+			 } elseif ('featured' == $post_from){
+				 $featured_posts_args = [
+					 'meta_query' => [
+						 [
+							 'key' => '_is_featured',
+							 'value' => 'yes',
+						 ]
+					 ]];
+				 $args = array_merge($common_args, $featured_posts_args);
+			 } elseif ('popular_post' == $post_from){
+				 $popular_posts_args = [
+					 'meta_key' => '_pgcu_post_views_count',
+					 'orderby'   => 'meta_value_num',
+					 'order'     => 'DESC',
+					 'ignore_sticky_posts' => true,
+					 ];
+				 $args = array_merge($common_args, $popular_posts_args);
+			 } elseif ('postsbyid' == $post_from) {
+				 $books_by_id = [
+					 'post__in' => ($posts_by_id ? explode(',', $posts_by_id) : null),
+					 'orderby'   => 'post__in',
+					 'order' => 'ASC',
+				 ];
+				 $args = array_merge($common_args, $books_by_id);
+			 }elseif ('postsbytag' == $post_from) {
+				 $books_by_tag = [
+					 'tag' => trim($posts_by_tag)
+				 ];
+				 $args = array_merge($common_args, $books_by_tag);
+			 } elseif ('postsbyyear' == $post_from) {
+				 $args = array_merge($common_args, ['year' => $posts_by_year]);
+			 } elseif ('postsbymonth' == $post_from) {
+				 $books_by_month_args = [
+					 'monthnum'  => $posts_from_month,
+					 'year'      => $posts_from_month_year,
+				 ];
+				 $args = array_merge($common_args, $books_by_month_args);
+			 } else {
+				 $args = $common_args;
+			 }
 
 		    $posts = new WP_Query( $args );
 

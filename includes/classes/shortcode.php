@@ -112,7 +112,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			} elseif( 'grid' == $layout || 'isotope' == $layout ) {
 				$layout_class = 'pgcu-row  pgcu-column-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . '';
 			} elseif( 'masonry' == $layout ) {
-				$layout_class = 'pgcu-masonry pgcu-masonry-col-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . '';
+				$layout_class = 'pgcu-masonry pgcu-masonry-col-' . $g_column . ' pgcu-masonry-column-md-' . $g_tablet . ' pgcu-masonry-column-sm-' . $g_mobile . '';
 			}
 
 			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
@@ -289,7 +289,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						<?php
 						if( 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
 							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
-						}elseif( 'grid' == $layout && 'yes' == $display_pagination ) {
+						}elseif( ( 'grid' == $layout || 'masonry' == $layout ) && 'yes' == $display_pagination ) {
 							include PGCU_INC_DIR . 'templates/pagination/pagination.php';
 						}
 						?>

@@ -82,7 +82,6 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option value="theme-18" <?php selected( $theme, 'theme-18' ); ?>>Theme-18</option>
                         <option value="theme-19" <?php selected( $theme, 'theme-19' ); ?>>Theme-19</option>
                         <option value="theme-20" <?php selected( $theme, 'theme-20' ); ?>>Theme-20</option>
-                        <option value="theme-21" <?php selected( $theme, 'theme-21' ); ?>>Theme-21</option>
                     </select>
                 </td>
             </tr>

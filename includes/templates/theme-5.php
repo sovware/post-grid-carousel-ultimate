@@ -47,9 +47,11 @@
             <?php } ?>
 
             <div class="pgcu-post__author pgcu-d-flex pgcu-flex-align-center">
-                <div>
-                    <a href=""><img src="https://via.placeholder.com/34x34" alt=""></a>
-                </div>
+                <?php if( 'yes' == $display_author ) { ?>
+                    <div>
+                    <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' ))); ?>"><img src="<?php echo $author_img; ?>" alt=""></a>
+                    </div>
+                <?php } ?>
                 <div>
                     <ul class="pgcu-post__meta pgcu-post__meta--divider">
                         <?php if( 'yes' == $display_author ) { ?>

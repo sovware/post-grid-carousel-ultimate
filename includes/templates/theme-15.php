@@ -15,25 +15,27 @@
             <?php } ?>
 
             <div class="pgcu-post__author pgcu-d-flex pgcu-flex-align-center">
+                <?php if( 'yes' == $display_author ) { ?>
+                    <div>
+                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' ))); ?>"><img src="<?php echo $author_img; ?>" alt=""></a>
+                    </div>
+                <?php } ?>
                 <div>
-                    <a href=""><img src="https://via.placeholder.com/34x34" alt=""></a>
-                </div>
-                <div>
-                    <?php if( 'yes' == $display_author ) { ?>
-                        <div class="pgcu-post__meta__author">
-                            <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' )))?>">
-                                <?php echo ucfirst( get_the_author() );?>
-                            </a>
-                        </div>
+                <?php if( 'yes' == $display_author ) { ?>
+                    <div class="pgcu-post__meta__author">
+                        <a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' )))?>">
+                            <?php echo ucfirst( get_the_author() );?>
+                        </a>
+                    </div>
+                <?php } ?>
+                <ul class="pgcu-post__meta pgcu-post__meta--dots">
+                    <?php if( 'yes' == $display_date ) { ?>
+                        <li><a><?php echo get_the_date(); ?></a></li>
                     <?php } ?>
-                    <ul class="pgcu-post__meta pgcu-post__meta--dots">
-                        <?php if( 'yes' == $display_date ) { ?>
-                            <li><a><?php echo get_the_date(); ?></a></li>
-                        <?php } ?>
-                        <li class="pgcu-post__meta__ert"> <!-- ert: Estimated reading time -->
-                            <span>6 Min Read</span>
-                        </li>
-                    </ul>
+                    <li class="pgcu-post__meta__ert"> <!-- ert: Estimated reading time -->
+                        <span><?php echo pgcu_site_estimated_reading_time( get_the_content( )); ?> Min Read</span>
+                    </li>
+                </ul>
                 </div>
             </div>
 

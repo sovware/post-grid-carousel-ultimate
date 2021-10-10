@@ -213,6 +213,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 						$get_terms  = get_the_terms( get_the_ID(), $term_from );
 						$post_views = get_post_meta( get_the_id(), '_pgcu_post_views_count', true );
+						$author_id  = get_the_author_meta('ID');
+                        $author_img    = get_avatar_url( $author_id, array('size' => 38) );
 						
 						include PGCU_INC_DIR . 'templates/' . $theme . '.php';
 

@@ -9,6 +9,7 @@ $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'ye
 $read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
+$post_from 		      = !empty($post_from) ? $post_from : 'latest';
 ?>
 <!-- General settings -->
 <div id="tab-2" class="adl-tab-content">
@@ -96,13 +97,13 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                 </td>
             </tr>
 
-            <tr>
+            <tr>            
                 <th><label for="gc[post_from]"><?php esc_html_e('Display Post From', PGCU_TEXTDOMAIN); ?></label>
                 </th>
                 <td>
                     <select id="gc[post_from]" name="gc[post_from]">
-                        <option value="latest" <?php if(!empty($post_from) && $post_from == "latest"){ echo "selected";}?>>Latest Posts</option>
-                        <option value="older" <?php if(!empty($post_from) && $post_from == "older"){ echo "selected";}?>>Older Posts</option>
+                        <option value="latest" <?php checked( 'latest', $post_from, true ); ?>>Latest Posts</option>
+                        <option value="older" <?php checked( 'older', $post_from, true ); ?>>Older Posts</option>
                         <option disabled>Feature Posts (Pro)</option>
                         <option disabled>Populer Posts (Pro)</option>
                         <option disabled>Random Posts (Pro)</option>
@@ -112,7 +113,7 @@ $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
                         <option disabled>Posts by Year (Pro)</option>
                         <option disabled>Posts by Month (Pro)</option>
                     </select>
-
+                    
                 </td>
             </tr>
 

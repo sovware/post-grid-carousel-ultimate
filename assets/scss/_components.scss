@@ -147,6 +147,9 @@
             &:first-child:after{
                 content: ',';
             }
+            &:last-child:after{
+                content: none;
+            }
         }
     }
     @include e(categories-more){
@@ -175,6 +178,7 @@
             bottom: calc(100% + 10px);
             box-shadow: 0 10px 15px rgba(0,0,0,0.1);
             transition: 0.3s ease;
+            min-width: 100px;
             &:before{
                 position: absolute;
                 content: '';

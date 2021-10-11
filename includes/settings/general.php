@@ -10,6 +10,7 @@ $read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
 $post_from            = ! empty( $post_from   ) ? $post_from   : 'latest';
+$theme                = ! empty( $theme   ) ? $theme   : 'theme-1';
 ?>
 <!-- General settings -->
 <div id="tab-2" class="adl-tab-content" style="display: none;">

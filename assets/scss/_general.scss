@@ -2,8 +2,8 @@
 .pgcu-posts {
     max-width: 100% !important;
     width: 100% !important;
-    padding: 0 15px;
     position: relative;
+    overflow: hidden;
 }
 
 /* Header style */
@@ -30,11 +30,21 @@
 /* Post card */
 .pgcu-post{
     @include e(img){
+        > a{
+            display: block;
+            line-height: 0;
+            img{
+                margin: 0;
+            }
+        }
         @include e(upper-content){
             position: absolute;
+            box-sizing: border-box;
             @include m(bottom-left){
-                left: 20px;
-                bottom: 15px;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                padding: 15px;
             }
         }
     }
@@ -203,7 +213,6 @@
         margin: -4px -4px 36px;
         .pgcu-post-sortable__btn{
             margin: 4px;
-            background: none !important;
             color: var(--pgcu-sortableBtnColor) !important;
             font-size: 14px;
             font-weight: 500;
@@ -215,6 +224,7 @@
             text-decoration: none !important;
             border: 1px solid var(--pgcu-sortableBtnBorder) !important;
             border-radius: 4px;
+            background: #fff;
             @include m(active){
                 border-color: var(--pgcu-sortableBtnActiveBg) !important;
                 color: var(--pgcu-sortableBtnActiveColor) !important;

@@ -2,7 +2,7 @@
 
     "use strict";
 
-    $('.pgcu-post-sortable__btn').click(function(e){
+    $('.pgcu-post-sortable__btn').on("click", function(e){
 		e.preventDefault();
 		var button = $(this),
 		    data = {

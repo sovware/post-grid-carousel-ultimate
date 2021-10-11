@@ -135,7 +135,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 		    ];
 		     // for testing, setting this equal
 			 if ( 'latest' == $post_from ) { $args = $common_args; }
-			 elseif('random_post' == $post_from) { 
+			 elseif('random_post' == $post_from) {
 				 $random = [
 				 'orderby'=>'rand',
 				 ];
@@ -246,7 +246,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 					}
 
-						?>
+						0?>
 
 
     				<div class="pgcu-grid-<?php echo $post_id; ?> <?php echo $layout_class; ?>" style="
@@ -260,7 +260,11 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					--pgcu-buttonColorHover: <?php echo $read_more_button_hover_color; ?>;
 					--pgcu-buttonBg: <?php echo $read_more_button_background_color; ?>;
 					--pgcu-buttonBgHover: <?php echo $read_more_button_background_hover_color; ?>;
-				">
+				" data-pgcu-masonry-gutter="30" data-pgcu-masonry-columns="3" data-pgcu-masonry-responsive='{
+					"991": "3",
+                    "767": "2",
+                    "575": "1"
+				}'>
 
 						<?php
 						while( $posts->have_posts() ) : $posts->the_post();

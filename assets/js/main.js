@@ -86,27 +86,17 @@
             })
         }
 
-        /* Masonry layout */
-        grid = document.querySelectorAll(".pgcu-masonry");
-        grid.forEach(elm =>{
-            function resizeGridItem(item) {
-                let rowHeight = parseInt(window.getComputedStyle(elm).getPropertyValue('grid-auto-rows'));
-                let rowGap = parseInt(window.getComputedStyle(elm).getPropertyValue('grid-row-gap'));
-                let rowSpan = Math.ceil((item.querySelector('.pgcu-post__content').getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
-                console.log(rowSpan);
-                item.style.gridRowEnd = "span " + rowSpan;
-            }
-
-            function resizeAllGridItems() {
-                let allItems = elm.querySelectorAll(".pgcu-post");
-                for (x = 0; x < allItems.length; x++) {
-                    resizeGridItem(allItems[x]);
-                }
-            }
-
-            window.onload = resizeAllGridItems();
-            window.addEventListener("resize", resizeAllGridItems);
+        /* Masonry Layout */
+        let pgcuMasonryContainer = document.querySelectorAll('.pgcu-masonry');
+        pgcuMasonryContainer.forEach(elm=>{
+            var macy = Macy({
+                container: elm,
+                trueOrder: true,
+                waitForImages: true,
+                margin: checkData(parseInt(elm.dataset.pgcuMasonryGutter), 30),
+                columns: checkData(parseInt(elm.dataset.pgcuMasonryColumns), 3),
+                breakAt: checkData(JSON.parse(elm.dataset.pgcuMasonryResponsive), {})
+            });
         })
     })
-
 })(jQuery);

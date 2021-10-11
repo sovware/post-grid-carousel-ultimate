@@ -195,7 +195,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 		    $posts = new WP_Query( $args );
 
-			wp_localize_script( 'pgcu-ajax', 'pgcu_ajax', array(
+			wp_localize_script( 'pgcu-main-js', 'pgcu_ajax', array(
 				'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
 				'query'   => json_encode( $posts->query_vars ), // everything about your loop is here
 				'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,

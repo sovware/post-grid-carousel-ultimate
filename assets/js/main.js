@@ -106,26 +106,24 @@
         pgcuMasonryInit();
 
         /* AJAX Options */
-        $('.pgcu-post-sortable__btn').each(function(id,element){
-            $(element).click(function(e){
-                e.preventDefault();
-                var button = $(this),
-                    data = {
-                    'action'	: 'pgcu_sortable',
-                    'id'		: $(this).attr('data-id'),
-                    'term_id'	: $(this).attr('data-sortable-nav'),
-                    'query'	    : pgcu_ajax.query
-                };
-                $.ajax({
-                    url : pgcu_ajax.ajaxurl,
-                    data : data,
-                    type : 'POST',
-                    success : function( data ){
-                        $(element).closest('.pgcu-row').empty().append( data );
-                    }
-                });
+        $('.pgcu-post-sortable__btn').click(function(e){
+            e.preventDefault();
+            var button = $(this),
+                data = {
+                'action'	: 'pgcu_sortable',
+                'id'		: $(this).attr('data-id'),
+                'term_id'	: $(this).attr('data-sortable-nav'),
+                'query'	    : pgcu_ajax.query
+            };
+            $.ajax({ // you can also use $.post here
+                url : pgcu_ajax.ajaxurl, // AJAX handler
+                data : data,
+                type : 'POST',
+                success : function( data ){
+                    $('.pgcu-row').empty().append( data );
+                }
             });
-        })
+        });
 
         $('.pgcu_load_more').each(function(id, element){
             $(element).on("click", function(){

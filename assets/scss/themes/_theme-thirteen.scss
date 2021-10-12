@@ -29,6 +29,16 @@
                         margin-bottom: 8px;
                     }
                 }
+                > span{
+                    line-height: 0;
+                }
+                div{
+                    text-align: left;
+                }
+            }
+            .pgcu-post__readmore{
+                text-align: center;
+                justify-content: center;
             }
         }
         @include e(meta){

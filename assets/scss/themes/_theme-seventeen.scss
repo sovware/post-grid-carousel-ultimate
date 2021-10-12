@@ -42,6 +42,12 @@
                     opacity: 1;
                 }
             }
+            &.pgcu-post__meta--divider li:not(:last-child):after{
+                background: rgba(#f9f9f9, 0.3) !important;
+            }
+        }
+        .pgcu-post__readmore{
+            padding-top: 20px;
         }
         @include e(content){
             &:hover{
@@ -53,6 +59,9 @@
                 }
                 .pgcu-post__meta{
                     margin-bottom: 7px !important;
+                }
+                .pgcu-post__readmore{
+                    padding-top: 0;
                 }
             }
         }

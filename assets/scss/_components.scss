@@ -4,13 +4,19 @@
 /* Post title */
 .pgcu-post__title{
     margin: 0 !important;
-    font-size: unset;
+    font-size: unset !important;
+    line-height: 1.2;
+    &:before,
+    &:after{
+        content: none;
+    }
     a{
         font-size: var(--pgcu-titleFontSize) !important;
-        font-weight: 500;
         color: var(--pgcu-titleColor) !important;
         transition: 0.3s ease;
         text-decoration: none !important;
+        border: 0 none !important;
+        line-height: inherit;
         &:hover{
             color: var(--pgcu-titleColorHover) !important;
         }
@@ -28,15 +34,15 @@
     li{
         list-style-type: none;
         margin: 0;
-        padding: 0 11px;
+        padding: 0 11px !important;
         a{
             text-decoration: none !important;
             font-size: 14px;
-            color: var(--pgcu-metaColor);
+            color: var(--pgcu-metaColor) !important;
             display: block;
             transition: 0.3s ease;
             &:hover{
-                color: var(--pgcu-metaColorHover);
+                color: var(--pgcu-metaColorHover) !important;
             }
 
         }
@@ -65,7 +71,7 @@
             padding: 0 10px;
             span{
                 font-size: 14px;
-                color: var(--pgcu-metaColor);
+                color: var(--pgcu-metaColor) !important;
                 display: block;
             }
             div{
@@ -75,7 +81,7 @@
             svg{
                 width: 14px;
                 height: 14px;
-                fill: var(--pgcu-metaColor);
+                fill: var(--pgcu-metaColor) !important;
                 margin-right: 8px;
             }
         }
@@ -95,18 +101,20 @@
             opacity: 0;
             pointer-events: none;
             transition: 0.3s ease;
+            z-index: 2;
             a{
                 display: block;
                 margin: 0 7px;
                 text-decoration: none !important;
                 transition: 0.3s ease;
                 flex: none;
+                line-height: 1;
                 svg{
                     margin-right: 0;
                 }
                 &:hover{
                     svg{
-                        fill: var(--pgcu-metaColorHover);
+                        fill: var(--pgcu-metaColorHover) !important;
                     }
                 }
             }
@@ -123,10 +131,10 @@
             cursor: pointer;
             .pgcu-post__meta__share__icon{
                 svg{
-                    fill: var(--pgcu-metaColorHover);
+                    fill: var(--pgcu-metaColorHover) !important;
                 }
                 span{
-                    color: var(--pgcu-metaColorHover);
+                    color: var(--pgcu-metaColorHover) !important;
                 }
             }
             .pgcu-post__meta__share__dropdown{
@@ -139,6 +147,7 @@
     }
     @include e(categories){
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         margin: -3px !important;
         > a{
@@ -221,8 +230,8 @@
 
 /* Post Excerpt */
 .pgcu-post__excerpt{
-    color: var(--pgcu-excerptColor);
-    font-size: var(--pgcu-excerptFontSize);
+    color: var(--pgcu-excerptColor) !important;
+    font-size: var(--pgcu-excerptFontSize) !important;
     line-height: 1.625;
     margin: 0;
 }
@@ -239,6 +248,8 @@
     align-items: center;
     justify-content: center;
     text-decoration: none !important;
+    transition: 0.3s ease;
+    line-height: 1;
     &:hover{
         background: var(--pgcu-buttonBgHover) !important;
         color: var(--pgcu-buttonColorHover) !important;
@@ -292,14 +303,14 @@
 /* Badges */
 .pgcu-post__badge{
     border-radius: 3px;
-    background: var(--pgcu-badgeBg);
-    color: var(--pgcu-badgeColor);
+    background: var(--pgcu-badgeBg) !important;
+    color: var(--pgcu-badgeColor) !important;
     text-decoration: none !important;
     font-size: 13px;
     font-weight: 500;
-    height: 24px;
+    height: 22px;
     border-radius: 3px;
-    padding: 0 5px;
+    padding: 0 4px;
     line-height: 24px;
     display: inline-block;
 }

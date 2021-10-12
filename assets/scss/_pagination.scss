@@ -39,7 +39,7 @@
     min-width: 34px;
     height: 34px;
     min-height: 34px;
-    border-radius: 3px;
+    border-radius: 4px !important;
     transition: 0.3s ease;
     &:before,
     &:after{
@@ -71,4 +71,5 @@
     background: var(--pgcu-pagActiveBgColor) !important;
     border-color: var(--pgcu-pagActiveBorderColor) !important;
     color: var(--pgcu-pagActiveColor) !important;
+    box-shadow: none !important;
 }

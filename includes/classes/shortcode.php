@@ -23,7 +23,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 			$post_id = $id;
 			$data 	 = get_post_meta( $post_id, 'gc', true );
-			$data = post_grid_and_carousel_ultimate::unserialize_and_decode24( $data );
+			$data    = ! is_array( $data ) ? post_grid_and_carousel_ultimate::unserialize_and_decode24( $data ) : $data;
 			$value = is_array( $data ) ? $data : array();
 			extract( $value );
 

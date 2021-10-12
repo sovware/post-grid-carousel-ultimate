@@ -42,7 +42,7 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
             wp_nonce_field( 'aps_meta_save', 'gc_meta_save_nonce' );
 
             $get_value = get_post_meta( $post->ID,'gc',true );
-            $get_value = post_grid_and_carousel_ultimate::unserialize_and_decode24( $get_value );
+            $get_value = ! is_array( $get_value ) ? post_grid_and_carousel_ultimate::unserialize_and_decode24( $get_value ) : $get_value;
 
             $gc_value = is_array($get_value) ? $get_value : array();
 

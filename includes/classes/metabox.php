@@ -65,7 +65,7 @@ if( !defined('ABSPATH')) { die('Direct access does not allow');}
 
                         <li><a href="#tab-6"> <?php esc_html_e('Style Settings', PGCU_TEXTDOMAIN); ?> </a></li>
                     </ul>
-                    <a href="#" class="lcsp-support"><span class="fas fa-question-circle"></span>Support</a>
+                    <a href="https://wpwax.com/contact/" class="lcsp-support"><span class="fas fa-question-circle"></span>Support</a>
                 </div>
                 <?php
                 require_once PGCU_INC_DIR . 'settings/get-shortcodes.php';

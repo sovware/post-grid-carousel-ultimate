@@ -71,7 +71,6 @@ Final class post_grid_and_carousel_ultimate
 			add_action( 'admin_enqueue_scripts', array( self::$instance, 'load_admin_file') );
             add_action( 'template_redirect', array( self::$instance, 'template_enqueue_file') );
 			add_action( 'plugin_loaded', array( self::$instance, 'load_textdomain' ) );
-			add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( self::$instance, 'pro_version_plugin_link') );
 
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
         }
@@ -101,13 +100,6 @@ Final class post_grid_and_carousel_ultimate
         // Plugin Language File Path
         if ( ! defined('PGCU_LANG_DIR') ) { define('PGCU_LANG_DIR', dirname(plugin_basename( __FILE__ ) ) . '/languages'); }
     }
-
-	//method for pro version link
-	public function pro_version_plugin_link( $links ) {
-
-		$links[] = '<a href="https://wpwax.com/product/post-grid-carousel-ultimate-pro/" target="_blank">Pro Version</a>';
-         return $links;
-	}
 
     /**
      * plugin text domain

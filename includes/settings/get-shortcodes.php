@@ -6,7 +6,7 @@
                     <div class="cmb2-metabox-content">
                         <div class="cmb2-metabox-card cmb2-metabox-card2">
                             <h6><?php esc_html_e('Shortcode',PGCU_TEXTDOMAIN); ?></h6>
-                            <p><?php esc_html_e('Copy this shortcode and paste on page or post where you want to display post grid,carousel and sortable grid.Use PHP code to your themes file to display post grid.',PGCU_TEXTDOMAIN); ?>
+                            <p><?php esc_html_e('Copy the shortcode and paste it on pages or posts',PGCU_TEXTDOMAIN); ?>
                             </p>
                             <div class="cmb2-metabox-card-textarea">
                                 <textarea onClick="this.select();">[pgcu <?php echo 'id="'.$post->ID.'"';?>]</textarea>
@@ -14,6 +14,8 @@
                         </div>
                         <div class="cmb2-metabox-card cmb2-metabox-card3">
                             <h6><?php esc_html_e('PHP Code:',PGCU_TEXTDOMAIN); ?></h6>
+                            <p><?php esc_html_e('Copy the code and paste it on your theme\'s template file',PGCU_TEXTDOMAIN); ?>
+                            </p>
                             <div class="cmb2-metabox-card-textarea">
                                 <textarea
                                     onClick="this.select();"><?php echo '<?php echo do_shortcode("[pgcu id='; echo "'".$post->ID."']"; echo '"); ?>'; ?></textarea>

@@ -315,7 +315,7 @@ $theme                = ! empty( $theme   ) ? $theme   : 'theme-1';
             <tr class="gc-read-more-type-section">
                 <th><label for="gc[read_more_type]"><?php esc_html_e('Read More Type', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <select class='pgcu_post_type_depend' id="gc[read_more_type]" name="gc[read_more_type]">
+                    <select class='pgcu_read_more_depend' id="gc[read_more_type]" name="gc[read_more_type]">
                         <option value="link" <?php selected( $read_more_type, 'link' ); ?>>Link Type</option>
                         <option value="button" <?php selected( $read_more_type, 'button' ); ?>>Button Type</option>
                     </select>

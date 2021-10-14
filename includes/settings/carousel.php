@@ -169,7 +169,7 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             </tr>
 
             <tr>
-                <th><label for="gc[navigation_border_hover_color]"><?php esc_html_e('Navigation Border Color', PGCU_TEXTDOMAIN); ?></label></th>
+                <th><label for="gc[navigation_border_hover_color]"><?php esc_html_e('Navigation Border  Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
                 <td><input type="text" name="gc[navigation_border_hover_color]" id="gc[navigation_border_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C'; ?>" />
                     
                 </td>

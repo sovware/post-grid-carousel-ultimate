@@ -82,6 +82,8 @@ Final class post_grid_and_carousel_ultimate
 
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
+            // Initialize appsero tracking
+            self::$instance->init_appsero();
         }
 
         return self::$instance;
@@ -190,6 +192,24 @@ Final class post_grid_and_carousel_ultimate
             ) );
         }
 
+    }
+
+    /**
+     * Initialize appsero tracking.
+     *
+     * @see https://github.com/Appsero/client
+     *
+     * @return void
+     */
+    public function init_appsero() {
+        if ( ! class_exists( '\Appsero\Client' ) ) {
+            require_once PGCU_INC_DIR . 'appsero/src/Client.php';
+        }
+
+        $client = new \Appsero\Client( '21cc659b-3127-480c-96a4-ece7f6a18a57', 'Post Grid & Carousel Ultimate', __FILE__ );
+
+        // Active insights
+        $client->insights()->init();
     }
 
     public function template_enqueue_file () {

@@ -247,7 +247,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 					}
 
-						0?>
+					?>
 
 
     				<div class="pgcu-grid-<?php echo $post_id; ?> <?php echo $layout_class; ?>" style="

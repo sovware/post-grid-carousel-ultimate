@@ -41,6 +41,11 @@ class PGCU_Migration
                 $new_meta['sortable_menu_text_color']            = ! empty( $get_meta['grid_menu_text'] ) ? $get_meta['grid_menu_text'] : '';
                 $new_meta['sortable_menu_active_back_color']     = ! empty( $get_meta['grid_active_back'] ) ? $get_meta['grid_active_back'] : '';
                 $new_meta['sortable_menu_active__text_color']    = ! empty( $get_meta['grid_active_text'] ) ? $get_meta['grid_active_text'] : '';
+                $new_meta['display_pagination1']                 = empty( $get_meta['pagi_hide'] ) ? 'yes' : 'no';
+                $new_meta['pagi_color']                          = ! empty( $get_meta['pagi_text_color'] ) ? $get_meta['pagi_text_color'] : '';
+                $new_meta['pagi_hover_color']                    = ! empty( $get_meta['pagi_text_hover_color'] ) ? $get_meta['pagi_text_hover_color'] : '';
+                $new_meta['pagi_active_color']                   = ! empty( $get_meta['pagi_text_active_color'] ) ? $get_meta['pagi_text_active_color'] : '';
+                $new_meta['pagi_active_back_color']              = ! empty( $get_meta['pagi_active_back_color'] ) ? $get_meta['pagi_active_back_color'] : '';
 
                 update_post_meta( $old_post->ID, 'gc', post_grid_and_carousel_ultimate::serialize_and_encode24( $new_meta ) );
                 

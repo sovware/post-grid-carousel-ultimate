@@ -15,7 +15,7 @@
         echo pgcu_pagination( $posts, $paged );
         ?>
     </div>
-<?php } elseif( 'ajax' == $pagination_type ) { ?>
+<?php } elseif( 'ajax' == $pagination_type &&  $posts->max_num_pages > 1 ) { ?>
     <div class="pgcu-loadmore-btn">
         <div class='pgcu-button pgcu_load_more pgcu-button--rounded' data-id='<?php echo $post_id; ?>'>Load More</div>
     </div>

@@ -53,6 +53,12 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
         public $migration;
 
         /**
+         * license
+         *@since 1.0.0
+        */
+        public $license;
+
+        /**
          * Main post_grid_and_carousel_ultimate Instance.
          *
          *
@@ -75,7 +81,8 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
                 self::$instance->metabox     = new PGCU_Metabox();
                 self::$instance->shortcode   = new PGCU_Shortcode();
                 self::$instance->ajax        = new PGCU_Ajax();
-                self::$instance->ajax        = new PGCU_Migration();
+                self::$instance->migration   = new PGCU_Migration();
+                self::$instance->license     = new Pgc_License_Controller();
 
                 add_action( 'admin_enqueue_scripts', array( self::$instance, 'load_admin_file') );
                 add_action( 'template_redirect', array( self::$instance, 'template_enqueue_file') );
@@ -108,6 +115,18 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
             if ( ! defined('PGCU_INC_DIR') ) { define('PGCU_INC_DIR', PGCU_DIR.'includes/'); }
             // Plugin Language File Path
             if ( ! defined('PGCU_LANG_DIR') ) { define('PGCU_LANG_DIR', dirname(plugin_basename( __FILE__ ) ) . '/languages'); }
+            //custom post type id
+            if ( ! defined( 'PGC_VERSION' ) ) {
+                define( 'PGC_VERSION', '3.2.0' );
+            }
+            // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
+            if ( ! defined( 'PGC_REMOTE_URL' ) ) {
+                define( 'PGC_REMOTE_URL', 'https://aazztech.com' ); // IMPORTANT: change the name of this constant to something unique to prevent conflicts with other plugins using this system
+            }
+            // the download ID. This is the ID of your product in EDD and should match the download ID visible in your Downloads list (see example below)
+            if ( ! defined( 'PGC_REMOTE_POST_ID' ) ) {
+                define( 'PGC_REMOTE_POST_ID', 3309 ); // IMPORTANT: change the name of this constant to something unique to prevent conflicts with other plugins using this system
+            }
         }
 
         /**
@@ -158,6 +177,23 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
 
             require_once PGCU_INC_DIR . 'helper.php';
             pgcu_load_dependencies( 'all', PGCU_INC_DIR . 'classes/' );
+
+            require_once PGCU_INC_DIR . 'license/class-license-controller.php';
+            if ( ! class_exists( 'EDD_SL_Plugin_Updater' ) ) {
+                // load our custom updater if it doesn't already exist 
+                include( PGCU_INC_DIR . 'license/EDD_SL_Plugin_Updater.php' );
+            }
+            // retrieve our license key from the DB
+            $license_key = trim( get_option( 'pgc_license_key' ) );
+            // setup the updater
+            new EDD_SL_Plugin_Updater( PGC_REMOTE_URL, __FILE__, array(
+                'version'     => PGC_VERSION,        // current version number
+                'license'     => $license_key,    // license key (used get_option above to retrieve from DB)
+                'item_id'     => PGC_REMOTE_POST_ID,    // id of this plugin
+                'author'      => 'wpWax',    // author of this plugin
+                'url'         => home_url(),
+                'beta'        => false // set to true if you wish customers to receive update notifications of beta releases
+            ) );
         }
 
         public function load_admin_file () {

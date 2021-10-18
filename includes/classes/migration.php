@@ -17,10 +17,8 @@ class PGCU_Migration
 
             foreach( $old_posts as $old_post ) {
 
-                $get_post_meta = get_post_meta( $old_post->ID, 'gc', true );
-                $get_meta      = post_grid_and_carousel_ultimate::unserialize_and_decode24( $get_post_meta );
+                $get_meta = get_post_meta( $old_post->ID, 'gc', true );
                 $new_meta      = $get_meta;
-
                 if( ! empty( $get_meta['g_theme'] ) ) {
 
                     $grid_theme_number = trim( $get_meta['g_theme'], 'theme_' );

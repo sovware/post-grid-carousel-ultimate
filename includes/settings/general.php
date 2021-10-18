@@ -408,26 +408,6 @@ $theme                = ! empty( $theme   ) ? $theme   : 'theme-1';
             </tr>
 
             <tr>
-                <th><label for="gc[image_ups]"><?php esc_html_e('Enable Image Upscaling', PGCU_TEXTDOMAIN); ?></label></th>
-                <td>
-
-                    <ul class="cmb2-radio-list cmb2-list cmb2-radio-switch">
-                        <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch1" name="gc[image_ups]" id="gc[image_ups]" value="yes" <?php if(empty($image_ups) || 'no' !== $image_ups) { echo 'checked'; } ?>>
-                            <label for="gc[image_ups]"><?php esc_html_e('Yes', PGCU_TEXTDOMAIN); ?></label>
-                        </li>
-                        <li>
-                            <input type="radio" class="cmb2-option cmb2-radio-switch2" name="gc[image_ups]" id="gc[image_ups]" value="no" <?php if (!empty($image_ups)) { checked('no', $image_ups); } ?>>
-                            <label for="gc[image_ups]"><?php esc_html_e('No', PGCU_TEXTDOMAIN); ?></label>
-                        </li>
-                    </ul>
-
-                    <p class="description"><?php esc_html_e('If the product image is less than the cropping size set above then by default, image will break. However, you can solve this problem by enabling upscaling.', PGCU_TEXTDOMAIN); ?></p>
-                </td>
-
-            </tr>
-
-            <tr>
                 <th><label for="gc[image_width]"><?php esc_html_e('Image Width', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <input type='number' class="cmb2-text-medium" id="gc[image_width]" name="gc[image_width]" value="<?php if(empty($image_width)) {echo '300';

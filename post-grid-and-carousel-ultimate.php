@@ -89,6 +89,8 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
                 add_action( 'plugin_loaded', array( self::$instance, 'load_textdomain' ) );
 
                 add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
+                // Initialize appsero tracking
+                self::$instance->init_appsero();
             }
 
             return self::$instance;
@@ -121,7 +123,7 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
             }
             // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
             if ( ! defined( 'PGC_REMOTE_URL' ) ) {
-                define( 'PGC_REMOTE_URL', 'https://aazztech.com' ); // IMPORTANT: change the name of this constant to something unique to prevent conflicts with other plugins using this system
+                define( 'PGC_REMOTE_URL', 'https://wpwax.com' ); // IMPORTANT: change the name of this constant to something unique to prevent conflicts with other plugins using this system
             }
             // the download ID. This is the ID of your product in EDD and should match the download ID visible in your Downloads list (see example below)
             if ( ! defined( 'PGC_REMOTE_POST_ID' ) ) {
@@ -164,6 +166,24 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
                 $postID = $post->ID;
             }
             $this->set_post_views( $postID );
+        }
+
+        /**
+         * Initialize appsero tracking.
+         *
+         * @see https://github.com/Appsero/client
+         *
+         * @return void
+         */
+        public function init_appsero() {
+            if ( ! class_exists( '\Appsero\Client' ) ) {
+                require_once PGCU_INC_DIR . 'appsero/src/Client.php';
+            }
+
+            $client = new \Appsero\Client( '21cc659b-3127-480c-96a4-ece7f6a18a57', 'Post Grid & Carousel Ultimate', __FILE__ );
+
+            // Active insights
+            $client->insights()->init();
         }
 
         /**

@@ -10,6 +10,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			//add shortcode hoke
 			add_shortcode( "pgcu", array( $this,"shortcode_for_post_grid_carousel") );
 			add_shortcode( "PGCU", array( $this,"shortcode_for_post_grid_carousel") );
+			add_shortcode( "post_grid_carousel", array( $this,"shortcode_for_post_grid_carousel") );
 
 		}
 

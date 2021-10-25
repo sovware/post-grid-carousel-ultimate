@@ -41,10 +41,10 @@ Presentation of your posts determines how good they are to your users in the fir
 More amazing features available in [__Pro version__](https://wpwax.com/product/post-grid-carousel-ultimate-pro/).
 
 = Features of the Pro version =
-*   24 different themes for Grid.
-*   24 different themes for carousel.
-*   24 different themes for Filterable Grid
-*   24 different themes for Masonry
+*   20 different themes for Grid.
+*   20 different themes for carousel.
+*   20 different themes for Filterable Grid
+*   20 different themes for Masonry
 *   Display popular, featured, latest, older and random posts.
 *   Display posts by category, IDs, tag, month and year.
 *   Control font size, weight, alignment of post title and content.

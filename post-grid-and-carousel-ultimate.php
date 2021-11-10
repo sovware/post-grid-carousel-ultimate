@@ -3,7 +3,7 @@
 Plugin Name: Post Grid & Carousel Ultimate
 Plugin URI: https://wordpress.org/product/post-grid-carousel-ultimate-pro
 Description: Use Post Grid & Carousel Ultimate Plugin to display your posts in different beautiful Grids and Sliders/Carousels very easily.
-Version: 1.4.0
+Version: 1.4.1
 Author: wpWax
 Author URI: https://wpwax.com
 License: GPLv2 or later
@@ -82,6 +82,9 @@ Final class post_grid_and_carousel_ultimate
 
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
+            if( empty( get_option('pgcu_dismiss_notice') ) ) {
+                add_action( 'admin_notices', array( self::$instance, 'admin_notices') );
+            }
             // Initialize appsero tracking
             self::$instance->init_appsero();
         }
@@ -118,6 +121,13 @@ Final class post_grid_and_carousel_ultimate
 		$links[] = '<a href="https://wpwax.com/product/post-grid-carousel-ultimate-pro/" target="_blank">Pro Version</a>';
          return $links;
 	}
+
+    public function admin_notices() {
+        global $pagenow, $typenow;
+        if ( 'index.php' == $pagenow || 'plugins.php' == $pagenow || 'adl-shortcode' == $typenow ) {
+            require_once PGCU_INC_DIR . 'notice.php';
+        }
+    }
 
     /**
      * plugin text domain
@@ -178,7 +188,7 @@ Final class post_grid_and_carousel_ultimate
     }
 
     public function load_admin_file () {
-        global $typenow;
+        global $typenow, $pagenow;
 
         if( $typenow == PGCU_POST_TYPE ) {
             wp_enqueue_script('admin-js',PLUGINS_URL('admin/admin.js',__FILE__),array('jquery'));
@@ -190,6 +200,10 @@ Final class post_grid_and_carousel_ultimate
                 'ajaxurl' => admin_url( 'admin-ajax.php' ), // WordPress AJAX
                 
             ) );
+        }
+
+        if ( 'index.php' == $pagenow || 'plugins.php' == $pagenow || 'adl-shortcode' == $typenow ) {
+            wp_enqueue_style('admin-notice',PLUGINS_URL('admin/notice.css',__FILE__));
         }
 
     }

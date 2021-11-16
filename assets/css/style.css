@@ -956,7 +956,7 @@
 }
 
 .pgcu-post__author img {
-  border-radius: 50%;
+  border-radius: 50% !important;
 }
 
 .pgcu-post__author .pgcu-post__meta__author a {
@@ -1713,12 +1713,12 @@
 }
 
 .pgcu-theme-17 .pgcu-post__meta a, .pgcu-theme-17 .pgcu-post__meta span {
-  color: #fff;
+  color: #fff !important;
   opacity: 0.6;
 }
 
 .pgcu-theme-17 .pgcu-post__meta__author a {
-  color: #fff;
+  color: #fff !important;
   font-weight: 500;
   opacity: 1;
 }
@@ -1782,7 +1782,7 @@
 }
 
 .pgcu-theme-18 .pgcu-post__meta span {
-  color: #fff;
+  color: #fff !important;
   opacity: 0.6;
 }
 
@@ -1836,7 +1836,7 @@
 }
 
 .pgcu-theme-19 .pgcu-post__meta span {
-  color: #fff;
+  color: #fff !important;
   opacity: 0.6;
 }
 
@@ -1870,6 +1870,6 @@
 }
 
 .pgcu-theme-20 .pgcu-post__meta span {
-  color: #fff;
+  color: #fff !important;
   opacity: 0.6;
 }

@@ -59,7 +59,7 @@
             </p>
             <?php } ?>
 
-            <div class="pgcu-d-flex pgcu-space-between">
+            <div class="pgcu-d-flex pgcu-d-flex-wrap pgcu-space-between">
                 <?php if( 'yes' == $display_read_more ) { ?>
                 <a href="<?php echo get_the_permalink(); ?>"
                     class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
@@ -101,11 +101,12 @@
                                 <span>4</span>
                             </div>
                             <div class="pgcu-post__meta__share__dropdown">
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ) ?>"
-                                    target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode( get_permalink() ) ?>" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                         <path
                                             d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
-                                        </svg></a>
+                                    </svg>
+                                </a>
                                 <a href="'https://twitter.com/home?status=<?php echo urlencode( get_permalink() ) ?>"
                                     target="_blank"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                         <path

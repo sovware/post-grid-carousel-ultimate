@@ -79,7 +79,7 @@
   margin: 0 0 30px !important;
   max-width: 100% !important;
   width: 100% !important;
-  padding: 0 15px;
+  padding: 0;
   text-align: left !important;
 }
 
@@ -488,7 +488,7 @@
 
 .pgcu-post__meta li {
   list-style-type: none;
-  margin: 0;
+  margin: 0 !important;
   padding: 0 11px !important;
 }
 
@@ -554,7 +554,8 @@
 .pgcu-post__meta__share__dropdown {
   position: absolute;
   width: 130px;
-  left: -15px;
+  left: auto;
+  right: -15px;
   top: 40px;
   box-shadow: 0 0 15px rgba(3, 2, 19, 0.1);
   padding: 15px;
@@ -817,6 +818,10 @@
 
 .pgcu-d-flex {
   display: flex;
+}
+
+.pgcu-d-flex-wrap {
+  flex-wrap: wrap;
 }
 
 .pgcu-space-between {

@@ -57,7 +57,7 @@
                 </a>
             <?php } ?>
 
-            <div class="pgcu-post__meta-boxed pgcu-d-flex pgcu-space-between">
+            <div class="pgcu-post__meta-boxed pgcu-d-flex pgcu-d-flex-wrap pgcu-space-between">
                 <?php if( 'yes' == $display_date ) { ?>
                     <ul class="pgcu-post__meta">
                         <li class="pgcu-post__meta__date">

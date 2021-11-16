@@ -42,7 +42,7 @@
                 <?php echo wp_trim_words( get_the_content(), $content_word_limit );?>
                 </p>
             <?php } ?>
-            <div class="pgcu-d-flex pgcu-space-between">
+            <div class="pgcu-d-flex pgcu-d-flex-wrap pgcu-space-between">
                 <?php if( 'yes' == $display_read_more ) { ?>
                     <a href="<?php echo get_the_permalink(); ?>"
                         class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">

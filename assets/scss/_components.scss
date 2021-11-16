@@ -34,7 +34,7 @@
     align-items: center;
     li{
         list-style-type: none;
-        margin: 0;
+        margin: 0 !important;
         padding: 0 11px !important;
         a{
             text-decoration: none !important;
@@ -42,6 +42,7 @@
             color: var(--pgcu-metaColor) !important;
             display: block;
             transition: 0.3s ease;
+            margin: 0;
             &:hover{
                 color: var(--pgcu-metaColorHover) !important;
             }
@@ -140,7 +141,8 @@
         @include e(dropdown){
             position: absolute;
             width: 130px;
-            left: -15px;
+            left: auto;
+            right: -15px;
             top: 40px;
             box-shadow: 0 0 15px rgba(3,2,19,0.1);
             padding: 15px;

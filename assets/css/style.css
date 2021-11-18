@@ -387,7 +387,7 @@
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
-  margin-top: -25px;
+  margin-top: -30px;
   min-width: 100%;
 }
 
@@ -404,7 +404,7 @@
   max-width: 100%;
   padding-right: 15px;
   padding-left: 15px;
-  margin-top: 25px;
+  margin-top: 30px;
 }
 
 .pgcu-no-gutter > * {
@@ -670,7 +670,7 @@
 
 .pgcu-post__meta__share__dropdown a {
   display: block;
-  margin: 0 7px;
+  margin: 0 7px !important;
   text-decoration: none !important;
   transition: 0.3s ease;
   flex: none;
@@ -953,6 +953,11 @@
 /* Post author bottom */
 .pgcu-post__author > div {
   margin-right: 10px;
+}
+
+.pgcu-post__author > div a {
+  display: block;
+  line-height: 1;
 }
 
 .pgcu-post__author img {

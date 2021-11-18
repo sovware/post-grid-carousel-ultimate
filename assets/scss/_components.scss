@@ -155,7 +155,7 @@
             z-index: 2;
             a{
                 display: block;
-                margin: 0 7px;
+                margin: 0 7px !important;
                 text-decoration: none !important;
                 transition: 0.3s ease;
                 flex: none;
@@ -415,6 +415,10 @@
 .pgcu-post__author{
     >div{
         margin-right: 10px;
+        a{
+            display: block;
+            line-height: 1;
+        }
     }
     img{
         border-radius: 50% !important;

@@ -98,11 +98,13 @@
 
 
     window.addEventListener('load', ()=>{
-        if(document.getElementById('gc[display_read_more2]').hasAttribute('checked')){
+        let readmore2 = document.getElementById('gc[display_read_more2]');
+        let title2 = document.getElementById('gc[display_header_title2]');
+        if(readmore2 !== null && readmore2.hasAttribute('checked')){
             document.querySelector('.gc-read-more-type-section').style.display = 'none';
         }
 
-        if(document.getElementById('gc[display_header_title2]').hasAttribute('checked')){
+        if(title2 !== null && title2.hasAttribute('checked')){
             document.querySelector('.pgcu_header_title').style.display = 'none';
         }
     })

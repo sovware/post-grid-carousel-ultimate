@@ -3,7 +3,7 @@
 Plugin Name: Post Grid & Carousel Ultimate Pro
 Plugin URI: https://wordpress.org/product/post-grid-carousel-ultimate-pro
 Description: Use Post Grid & Carousel Ultimate Plugin to display your posts in different beautiful Grids and Sliders/Carousels very easily.
-Version: 1.3.0
+Version: 2.0.0
 Author: wpWax
 Author URI: https://wpwax.com
 License: GPLv2 or later
@@ -119,7 +119,7 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
             if ( ! defined('PGCU_LANG_DIR') ) { define('PGCU_LANG_DIR', dirname(plugin_basename( __FILE__ ) ) . '/languages'); }
             //custom post type id
             if ( ! defined( 'PGC_VERSION' ) ) {
-                define( 'PGC_VERSION', '1.3.0' );
+                define( 'PGC_VERSION', '2.0.0' );
             }
             // this is the URL our updater / license checker pings. This should be the URL of the site with EDD installed
             if ( ! defined( 'PGC_REMOTE_URL' ) ) {

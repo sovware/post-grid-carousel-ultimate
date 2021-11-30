@@ -39,7 +39,7 @@
         @include e(meta){
             transition: 0.3s ease;
             span{
-                color: #fff;
+                color: #fff !important;
                 opacity: 0.6;
             }
         }

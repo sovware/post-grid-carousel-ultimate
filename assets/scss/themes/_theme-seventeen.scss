@@ -32,12 +32,12 @@
             margin-bottom: 17px !important;
             transition: 0.3s ease;
             a, span{
-                color: #fff;
+                color: #fff !important;
                 opacity: 0.6;
             }
             @include e(author){
                 a{
-                    color: #fff;
+                    color: #fff !important;
                     font-weight: 500;
                     opacity: 1;
                 }

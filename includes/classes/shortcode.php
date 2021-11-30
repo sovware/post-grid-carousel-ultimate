@@ -49,7 +49,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 			$image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
-			$image_height	   = ! empty( $image_height ) ? $image_height : 290;
+			$image_hight	   = ! empty( $image_hight ) ? $image_hight : 290;
 
 			$navigation              		=   ! empty( $navigation  ) ? $navigation  : 'yes';
 			$navigation_position     		=   ! empty( $navigation_position  ) ? $navigation_position  : 'middle';
@@ -273,7 +273,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						$thumb = get_post_thumbnail_id();
 						// crop the image if the cropping is enabled.
 						if( 'yes' === $image_resize_crop ){
-							$pgcu_img = pgcu_image_cropping( $thumb, $image_width, $image_height, true, 100 )['url'];
+							$pgcu_img = pgcu_image_cropping( $thumb, $image_width, $image_hight, true, 100 )['url'];
 						}else{
 							$aazz_thumb = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID()), 'large' );
 							$pgcu_img = $aazz_thumb['0'];

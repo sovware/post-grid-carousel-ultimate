@@ -1,53 +1,82 @@
 === Post Grid, Slider & Carousel Ultimate ===
 Contributors: wpwax
-Tags: post grid, post carousel, post slider, post sortable grid, grid, carousel
+Tags: post grid, post carousel, post slider, post view, post list
 Requires at least: 4.0
 Tested up to: 5.9
 Stable tag: 1.4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Use this plugin to display your posts/pages/custom post types in different beautiful Grids and Carousels/Sliders very easily. 
+The easiest and most useful plugin to display blog posts, pages, or custom posts in beautiful post layouts like post grid, post carousel & post slider 
 
 == Description ==
 
-Live demo: <https://demo.wpwax.com/plugin/post-carousel-ultimate/>
+👉 [Demos](https://demo.wpwax.com/plugin/post-carousel-ultimate/) | [Pro Version](https://wpwax.com/product/post-grid-carousel-ultimate-pro/) | [Documentation](https://wpwax.com/docs/post-grid-carousel-ultimate/) | [Support](https://wpwax.com/contact/) 👈
 
-Presentation of your posts determines how good they are to your users in the first sight. Do you want to display your posts in a beautiful way so that it attracts your users more? Now you can increase the attractiveness of your posts by using Post Grid, Slider & Carousel Ultimate plugin. It is the easiest and the most useful plugin that allows you display your blog posts, pages or any other custom posts in different beautiful grids & carousels. You can use different layouts like Normal Grid, Sortable Grid, and Carousel to display your posts. It is 100% responsive and Mobile friendly. Your posts will display perfectly on any devices. You do not need to be a pro to use this plugin. You can generate dynamic shortcodes just by a few mouse click and then use the shortcode anywhere to display your posts. The interface is extremely clean and easy to understand that a novice user can use this plugin without spending hours of valuable time reading online docs like other low-quality plugins. 
+The presentation of your posts determines how good they are to your users at the first sight. Do you want to display your posts in a beautiful way so that it attracts your users more? Now you can increase the attractiveness of your posts by using the Post Grid, Slider & Carousel Ultimate plugin.
+
+[youtube https://youtu.be/hAVqsDftmF4]
+
+It is the easiest and the most useful plugin that allows you to display your blog posts, pages, or any other custom posts in different beautiful grids & carousels. You can use different layouts like Normal Grid, Sortable Grid, and Carousel to display your posts. It is 100% responsive and mobile-friendly. Your posts will display perfectly on any device and most importantly, you do not need to be a pro to use the Post Grid, Slider & Carousel Ultimate plugin. 
+
+You can generate dynamic shortcodes with just a few clicks and use them anywhere to display your posts. The interface is extremely clean and easy to understand even a novice user can use this plugin without spending hours of valuable time reading online docs like other low-quality plugins. Captivate more users by creating attractive post lists without the need for any coding knowledge. 
+
+HERE’S WHAT USERS SAY ABOUT  POST GRID, POST SLIDER & POST CAROUSEL ULTIMATE
+
+>👨 __Carousel works amazing, Pro is definitely worth it__
+
+>Been looking for an all-in-one plugin for rotating my advertisements within categories, found this plugin when working on another project and it surprised me with how simple and effective it is. Arranging my page to have content peppered with relevant images and media, the slider fits in perfectly between content blocks and attracts a lot of clicks. Being able to sort by category, tag, ID and more is a great feature and makes featuring a multitude of products a breeze.
+
+I initially had a few questions on functionality and the SovWare team responded right away to my emails. Can’t stress enough how nice it is to have a support team that actually helps its customers quickly rather than letting your support email sit for 2 weeks before answering it. Great products, great team.
+- By @jasonbryan
+
+>💁 __Post Grid, Slider & Carousel Ultimate__
+
+>awesome plugin to create beautiful grid/slider/carousel on wordpress website… love it…
+- By @rawatrj
+
+>👨 __Exactly what I was looking for__
+
+>Best for working with custom posts
+- By @wixvw
 
 = Features of this plugin =
-*   12 beautiful themes for Grid, Filterable Grid and Carousel/Slider. 
-*   Customizable columns for any devices.
-*   Easy Shortcode Generator and insert generated Shortcode easily via TinyMCE button.
-*   Show/hide post title, content, image, author name, date, category etc.
-*   Customizable post title, content, image, author name, date, category etc.
-*   Auto post image resize and crop option.  
-*   Image Upscale enable/disable.
-*   Control number of posts to be displayed.
-*   Control Carousel/Slider's per page items, autoplay, speed, mouse draggability etc.
+*   4 beautiful themes for Post Grid 
+*   4 beautiful themes for Post Carousel or Post Slider.
+*   4 beautiful themes for Post Filterable Grid 
+*   Create unlimited Post Grid, Post Ffilterable Grid, Post Carousel, or Post Slider
+*   Customizable columns for any device.
+*   Easy Shortcode Generator and insert shortcode easily with Gutenberg editor.
+*   Multiple post layouts: Pick your favorite layout from Carousel, Grid, Sortable Grid.
+*   Show/hide post title, content, image, author name, date, category, etc.
+*   Customizable post title, content, image, author name, date, category, etc.
+*   Post image resizes and crops automatically.
+*   Control the number of posts to be displayed.
+*   Control Carousel/Slider’s per page items, autoplay, speed, mouse draggability, etc.
 *   Auto images resize and crop option.
 *   Sortable grid using categories and tags.
-*   Display posts on sidebar using custom Widget.
+*   Display posts on the sidebar using custom Widget.
 *   Show/hide pagination.
 *   Customizable pagination.
-*   Customizable Read More button. 
+*   Customizable Read More button.
 *   100% Responsive & Mobile friendly.
-*   Support all modern browsers.
+*   Supports all modern browsers.
 *   Very lightweight.
 *   Translation ready.
 *   And many more features.
 
-More amazing features available in [__Pro version__](https://wpwax.com/product/post-grid-carousel-ultimate-pro/).
 
-= Features of the Pro version =
-*   20 different themes for Grid.
-*   20 different themes for carousel.
-*   20 different themes for Filterable Grid
-*   20 different themes for Masonry
+More amazing features are available in the Post Grid, Post Slider & Post Carousel Ultimate [__Pro version__](https://wpwax.com/product/post-grid-carousel-ultimate-pro/).
+
+= FEATURES OF THE  POST GRID, POST SLIDER & POST CAROUSEL ULTIMATE PRO VERSION =
+*   21 different themes for Post Grid.
+*   21 different themes for Post Carousel.
+*   21 different themes for Post Filterable Grid
+*   21 different themes for Post Masonry
 *   Display popular, featured, latest, older and random posts.
-*   Display posts by category, IDs, tag, month and year.
+*   Display posts by category, IDs, tag, month, and year.
 *   Control font size, weight, alignment of post title and content.
-*   Lots of options to customize posts in widget.
+*   Lots of options to customize posts in widgets.
 *   Excerpt length control.
 *   Ajax Load More pagination.
 *   Social share buttons.
@@ -55,9 +84,12 @@ More amazing features available in [__Pro version__](https://wpwax.com/product/p
 *   Navigational arrows color changing option.
 *   Show/Hide Carousel dots pagination.
 *   Read more button text edit option
-*   And many more features.
+*   Premium Support
+*   And many more features
 
-Live demo: <https://demo.wpwax.com/plugin/post-carousel-ultimate/>
+
+👉 Like us on Facebook : [wpWax](https://www.facebook.com/wpwax)
+👉 Official YouTube Channel : [YouTube](https://www.youtube.com/c/wpWax)
 
 
 == Installation ==

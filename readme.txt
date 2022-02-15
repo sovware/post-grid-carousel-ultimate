@@ -25,9 +25,7 @@ HERE’S WHAT USERS SAY ABOUT  POST GRID, POST SLIDER & POST CAROUSEL ULTIMATE
 
 >👨 __Carousel works amazing, Pro is definitely worth it__
 
->Been looking for an all-in-one plugin for rotating my advertisements within categories, found this plugin when working on another project and it surprised me with how simple and effective it is. Arranging my page to have content peppered with relevant images and media, the slider fits in perfectly between content blocks and attracts a lot of clicks. Being able to sort by category, tag, ID and more is a great feature and makes featuring a multitude of products a breeze.
-
-I initially had a few questions on functionality and the SovWare team responded right away to my emails. Can’t stress enough how nice it is to have a support team that actually helps its customers quickly rather than letting your support email sit for 2 weeks before answering it. Great products, great team.
+>Been looking for an all-in-one plugin for rotating my advertisements within categories, found this plugin when working on another project and it surprised me with how simple and effective it is. Arranging my page to have content peppered with relevant images and media, the slider fits in perfectly between content blocks and attracts a lot of clicks. Being able to sort by category, tag, ID and more is a great feature and makes featuring a multitude of products a breeze. I initially had a few questions on functionality and the SovWare team responded right away to my emails. Can’t stress enough how nice it is to have a support team that actually helps its customers quickly rather than letting your support email sit for 2 weeks before answering it. Great products, great team.
 - By @jasonbryan
 
 >💁 __Post Grid, Slider & Carousel Ultimate__

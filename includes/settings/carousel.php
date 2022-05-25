@@ -13,7 +13,7 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             <tr>
                 <th><label for="gc[post_column]"><?php esc_html_e('Post Column', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column]" value="<?php echo ! empty( $post_column ) ? $post_column : '3'; ?>"/>
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column]" value="<?php echo esc_attr( ! empty( $post_column ) ? $post_column : '3' ); ?>"/>
                     
                 </td>
             </tr>
@@ -21,7 +21,7 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             <tr>
                 <th><label for="gc[post_column_laptop]"><?php esc_html_e('Post Column on Laptop', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column_laptop]" value="<?php echo ! empty( $post_column_laptop ) ? $post_column_laptop : '3'; ?>"/>
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column_laptop]" value="<?php echo esc_attr( ! empty( $post_column_laptop ) ? $post_column_laptop : '3' ); ?>"/>
                     
                 </td>
             </tr>
@@ -29,13 +29,13 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
             <tr>
                 <th><label for="gc[post_column_tablet]"><?php esc_html_e('Post column on Tablet', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column_tablet]" id="gc[post_column_tablet]" value="<?php echo ! empty( $post_column_tablet ) ? $post_column_tablet : '2'; ?>" />
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column_tablet]" id="gc[post_column_tablet]" value="<?php echo esc_attr( ! empty( $post_column_tablet ) ? $post_column_tablet : '2' ); ?>" />
                 </td>
             </tr>
             <tr>
                 <th><label for="gc[post_column_mobile]"><?php esc_html_e('Post column on Mobile', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" name="gc[post_column_mobile]" id="gc[post_column_mobile]" value="<?php echo ! empty( $post_column_mobile ) ? $post_column_mobile : '1'; ?>" />
+                    <input type='number' class="cmb2-text-medium" name="gc[post_column_mobile]" id="gc[post_column_mobile]" value="<?php echo esc_attr( ! empty( $post_column_mobile ) ? $post_column_mobile : '1' ); ?>" />
                     
                 </td>
             </tr>  
@@ -90,7 +90,7 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
 
             <tr>
                 <th><label for="gc[c_autoplay_speed]"><?php esc_html_e('Slide Speed', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_speed]" name="gc[c_autoplay_speed]" value="<?php echo ! empty( $c_autoplay_speed ) ? $c_autoplay_speed : '2000'; ?>"/><span class="description">(Millisecond)</span>
+                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_speed]" name="gc[c_autoplay_speed]" value="<?php echo esc_attr( ! empty( $c_autoplay_speed ) ? $c_autoplay_speed : '2000' ); ?>"/><span class="description">(Millisecond)</span>
                     
                 </td>
                 
@@ -98,7 +98,7 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
 
             <tr>
                 <th><label for="gc[c_autoplay_time]"><?php esc_html_e('Slide Timeout', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_time]" name="gc[c_autoplay_time]" value="<?php echo ! empty( $c_autoplay_time ) ? $c_autoplay_time : '2000'; ?>"/><span class="description">(Millisecond)</span>
+                <td><input type="number" class="cmb2-text-medium" id="gc[c_autoplay_time]" name="gc[c_autoplay_time]" value="<?php echo esc_attr( ! empty( $c_autoplay_time ) ? $c_autoplay_time : '2000' ); ?>"/><span class="description">(Millisecond)</span>
                     
                 </td>
                 
@@ -135,42 +135,42 @@ $navigation_position     =   ! empty( $navigation_position  ) ? $navigation_posi
 
             <tr>
                 <th><label for="gc[navigation_arrow_color]"><?php esc_html_e('Navigation Arrow Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[navigation_arrow_color]" id="gc[navigation_arrow_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_arrow_color ) ? $navigation_arrow_color : '#030517'; ?>" />
+                <td><input type="text" name="gc[navigation_arrow_color]" id="gc[navigation_arrow_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $navigation_arrow_color ) ? $navigation_arrow_color : '#030517' ); ?>" />
                     
                 </td> 
             </tr>
 
             <tr>
                 <th><label for="gc[navigation_arrow_hover_color]"><?php esc_html_e('Navigation Arrow Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[navigation_arrow_hover_color]" id="gc[navigation_arrow_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_arrow_hover_color ) ? $navigation_arrow_hover_color : '#fff'; ?>" />
+                <td><input type="text" name="gc[navigation_arrow_hover_color]" id="gc[navigation_arrow_hover_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $navigation_arrow_hover_color ) ? $navigation_arrow_hover_color : '#fff' ); ?>" />
                     
                 </td>
             </tr>
 
             <tr>
                 <th><label for="gc[navigation_back_color]"><?php esc_html_e('Navigation Background Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[navigation_back_color]" id="gc[navigation_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_back_color ) ? $navigation_back_color : '#f5f5f5'; ?>" />
+                <td><input type="text" name="gc[navigation_back_color]" id="gc[navigation_back_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $navigation_back_color ) ? $navigation_back_color : '#f5f5f5' ); ?>" />
                     
                 </td>
             </tr>
 
             <tr>
                 <th><label for="gc[navigation_back_hover_color]"><?php esc_html_e('Navigation Background Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[navigation_back_hover_color]" id="gc[navigation_back_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_back_hover_color ) ? $navigation_back_hover_color : '#F31C1C'; ?>" />
+                <td><input type="text" name="gc[navigation_back_hover_color]" id="gc[navigation_back_hover_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $navigation_back_hover_color ) ? $navigation_back_hover_color : '#F31C1C' ); ?>" />
                     
                 </td>
             </tr>
 
             <tr>
                 <th><label for="gc[navigation_border_color]"><?php esc_html_e('Navigation Border Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[navigation_border_color]" id="gc[navigation_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_border_color ) ? $navigation_border_color : '#f5f5f5'; ?>" />
+                <td><input type="text" name="gc[navigation_border_color]" id="gc[navigation_border_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $navigation_border_color ) ? $navigation_border_color : '#f5f5f5' ); ?>" />
                     
                 </td>
             </tr>
 
             <tr>
                 <th><label for="gc[navigation_border_hover_color]"><?php esc_html_e('Navigation Border  Hover Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[navigation_border_hover_color]" id="gc[navigation_border_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C'; ?>" />
+                <td><input type="text" name="gc[navigation_border_hover_color]" id="gc[navigation_border_hover_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $navigation_border_hover_color ) ? $navigation_border_hover_color : '#F31C1C' ); ?>" />
                     
                 </td>
             </tr>

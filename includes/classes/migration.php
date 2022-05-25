@@ -5,7 +5,7 @@ class PGCU_Migration
 {
     public function __construct ()
     {
-        add_action( 'admin_init', array( $this, 'migrate_custom_post' ) );
+       // add_action( 'admin_init', array( $this, 'migrate_custom_post' ) );
     }
 
     public function migrate_custom_post() {

@@ -4,13 +4,13 @@
         <?php if( ! empty( $pgcu_img ) ) { ?>
         <div class="pgcu-post__img">
             <a href="<?php echo get_the_permalink(); ?>">
-                <img src="<?php echo $pgcu_img; ?>" alt="<?php echo get_the_title(); ?>">
+                <img src="<?php echo esc_url( $pgcu_img ); ?>" alt="<?php echo get_the_title(); ?>">
             </a>
             <div class="pgcu-post__img__upper-content pgcu-post__img__upper-content--bottom-left">
                 <?php
                     if( $get_terms ) {
                         foreach( $get_terms as $term ) { ?>
-                <a class="pgcu-post__badge"><?php echo $term->name; ?></a>
+                <a class="pgcu-post__badge"><?php echo esc_html( $term->name ); ?></a>
                 <?php } } ?>
             </div>
         </div>
@@ -63,7 +63,7 @@
                 <?php if( 'yes' == $display_read_more ) { ?>
                 <a href="<?php echo get_the_permalink(); ?>"
                     class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
-                    <?php echo $read_more_text; ?>
+                    <?php echo esc_html( $read_more_text ); ?>
                     <?php if( 'link' == $read_more_type ) { ?>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                         <path

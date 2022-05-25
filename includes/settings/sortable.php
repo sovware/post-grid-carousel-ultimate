@@ -16,7 +16,7 @@ $terms                = get_object_taxonomies( (object) array( 'post_type' => $p
                         if( $terms ) {
                             foreach( $terms as $term ) {
                         ?>
-                        <option value="<?php echo $term; ?>" <?php selected( $g_sort, $term ); ?>><?php echo $term; ?></option>
+                        <option value="<?php echo esc_attr( $term ); ?>" <?php selected( $g_sort, $term ); ?>><?php echo $term; ?></option>
                         <?php } } ?>
                     </select>
                 </td>
@@ -24,7 +24,7 @@ $terms                = get_object_taxonomies( (object) array( 'post_type' => $p
 
             <tr>
                 <th><label for="gc[sortable_menu_text_color]"><?php esc_html_e('Sortable Menu Text Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[sortable_menu_text_color]" class="cpa-color-picker" value="<?php echo ! empty( $sortable_menu_text_color ) ? $sortable_menu_text_color : '#4F515A'; ?>" />
+                <td><input type="text" name="gc[sortable_menu_text_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $sortable_menu_text_color ) ? $sortable_menu_text_color : '#4F515A' ); ?>" />
                     
                 </td>
                 
@@ -32,7 +32,7 @@ $terms                = get_object_taxonomies( (object) array( 'post_type' => $p
             
             <tr>
                 <th><label for="gc[sortable_menu_active_back_color]"><?php esc_html_e('Sortable Menu Active Background Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[sortable_menu_active_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $sortable_menu_active_back_color ) ? $sortable_menu_active_back_color : '#030213'; ?>" />
+                <td><input type="text" name="gc[sortable_menu_active_back_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $sortable_menu_active_back_color ) ? $sortable_menu_active_back_color : '#030213' ); ?>" />
                     
                 </td>
                 
@@ -40,7 +40,7 @@ $terms                = get_object_taxonomies( (object) array( 'post_type' => $p
 
             <tr>
                 <th><label for="gc[sortable_menu_active__text_color]"><?php esc_html_e('Sortable Menu Active Text Color', PGCU_TEXTDOMAIN); ?></label></th>
-                <td><input type="text" name="gc[sortable_menu_active__text_color]" class="cpa-color-picker" value="<?php echo ! empty( $sortable_menu_active__text_color ) ? $sortable_menu_active__text_color : '#ffffff'; ?>" />
+                <td><input type="text" name="gc[sortable_menu_active__text_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $sortable_menu_active__text_color ) ? $sortable_menu_active__text_color : '#ffffff' ); ?>" />
                     
                 </td>
                 

@@ -89,3 +89,23 @@ if( ! function_exists('pgcu_pagination') ) {
         return apply_filters('pgcu_pagination', $navigation, $links, $custom_post_query, $paged);
     }
 }
+
+if ( ! function_exists( 'pgcu_sanitize_array' ) ) {
+	/**
+	 * It sanitize a multi-dimensional array
+	 * @param array &$array The array of the data to sanitize
+	 * @return mixed
+	 */
+	function pgcu_sanitize_array( &$array ) {
+		foreach ( $array as &$value ) {
+			if ( ! is_array( $value ) ) {
+				// sanitize if value is not an array
+				$value = sanitize_text_field( $value );
+			} else {
+				// go inside this function again
+				pgcu_sanitize_array( $value );
+			}
+		}
+		return $array;
+	}
+}

@@ -5,7 +5,7 @@
         <?php if( ! empty( $pgcu_img ) ) { ?>
             <div class="pgcu-post__img">
                 <a href="<?php echo get_the_permalink(); ?>">
-                    <img src="<?php echo $pgcu_img; ?>" alt="<?php echo get_the_title(); ?>">
+                    <img src="<?php echo esc_url( $pgcu_img ); ?>" alt="<?php echo get_the_title(); ?>">
                 </a>
             </div>
         <?php } ?>
@@ -26,10 +26,10 @@
                 
                 <?php if( 'yes' == $display_term && ! empty( $get_terms ) ) { ?>
                     <li class="pgcu-post__meta__categories">
-                        <a><?php echo $get_terms[0]->name; ?></a>
+                        <a><?php echo esc_html( $get_terms[0]->name ); ?></a>
 
                         <?php if( 1 < count( $get_terms ) ) { ?>
-                        <a><?php echo $get_terms[1]->name; ?></a>
+                        <a><?php echo esc_html( $get_terms[1]->name ); ?></a>
                         <?php } ?>
                         
                         <?php if( 2 < count( $get_terms ) ) { ?>
@@ -38,7 +38,7 @@
                                 <div>
 
                                 <?php foreach( array_slice( $get_terms, 2 ) as $term ) { ?>
-                                    <a><?php echo $term->name; ?></a>
+                                    <a><?php echo esc_html( $term->name ); ?></a>
                                 <?php } ?>
                                 
                                 </div>

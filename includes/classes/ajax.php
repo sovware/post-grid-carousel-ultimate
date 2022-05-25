@@ -1,11 +1,14 @@
 <?php 
-
- //Protect direct access
-if ( ! defined( 'ABSPATH' ) ) die( 'Are you cheating??? Accessing this file directly is forbidden.' );
+/**
+ * Exit if accessed directly
+ */
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
 class PGCU_Ajax
 {
-	public function __construct() {
+	public function __construct () {
 
 		add_action('wp_ajax_pgcu_post_type', array( $this, 'post_type_ajax_handler') ); // wp_ajax_{action}
 
@@ -24,7 +27,7 @@ class PGCU_Ajax
         if( $terms ) {
             foreach( $terms as $term ) {
         ?>
-        <option value="<?php echo $term;?>" ><?php echo $term; ?></option>
+        <option value="<?php echo esc_attr( $term ); ?>" ><?php echo esc_html( $term ); ?></option>
         <?php } } 
         $value = ob_get_clean();
 

@@ -69,7 +69,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_color]"><?php esc_html_e('Pagination Color', PGCU_TEXTDOMAIN); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_color ) ? $pagi_color : '#333'; ?>" />
+                    <input type="text" name="gc[pagi_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_color ) ? $pagi_color : '#333' ); ?>" />
                 </td>
             </tr>   
 
@@ -78,7 +78,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_border_color]"><?php esc_html_e( 'Pagination Border Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4'; ?>" />
+                    <input type="text" name="gc[pagi_border_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_border_color ) ? $pagi_border_color : '#e4e4e4' ); ?>" />
                 </td>
             </tr>
 
@@ -87,7 +87,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_back_color]"><?php esc_html_e('Pagination Background Color', PGCU_TEXTDOMAIN); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff'; ?>" />
+                    <input type="text" name="gc[pagi_back_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_back_color ) ? $pagi_back_color : '#fff' ); ?>" />
                 </td>
                 
             </tr> 
@@ -97,7 +97,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_hover_color]"><?php esc_html_e( 'Pagination Hover Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_hover_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_hover_color ) ? $pagi_hover_color : '#fff'; ?>" />
+                    <input type="text" name="gc[pagi_hover_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_hover_color ) ? $pagi_hover_color : '#fff' ); ?>" />
                     
                 </td>
                 
@@ -108,7 +108,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_hover_border_color]"><?php esc_html_e( 'Pagination Hover Border Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_hover_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_hover_border_color ) ? $pagi_hover_border_color : '#ff5500'; ?>" />
+                    <input type="text" name="gc[pagi_hover_border_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_hover_border_color ) ? $pagi_hover_border_color : '#ff5500' ); ?>" />
                     
                 </td>
                 
@@ -119,7 +119,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_hover_back_color]"><?php esc_html_e( 'Pagination Hover Background Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_hover_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_hover_back_color ) ? $pagi_hover_back_color : '#ff5500'; ?>" />
+                    <input type="text" name="gc[pagi_hover_back_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_hover_back_color ) ? $pagi_hover_back_color : '#ff5500' ); ?>" />
                     
                 </td>
             </tr>
@@ -129,7 +129,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_active_color]"><?php esc_html_e( 'Pagination Active Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_active_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_active_color ) ? $pagi_active_color : '#fff'; ?>" />
+                    <input type="text" name="gc[pagi_active_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_active_color ) ? $pagi_active_color : '#fff' ); ?>" />
                     
                 </td>
             </tr>
@@ -139,7 +139,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_active_border_color]"><?php esc_html_e( 'Pagination Active Border Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_active_border_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_active_border_color ) ? $pagi_active_border_color : '#ff5500'; ?>" />
+                    <input type="text" name="gc[pagi_active_border_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_active_border_color ) ? $pagi_active_border_color : '#ff5500' ); ?>" />
                     
                 </td>
             </tr>
@@ -149,7 +149,7 @@ $g_mobile                   = ! empty( $g_mobile   ) ? $g_mobile   : '1';
                     <label for="gc[pagi_active_back_color]"><?php esc_html_e( 'Pagination Active Background Color', PGCU_TEXTDOMAIN ); ?></label>
                 </th>
                 <td>
-                    <input type="text" name="gc[pagi_active_back_color]" class="cpa-color-picker" value="<?php echo ! empty( $pagi_active_back_color ) ? $pagi_active_back_color : '#ff5500'; ?>" />
+                    <input type="text" name="gc[pagi_active_back_color]" class="cpa-color-picker" value="<?php echo esc_attr( ! empty( $pagi_active_back_color ) ? $pagi_active_back_color : '#ff5500' ); ?>" />
                     
                 </td>
             </tr>

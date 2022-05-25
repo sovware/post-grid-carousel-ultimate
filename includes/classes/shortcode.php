@@ -104,7 +104,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$read_more_button_background_color     = ! empty( $read_more_button_background_color ) ? $read_more_button_background_color : '#EFEFEF';
 			$read_more_button_background_hover_color     = ! empty( $read_more_button_background_hover_color ) ? $read_more_button_background_hover_color : '#030213';
 
-			$post_from 		  = !empty($post_from) ? $post_from : 'latest';
+			$post_from 		  = ! empty( $post_from ) ? $post_from : 'latest';
 			$paged 			  = pgcu_get_paged_num();
 				
 			$g_sort           = ! empty( $g_sort    ) ? $g_sort    : 'category';
@@ -117,7 +117,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$args = array();
 		    $common_args = [
 		        'post_type'      => $post_type,
-		        'posts_per_page' => (!empty($total_posts) ? $total_posts : -1),
+		        'posts_per_page' => ( ! empty( $total_posts ) ? $total_posts : -1 ),
 		        'status' 		 => 'published',
 		        'paged'			 => $paged
 
@@ -144,22 +144,22 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				<?php if( 'yes' == $display_header_title ) { ?>
 				<div class="pgcu-posts__header" style="
 					--pgcu-headerFontSize: 24px;
-    				--pgcu-headerFontColor: <?php echo $header_title_color; ?>;
+    				--pgcu-headerFontColor: <?php echo esc_attr( $header_title_color ); ?>;
 				">
-					<h2><?php echo $header_title; ?></h2>
+					<h2><?php echo esc_html( $header_title ); ?></h2>
 				</div>
 				<?php } ?>
-				<div class="pgcu-posts pgcu-<?php echo $theme; ?> <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
+				<div class="pgcu-posts pgcu-<?php echo esc_attr( $theme ); ?> <?php echo ( 'carousel' == $layout ) ? 'pgcu-carousel' : ''; ?>"
 				<?php if( 'carousel' == $layout ) { ?>
 					data-pgcu-items="4"
 					data-pgcu-margin="30"
 					data-pgcu-loop="<?php echo ( 'yes' == $repeat_post ) ? 'true' : 'false'; ?>"
 					data-pgcu-perslide="2"
-					data-pgcu-speed="<?php echo $c_autoplay_speed; ?>"
+					data-pgcu-speed="<?php echo esc_attr( $c_autoplay_speed ); ?>"
 					data-pgcu-autoplay='
 					<?php if( 'yes' == $autoplay ) { ?>
 					{
-						"delay": "<?php echo $c_autoplay_time; ?>",
+						"delay": "<?php echo esc_attr( $c_autoplay_time ); ?>",
 						"pauseOnMouseEnter": <?php echo ( 'yes' == $pause_hover ) ? "true" : "false"; ?>,
 						"disableOnInteraction": false,
 						"stopOnLastSlide": true,
@@ -169,10 +169,10 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						false
 					<?php } ?>
 				' data-pgcu-responsive='{
-						"0": {"slidesPerView": "<?php echo $post_column_mobile; ?>", "spaceBetween": "20", "slidesPerGroup":"1"},
-						"768": {"slidesPerView": "<?php echo $post_column_tablet; ?>", "spaceBetween": "30", "slidesPerGroup":"1"},
-						"992": {"slidesPerView": "<?php echo $post_column_laptop; ?>", "spaceBetween": "30", "slidesPerGroup":"1"},
-						"1200": {"slidesPerView": "<?php echo $post_column; ?>", "spaceBetween": "30", "slidesPerGroup":"1"}
+						"0": {"slidesPerView": "<?php echo esc_attr( $post_column_mobile ); ?>", "spaceBetween": "20", "slidesPerGroup":"1"},
+						"768": {"slidesPerView": "<?php echo esc_attr( $post_column_tablet ); ?>", "spaceBetween": "30", "slidesPerGroup":"1"},
+						"992": {"slidesPerView": "<?php echo esc_attr( $post_column_laptop ); ?>", "spaceBetween": "30", "slidesPerGroup":"1"},
+						"1200": {"slidesPerView": "<?php echo esc_attr( $post_column ); ?>", "spaceBetween": "30", "slidesPerGroup":"1"}
 					}'
 				<?php } ?>
 				>
@@ -188,16 +188,16 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 
 
     				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . ''; ?>" style="
-					--pgcu-titleColor: <?php echo $post_title_color; ?>;
-    				--pgcu-titleColorHover: <?php echo $post_title_hover_color; ?>;
-					--pgcu-excerptColor: <?php echo $post_content_color; ?>;
-					--pgcu-readMoreColor: <?php echo $read_more_color; ?>;
-    				--pgcu-readMoreColorHover: <?php echo $read_more_hover_color; ?>;
+					--pgcu-titleColor: <?php echo esc_attr( $post_title_color ); ?>;
+    				--pgcu-titleColorHover: <?php echo esc_attr( $post_title_hover_color ); ?>;
+					--pgcu-excerptColor: <?php echo esc_attr( $post_content_color ); ?>;
+					--pgcu-readMoreColor: <?php echo esc_attr( $read_more_color ); ?>;
+    				--pgcu-readMoreColorHover: <?php echo esc_attr( $read_more_hover_color ); ?>;
 					--pgcu-buttonFontSize: 14px;
-					--pgcu-buttonColor: <?php echo $read_more_button_color; ?>;
-					--pgcu-buttonColorHover: <?php echo $read_more_button_hover_color; ?>;
-					--pgcu-buttonBg: <?php echo $read_more_button_background_color; ?>;
-					--pgcu-buttonBgHover: <?php echo $read_more_button_background_hover_color; ?>;
+					--pgcu-buttonColor: <?php echo esc_attr( $read_more_button_color ); ?>;
+					--pgcu-buttonColorHover: <?php echo esc_attr( $read_more_button_hover_color ); ?>;
+					--pgcu-buttonBg: <?php echo esc_attr( $read_more_button_background_color ); ?>;
+					--pgcu-buttonBgHover: <?php echo esc_attr( $read_more_button_background_hover_color ); ?>;
 				">
 
 						<?php 

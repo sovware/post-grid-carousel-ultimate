@@ -9,7 +9,7 @@ $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'ye
 $read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 $display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 $display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
-$post_from 		      = !empty($post_from) ? $post_from : 'latest';
+$post_from 		      = ! empty( $post_from ) ? $post_from : 'latest';
 ?>
 <!-- General settings -->
 <div id="tab-2" class="adl-tab-content" style="display: none;">
@@ -35,7 +35,7 @@ $post_from 		      = !empty($post_from) ? $post_from : 'latest';
                                 $done = get_object_taxonomies( (object) array( 'post_type' => 'names', 'hide_empty' => true ) );
                                 ?>
 
-                                <option value="<?php echo $value;?>" <?php if(!empty($post_type) && $post_type ==$value){ echo "selected";}?> ><?php echo $value;?></option>
+                                <option value="<?php echo esc_attr( $value );?>" <?php if(!empty($post_type) && $post_type ==$value){ echo "selected";}?> ><?php echo $value;?></option>
                                 <?php
                             }
                         }
@@ -176,7 +176,7 @@ $post_from 		      = !empty($post_from) ? $post_from : 'latest';
             <tr>
                 <th><label for="gc[content_word_limit]"><?php esc_html_e('Content Word Limit', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
-                    <input type='number' class="cmb2-text-medium" id="gc[content_word_limit]" name="gc[content_word_limit]" value="<?php  echo ! empty( $content_word_limit ) ? $content_word_limit : '16'; ?>"/>
+                    <input type='number' class="cmb2-text-medium" id="gc[content_word_limit]" name="gc[content_word_limit]" value="<?php  echo esc_attr( ! empty( $content_word_limit ) ? $content_word_limit : '16' ); ?>"/>
                 </td>
             </tr>
 
@@ -264,7 +264,7 @@ $post_from 		      = !empty($post_from) ? $post_from : 'latest';
                         if( $terms ) {
                             foreach( $terms as $term ) {
                         ?>
-                        <option value="<?php echo $term; ?>" <?php selected( $term_from, $term ); ?>><?php echo $term; ?></option>
+                        <option value="<?php echo esc_attr( $term ); ?>" <?php selected( $term_from, $term ); ?>><?php echo $term; ?></option>
                        <?php } } ?>
                     </select>
 
@@ -304,7 +304,7 @@ $post_from 		      = !empty($post_from) ? $post_from : 'latest';
                 <th><label for="gc[image_hight]"><?php esc_html_e('Image Height', PGCU_TEXTDOMAIN); ?></label></th>
                 <td>
                     <input type='number' class="cmb2-text-medium" id="gc[image_hight]" name="gc[image_hight]" value="<?php if(empty($image_hight)) {echo '200';
-                    }else{ echo $image_hight;}?>"/>
+                    }else{ echo esc_attr( $image_hight ) ; } ?>"/>
                     <p class="description"><?php esc_html_e('Image cropping height.', PGCU_TEXTDOMAIN); ?></p>
                 </td>
             </tr>

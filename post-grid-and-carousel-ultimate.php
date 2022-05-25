@@ -3,13 +3,13 @@
 Plugin Name: Post Grid, Slider & Carousel Ultimate
 Plugin URI: https://wordpress.org/product/post-grid-carousel-ultimate-pro
 Description: Use Post Grid & Carousel Ultimate Plugin to display your posts in different beautiful Grids and Sliders/Carousels very easily.
-Version: 1.4.3
+Version: 1.5.0
 Author: wpWax
 Author URI: https://wpwax.com
 License: GPLv2 or later
 */
 
-if( !defined('ABSPATH')) { die('Direct browsing is not possible');}
+if( ! defined('ABSPATH') ) { die('Direct browsing is not possible');}
 
 Final class post_grid_and_carousel_ultimate
 {
@@ -132,8 +132,7 @@ Final class post_grid_and_carousel_ultimate
     /**
      * plugin text domain
      */
-    public function load_textdomain()
-    {
+    public function load_textdomain() {
         load_plugin_textdomain( PGCU_TEXTDOMAIN, false, PGCU_LANG_DIR );
     }
 

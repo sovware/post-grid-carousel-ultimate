@@ -88,6 +88,10 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
                 add_action( 'template_redirect', array( self::$instance, 'template_enqueue_file') );
                 add_action( 'plugin_loaded', array( self::$instance, 'load_textdomain' ) );
 
+                // enqueue for elementor 
+                add_action( 'elementor/preview/enqueue_styles', [ self::$instance, 'elementor_enqueue_preview_style' ] );
+                add_action( 'elementor/preview/enqueue_scripts', [ self::$instance, 'elementor_preview_enqueue_script' ] );
+
                 add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
                 // Initialize appsero tracking
                 self::$instance->init_appsero();
@@ -196,6 +200,7 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
         public function include_files(){
 
             require_once PGCU_INC_DIR . 'helper.php';
+            require_once PGCU_INC_DIR . 'elementor/init.php';
             pgcu_load_dependencies( 'all', PGCU_INC_DIR . 'classes/' );
 
             require_once PGCU_INC_DIR . 'license/class-license-controller.php';
@@ -236,6 +241,17 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
         public function template_enqueue_file () {
             wp_enqueue_style( 'pgcu-main', PGCU_URL . 'assets/css/style.css' );
             wp_enqueue_style( 'pgcu-swiper-css', PGCU_URL . 'assets/css/swiper-bundle.min.css' );
+            wp_enqueue_script( 'pgcu-macy', PGCU_URL . 'assets/js/macy.min.js', array('jquery'), '', true );
+            wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
+            wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery'), '', true );
+        }
+
+        public function elementor_enqueue_preview_style() {
+            wp_enqueue_style( 'pgcu-main', PGCU_URL . 'assets/css/style.css' );
+            wp_enqueue_style( 'pgcu-swiper-css', PGCU_URL . 'assets/css/swiper-bundle.min.css' );
+        }
+
+        public function elementor_preview_enqueue_script() {
             wp_enqueue_script( 'pgcu-macy', PGCU_URL . 'assets/js/macy.min.js', array('jquery'), '', true );
             wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
             wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery'), '', true );

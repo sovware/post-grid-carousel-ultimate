@@ -105,6 +105,12 @@
 /* Post card */
 .pgcu-post__img {
   overflow: hidden;
+  /* Image Zoom In hover effect */
+  /* Image Zoom Out hover effect */
+  /* Image Blur In hover effect */
+  /* Image Blur Out hover effect */
+  /* Image Grayscale In hover effect */
+  /* Image Grayscale Out hover effect */
 }
 
 .pgcu-post__img > a {
@@ -116,6 +122,7 @@
   width: 100%;
   max-width: 100%;
   margin: 0;
+  transition: 0.4s ease;
 }
 
 .pgcu-post__img__upper-content {
@@ -135,6 +142,88 @@
   padding: 20px;
   left: 0;
   bottom: 0;
+}
+
+.pgcu-post__img--zoom-in > a {
+  display: block;
+  overflow: hidden;
+}
+
+.pgcu-post__img--zoom-in img {
+  transform: scale(1);
+}
+
+.pgcu-post__img--zoom-in:hover img {
+  transform: scale(1.15);
+}
+
+.pgcu-post__img--zoom-out > a {
+  display: block;
+  overflow: hidden;
+}
+
+.pgcu-post__img--zoom-out img {
+  transform: scale(1.15);
+}
+
+.pgcu-post__img--zoom-out:hover img {
+  transform: scale(1);
+}
+
+.pgcu-post__img--blur-in > a {
+  display: block;
+  overflow: hidden;
+}
+
+.pgcu-post__img--blur-in img {
+  transform: scale(1);
+}
+
+.pgcu-post__img--blur-in:hover img {
+  filter: blur(2px);
+  transform: scale(1.15);
+}
+
+.pgcu-post__img--blur-out > a {
+  display: block;
+  overflow: hidden;
+}
+
+.pgcu-post__img--blur-out img {
+  transform: scale(1.15);
+}
+
+.pgcu-post__img--blur-out:hover img {
+  filter: blur(2px);
+  transform: scale(1);
+}
+
+.pgcu-post__img--grayscale-in > a {
+  display: block;
+  overflow: hidden;
+}
+
+.pgcu-post__img--grayscale-in img {
+  transform: scale(1);
+}
+
+.pgcu-post__img--grayscale-in:hover img {
+  filter: grayscale(80%);
+  transform: scale(1.15);
+}
+
+.pgcu-post__img--grayscale-out > a {
+  display: block;
+  overflow: hidden;
+}
+
+.pgcu-post__img--grayscale-out img {
+  transform: scale(1.15);
+}
+
+.pgcu-post__img--grayscale-out:hover img {
+  filter: grayscale(80%);
+  transform: scale(1);
 }
 
 .pgcu-post--rounded-border {

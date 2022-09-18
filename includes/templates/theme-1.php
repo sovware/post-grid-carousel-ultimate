@@ -3,7 +3,15 @@
     <div class="pgcu-post__content">
 
         <?php if( ! empty( $pgcu_img ) ) { ?>
-            <div class="pgcu-post__img">
+            <!--    
+                Zoom In: pgcu-post__img--zoom-in
+                Zoom Out: pgcu-post__img--zoom-out
+                Blur In: pgcu-post__img--blur-in
+                Blur Out: pgcu-post__img--blur-out
+                Grayscale In: pgcu-post__img--grayscale-in
+                Grayscale Out: pgcu-post__img--grayscale-out
+            -->
+            <div class="pgcu-post__img pgcu-post__img--zoom-in">
                 <a href="<?php echo get_the_permalink(); ?>">
                     <img src="<?php echo $pgcu_img; ?>" alt="<?php echo get_the_title(); ?>">
                 </a>

@@ -10,10 +10,10 @@
                 <div class="pgcu-post__img__upper-content pgcu-post__img__upper-content--bottom">
                     <?php if( 'yes' == $display_term && ! empty( $get_terms ) ) { ?>
                         <div class="pgcu-post__meta__categories pgcu-post__meta__categories--badge">
-                        <a class="pgcu-post__badge"><?php echo $get_terms[0]->name; ?></a>
+                        <a class="pgcu-post__badge pgcu-cat"><?php echo $get_terms[0]->name; ?></a>
 
                         <?php if( 1 < count( $get_terms ) ) { ?>
-                        <a class="pgcu-post__badge"><?php echo $get_terms[1]->name; ?></a>
+                        <a class="pgcu-post__badge pgcu-cat"><?php echo $get_terms[1]->name; ?></a>
                         <?php } ?>
 
                         <?php if( 2 < count( $get_terms ) ) { ?>
@@ -58,7 +58,7 @@
                         </li>
                     </ul>
                     <?php if( 'yes' == $display_read_more ) { ?>
-                        <a href="<?php echo get_the_permalink(); ?>" class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
+                        <a href="<?php echo get_the_permalink(); ?>" class="pgcu-read-more <?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
                             <?php echo $read_more_text; ?>
 
                             <?php if( 'link' == $read_more_type ) { ?>

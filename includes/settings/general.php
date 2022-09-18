@@ -2,7 +2,8 @@
 $post_type            = ! empty( $post_type ) ? $post_type : 'post';
 $term_from            = ! empty( $term_from ) ? $term_from : 'category';
 $display_term         = ! empty( $display_term ) ? $display_term : 'yes';
-$display_header_title  = ! empty( $display_header_title ) ? $display_header_title : 'no';
+$display_header_title = ! empty( $display_header_title ) ? $display_header_title : 'no';
+$header_position      = ! empty( $header_position ) ? $header_position : 'middle';
 $display_title        = ! empty( $display_title ) ? $display_title : 'yes';
 $display_content      = ! empty( $display_content ) ? $display_content : 'yes';
 $display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
@@ -255,6 +256,18 @@ $theme                = ! empty( $theme   ) ? $theme   : 'theme-1';
                     <input type='text' class="cmb2-text-medium" id="gc[header_title]" name="gc[header_title]" value="<?php echo ! empty( $header_title ) ? $header_title : ''; ?>"/>
 
                 </td>
+            </tr>
+
+            <tr class="pgcu_header_title">
+                <th><label for="gc[header_position]"><?php esc_html_e('Header Position', PGCU_TEXTDOMAIN); ?></label></th>
+                <td>
+                    <select class='pgcu_header_position_depend' id="gc[header_position]" name="gc[header_position]">
+                        <option value="middle" <?php selected( $header_position, 'middle' ); ?>>Middle</option>
+                        <option value="right" <?php selected( $header_position, 'right' ); ?>>Right</option>
+                        <option value="left" <?php selected( $header_position, 'left' ); ?>>Left</option>
+                    </select>
+                </td>
+
             </tr>
 
             <tr>

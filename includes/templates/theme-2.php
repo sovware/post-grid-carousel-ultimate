@@ -26,7 +26,7 @@
 
             <?php if( 'yes' == $display_read_more ) { ?>
 
-                <a href="<?php echo get_the_permalink(); ?>" class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
+                <a href="<?php echo get_the_permalink(); ?>" class="pgcu-read-more <?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
                     <?php echo $read_more_text; ?>
 
                     <?php if( 'link' == $read_more_type ) { ?>

@@ -127,7 +127,7 @@ $scrool_direction        = ! empty( $scrool_direction ) ? $scrool_direction : 'r
                 <td>
                     <select  name="gc[scrool_direction]">
                         <option value="right_left" <?php selected( $scrool_direction, 'right_left' ); ?>>Right to Left</option>
-                        <option value="left_right" <?php selected( $scrool_direction, 'grid' ); ?> >Left to Right</option>
+                        <option value="left_right" <?php selected( $scrool_direction, 'left_right' ); ?> >Left to Right</option>
                     </select>
 
                 </td>

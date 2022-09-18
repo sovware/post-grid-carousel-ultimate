@@ -23,7 +23,7 @@
                 </ul>
                 <?php if( 'yes' == $display_read_more ) { ?>
                     <a href="<?php echo get_the_permalink(); ?>"
-                        class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore pgcu-mt-10' : 'pgcu-button pgcu-button--rounded pgcu-mt-20'; ?>">
+                        class="pgcu-read-more <?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore pgcu-mt-10' : 'pgcu-button pgcu-button--rounded pgcu-mt-20'; ?>">
                         <?php echo $read_more_text; ?>
                         <?php if( 'link' == $read_more_type ) { ?>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

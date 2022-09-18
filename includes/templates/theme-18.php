@@ -10,10 +10,10 @@
 
                 <?php if( 'yes' == $display_term && ! empty( $get_terms ) ) { ?>
                 <div class="pgcu-post__meta__categories pgcu-post__meta__categories--badge">
-                    <a class="pgcu-post__badge"><?php echo $get_terms[0]->name; ?></a>
+                    <a class="pgcu-post__badge pgcu-cat"><?php echo $get_terms[0]->name; ?></a>
 
                     <?php if( 1 < count( $get_terms ) ) { ?>
-                    <a class="pgcu-post__badge"><?php echo $get_terms[1]->name; ?></a>
+                    <a class="pgcu-post__badge pgcu-cat"><?php echo $get_terms[1]->name; ?></a>
                     <?php } ?>
 
                     <?php if( 2 < count( $get_terms ) ) { ?>
@@ -50,7 +50,7 @@
                 <div class="pgcu-d-flex pgcu-flex-center">
                     <?php if( 'yes' == $display_read_more ) { ?>
                         <a href="<?php echo get_the_permalink(); ?>"
-                            class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore pgcu-mt-10' : 'pgcu-button pgcu-button--rounded pgcu-mt-20'; ?>">
+                            class="pgcu-read-more <?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore pgcu-mt-10' : 'pgcu-button pgcu-button--rounded pgcu-mt-20'; ?>">
                             <?php echo $read_more_text; ?>
                             <?php if( 'link' == $read_more_type ) { ?>
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

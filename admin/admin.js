@@ -80,7 +80,7 @@
 
         jQuery('.cpa-color-picker').wpColorPicker();
 
-         /* Read more section */
+         /* Header section */
          $('input[name="gc[display_header_title]"]').each(function(id, elm){
             $(elm).on('change', function(){
                 if($(elm).val() === 'no'){

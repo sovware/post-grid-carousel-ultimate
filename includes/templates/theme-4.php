@@ -10,7 +10,7 @@
                 <?php
                     if( $get_terms ) {
                         foreach( $get_terms as $term ) { ?>
-                <a class="pgcu-post__badge"><?php echo esc_html( $term->name ); ?></a>
+                <a class="pgcu-cat pgcu-post__badge"><?php echo esc_html( $term->name ); ?></a>
                 <?php } } ?>
             </div>
         </div>

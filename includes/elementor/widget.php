@@ -718,7 +718,7 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 				'label'     => __( 'Typography', 'post-grid-carousel-ultimate' ),
 				'id'     	=> 'title_typography',
 				'type'		=> Group_Control_Typography::get_type(),
-				'selector' 	=> '{{WRAPPER}} .pgcu-post__title',
+				'selector' 	=> '{{WRAPPER}} .pgcu-post__title a',
 				'scheme' => Typography::TYPOGRAPHY_3,
 			),
 			array(

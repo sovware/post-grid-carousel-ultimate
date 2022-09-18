@@ -6,7 +6,7 @@
 */
 
 (function ($) {
-    window.addEventListener('load', () => {
+    function pgcu_js() {
         /* Check PGCU Carousel Data */
         let checkData = function (data, value) {
             return typeof data === 'undefined' ? value : data;
@@ -85,6 +85,20 @@
                 })
             })
         }
-    })
+    }
+
+    pgcu_js();
+    
+    /* Elementor Edit Mode */
+    $(window).on('elementor/frontend/init', function () {
+        setTimeout(() => {
+            if (elementorFrontend.isEditMode()) {
+                    pgcu_js();
+                elementorFrontend.hooks.addAction('frontend/element_ready/widget', function() {
+                    pgcu_js();
+                });
+            }
+        }, 6000);
+    });
 
 })(jQuery);

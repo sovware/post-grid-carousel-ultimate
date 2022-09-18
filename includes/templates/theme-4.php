@@ -62,7 +62,7 @@
             <div class="pgcu-d-flex pgcu-d-flex-wrap pgcu-space-between">
                 <?php if( 'yes' == $display_read_more ) { ?>
                 <a href="<?php echo get_the_permalink(); ?>"
-                    class="<?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
+                    class="pgcu-read-more <?php echo ( 'link' == $read_more_type ) ? 'pgcu-post__readmore' : 'pgcu-button pgcu-button--rounded'; ?>">
                     <?php echo esc_html( $read_more_text ); ?>
                     <?php if( 'link' == $read_more_type ) { ?>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">

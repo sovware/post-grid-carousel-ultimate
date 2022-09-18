@@ -80,6 +80,10 @@ Final class post_grid_and_carousel_ultimate
 			add_action( 'plugin_loaded', array( self::$instance, 'load_textdomain' ) );
 			add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), array( self::$instance, 'pro_version_plugin_link') );
 
+            // enqueue for elementor 
+            add_action( 'elementor/preview/enqueue_styles', [ self::$instance, 'elementor_enqueue_preview_style' ] );
+            add_action( 'elementor/preview/enqueue_scripts', [ self::$instance, 'elementor_preview_enqueue_script' ] );
+
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
             if( empty( get_option('pgcu_dismiss_notice') ) ) {
@@ -183,6 +187,7 @@ Final class post_grid_and_carousel_ultimate
     public function include_files(){
 
 		require_once PGCU_INC_DIR . 'helper.php';
+        require_once PGCU_INC_DIR . 'elementor/init.php';
         pgcu_load_dependencies( 'all', PGCU_INC_DIR . 'classes/' );
     }
 
@@ -233,6 +238,18 @@ Final class post_grid_and_carousel_ultimate
         wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
         wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery') );
 
+    }
+
+    public function elementor_enqueue_preview_style() {
+        wp_enqueue_style( 'pgcu-main', PGCU_URL . 'assets/css/style.css' );
+        wp_enqueue_style( 'pgcu-swiper-css', PGCU_URL . 'assets/css/swiper-bundle.min.css' );
+    }
+
+    public function elementor_preview_enqueue_script() {
+        wp_enqueue_script( 'pgcu-macy', PGCU_URL . 'assets/js/macy.min.js', array('jquery'), '', true );
+        wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
+        wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery'), '', true );
+        wp_enqueue_script( 'pgcu-ajax', PGCU_URL . 'assets/js/ajax.js', array('jquery'), '', true );
     }
 
     /**

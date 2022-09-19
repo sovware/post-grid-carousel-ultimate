@@ -241,14 +241,14 @@
 .pgcu-button{
     background: var(--pgcu-buttonBg) !important;
     color: var(--pgcu-buttonColor) !important;
-    font-size: var(--pgcu-buttonFontSize) !important;
+    font-size: var(--pgcu-buttonFontSize);
     font-weight: 500;
     height: 38px;
     padding: 0 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none !important;
+    text-decoration: none;
     transition: 0.3s ease;
     line-height: 1;
     &:hover{

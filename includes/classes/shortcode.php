@@ -59,6 +59,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					'image_resize_crop'         => '',
 					'image_width'       		=> '',
 					'image_hight'				=> '',
+					'img_hover_effect'          => '',
+            		'img_animation'             => '',
 				), $atts );
 
 			$post_id =  ! empty( $atts['id'] ) ? $atts['id'] : '';
@@ -186,7 +188,10 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$image_resize_crop                = ! empty( $atts['image_resize_crop'] ) ? $atts['image_resize_crop'] : $image_resize_crop;
 			$image_width              		  = ! empty( $atts['image_width'] ) ? $atts['image_width'] : $image_width;
 			$image_hight              		  = ! empty( $atts['image_hight'] ) ? $atts['image_hight'] : $image_hight;
-			
+			$img_hover_effect        = ! empty( $atts['img_hover_effect'] ) ? $atts['img_hover_effect'] : 'no';
+        	$img_animation           = ! empty( $atts['img_animation'] ) ? $atts['img_animation'] : 'zoom-in';
+
+			$img_animation_class     = 'pgcu-post__img--' . $img_animation;
 			
 			$layout_class = '';
 			if( 'carousel' == $layout ) {

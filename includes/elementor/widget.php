@@ -2920,11 +2920,13 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 			'scrool_direction'            	=> $settings['scrool_direction'] ? $settings['scrool_direction'] : 'right_left',
 			'navigation'            		=> $settings['navigation'] ? $settings['navigation'] : 'no',
 			'navigation_position'           => $settings['navigation_position'] ? $settings['navigation_position'] : 'middle',
-			'g_sort'           				=> $settings['g_sort'] ? $settings['g_sort'] : 'category',
+			//'g_sort'           				=> $settings['g_sort'] ? $settings['g_sort'] : 'category',
 
 			'image_resize_crop'           	=> $settings['image_resize_crop'] ? $settings['image_resize_crop'] : 'no',
 			'image_width'           		=> $settings['image_width'] ? $settings['image_width'] : '300',
 			'image_hight'           		=> $settings['image_hight'] ? $settings['image_hight'] : '200',
+			'img_hover_effect'				=> $settings['img_hover_effect'] ? $settings['img_hover_effect'] : 'no',
+			'img_animation'					=> $settings['img_animation'] ? $settings['img_animation'] : 'zoom-in',
 		);
 		$this->run_shortcode( 'pgcu', $atts );
 		

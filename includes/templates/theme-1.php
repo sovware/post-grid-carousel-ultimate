@@ -11,7 +11,7 @@
                 Grayscale In: pgcu-post__img--grayscale-in
                 Grayscale Out: pgcu-post__img--grayscale-out
             -->
-            <div class="pgcu-post__img pgcu-post__img--zoom-in">
+            <div class="pgcu-post__img <?php echo 'yes' == $img_hover_effect ? $img_animation_class : ''; ?>">
                 <a href="<?php echo get_the_permalink(); ?>">
                     <img src="<?php echo $pgcu_img; ?>" alt="<?php echo get_the_title(); ?>">
                 </a>

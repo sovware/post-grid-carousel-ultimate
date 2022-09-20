@@ -6,7 +6,7 @@
 */
 
 (function ($) {
-    window.addEventListener('load', () => {
+    function alljs() {
         /* Check PGCU Carousel Data */
         let checkData = function (data, value) {
             return typeof data === 'undefined' ? value : data;
@@ -85,6 +85,21 @@
                 })
             })
         }
+    }
+
+    window.addEventListener('load', () => { 
+        alljs();
     })
+    
+
+    /* Elementor Edit Mode */
+    $(window).on('elementor/frontend/init', function () {
+        if (elementorFrontend.isEditMode()) {
+            alljs();
+            elementorFrontend.hooks.addAction('frontend/element_ready/widget', function() {
+                alljs();
+            });
+        }
+    });
 
 })(jQuery);

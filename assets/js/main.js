@@ -171,18 +171,19 @@
         })
     }
 
-    alljs();
+    window.addEventListener('load', () => { 
+        alljs();
+    })
     
 
     /* Elementor Edit Mode */
     $(window).on('elementor/frontend/init', function () {
-        setTimeout(() => {
-            if (elementorFrontend.isEditMode()) {
+        if (elementorFrontend.isEditMode()) {
+            alljs();
+            elementorFrontend.hooks.addAction('frontend/element_ready/widget', function() {
                 alljs();
-                elementorFrontend.hooks.addAction('frontend/element_ready/widget', function() {
-                    alljs();
-                });
-            }
-        }, 6000);
+            });
+        }
     });
+    
 })(jQuery); 

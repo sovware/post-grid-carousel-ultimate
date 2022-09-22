@@ -34,7 +34,7 @@
 	<!-- Exclude paths -->
 	<exclude-pattern>/__*/</exclude-pattern>
 	<exclude-pattern>/.github</exclude-pattern>
-	<exclude-pattern>/assets/*</exclude-pattern>
+	<exclude-pattern>/admin/*</exclude-pattern>
 	<exclude-pattern>/assets/*</exclude-pattern>
 	<exclude-pattern>/languages/*</exclude-pattern>
 	<exclude-pattern>/node_modules/*</exclude-pattern>

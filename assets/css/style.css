@@ -1711,13 +1711,16 @@
 .pgcu-theme-14 .pgcu-post .pgcu-post__meta__categories--box-white {
   background: #fff;
   border-radius: 8px;
+  margin: 0 !important;
+}
+
+.pgcu-theme-14 .pgcu-post .pgcu-post__img + .pgcu-post__details .pgcu-post__meta__categories--box-white {
   width: calc(100% - 50px);
   min-height: 67px;
   position: absolute;
   left: 50%;
   top: 0;
   transform: translate(-50%, -50%);
-  margin: 0 !important;
 }
 
 /*===========================

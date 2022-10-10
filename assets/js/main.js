@@ -92,7 +92,7 @@
             pgcuMasonryContainer.forEach(elm=>{
                 let macy = new Macy({
                     container: elm,
-                    trueOrder: true,
+                    trueOrder: window.innerWidth > 575 ? true : false,
                     waitForImages: true,
                     margin: checkData(parseInt(elm.dataset.pgcuMasonryGutter), 30),
                     columns: checkData(parseInt(elm.dataset.pgcuMasonryColumns), 3),
@@ -171,10 +171,10 @@
         })
     }
 
-    window.addEventListener('load', () => { 
+    window.addEventListener('load', () => {
         alljs();
     })
-    
+
 
     /* Elementor Edit Mode */
     $(window).on('elementor/frontend/init', function () {
@@ -185,5 +185,5 @@
             });
         }
     });
-    
-})(jQuery); 
+
+})(jQuery);

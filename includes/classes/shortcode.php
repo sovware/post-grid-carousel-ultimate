@@ -149,7 +149,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$read_more_button_background_color     = ! empty( $read_more_button_background_color ) ? $read_more_button_background_color : '#EFEFEF';
 			$read_more_button_background_hover_color     = ! empty( $read_more_button_background_hover_color ) ? $read_more_button_background_hover_color : '#030213';
 
-			// shortcode $atts 
+			// shortcode $atts
 			$layout             			  = ! empty( $atts['layout'] ) ? $atts['layout'] : $layout;
 			$theme              			  = ! empty( $atts['theme'] ) ? $atts['theme'] : $theme;
 			$display_header_title             = ! empty( $atts['display_header_title'] ) ? $atts['display_header_title'] : $display_header_title;
@@ -192,7 +192,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
         	$img_animation           = ! empty( $atts['img_animation'] ) ? $atts['img_animation'] : 'zoom-in';
 
 			$img_animation_class     = 'pgcu-post__img--' . $img_animation;
-			
+
 			$layout_class = '';
 			if( 'carousel' == $layout ) {
 				$layout_class = 'swiper-wrapper';
@@ -289,7 +289,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 				'current_page' => get_query_var( 'paged' ) ? get_query_var('paged') : 1,
             	'max_page' => $posts->max_num_pages
 			) );
-			
+
 			$header_class = '';
 
 			if( 'middle' == $header_position ) {

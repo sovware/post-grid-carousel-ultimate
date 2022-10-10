@@ -200,6 +200,9 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 					$this->custom_post_type()
 				),
 				'default' => 'post',
+				'condition'    => [
+					'layout!'          => 'isotope',
+				],
 			),
 			array(
 				'type'    => Controls_Manager::SELECT,

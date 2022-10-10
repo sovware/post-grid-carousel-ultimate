@@ -1,7 +1,7 @@
 <div class="pgcu-post <?php echo ( 'carousel' == $layout ) ? 'swiper-slide' : ''; ?>">
     <div class="pgcu-post__content">
         <?php if( ! empty( $pgcu_img ) ) { ?>
-        <div class="pgcu-post__img">
+        <div class="pgcu-post__img <?php echo 'yes' == $img_hover_effect ? $img_animation_class : ''; ?>">
             <a href="<?php echo get_the_permalink(); ?>">
                 <img src="<?php echo $pgcu_img; ?>" alt="<?php echo get_the_title(); ?>">
             </a>

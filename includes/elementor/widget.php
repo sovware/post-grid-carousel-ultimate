@@ -2186,7 +2186,7 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 				'label'     => __( 'Box Shadow', 'post-grid-carousel-ultimate' ),
 				'id'     	=> 'grid_pagi_hover_shadow',
 				'type'		=> \Elementor\Group_Control_Box_Shadow::get_type(),
-				'selector' 	=> [ 
+				'selectors' 	=> [ 
 					'{{WRAPPER}} .pgcu-pagination .page-numbers:hover',
 					'{{WRAPPER}} .pgcu-pagination .nav-links .current',
 				]
@@ -2196,7 +2196,7 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 				'label'     => __( 'Typography', 'post-grid-carousel-ultimate' ),
 				'id'     	=> 'grid_pagi_hover_typography',
 				'type'		=> Group_Control_Typography::get_type(),
-				'selector' 	=> [
+				'selectors' 	=> [
 					'{{WRAPPER}} .pgcu-pagination .page-numbers:hover',
 					'{{WRAPPER}} .pgcu-pagination .nav-links .current',
 				],
@@ -2579,22 +2579,17 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 			'g_tablet'                 		=> $settings['g_tablet'] ? $settings['g_tablet'] : '2',
 			'g_mobile'                 		=> $settings['g_mobile'] ? $settings['g_mobile'] : '1',
 			'display_pagination'            => $settings['display_pagination'] ? $settings['display_pagination'] : 'no',
-			'pagination_type'            	=> $settings['pagination_type'] ? $settings['pagination_type'] : 'number',
 			'autoplay'                		=> $settings['autoplay'] ? $settings['autoplay'] : 'no',
 			'repeat_post'                 	=> $settings['repeat_post'] ? $settings['repeat_post'] : 'no',
 			'pause_hover'                 	=> $settings['pause_hover'] ? $settings['pause_hover'] : 'no',
-			'marquee'                 		=> $settings['marquee'] ? $settings['marquee'] : 'no',
 			'post_column'                 	=> $settings['post_column'] ? $settings['post_column'] : '2',
 			'post_column_laptop'            => $settings['post_column_laptop'] ? $settings['post_column_laptop'] : '2',
 			'post_column_tablet'            => $settings['post_column_tablet'] ? $settings['post_column_tablet'] : '2',
 			'post_column_mobile'            => $settings['post_column_mobile'] ? $settings['post_column_mobile'] : '1',
 			'c_autoplay_speed'            	=> $settings['c_autoplay_speed'] ? $settings['c_autoplay_speed'] : '2000',
 			'c_autoplay_time'            	=> $settings['c_autoplay_time'] ? $settings['c_autoplay_time'] : '2000',
-			'scrool_direction'            	=> $settings['scrool_direction'] ? $settings['scrool_direction'] : 'right_left',
 			'navigation'            		=> $settings['navigation'] ? $settings['navigation'] : 'no',
 			'navigation_position'           => $settings['navigation_position'] ? $settings['navigation_position'] : 'middle',
-			'g_sort'           				=> $settings['g_sort'] ? $settings['g_sort'] : 'category',
-
 			'image_resize_crop'           	=> $settings['image_resize_crop'] ? $settings['image_resize_crop'] : 'no',
 			'image_width'           		=> $settings['image_width'] ? $settings['image_width'] : '300',
 			'image_hight'           		=> $settings['image_hight'] ? $settings['image_hight'] : '200',

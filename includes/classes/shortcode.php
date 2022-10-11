@@ -264,7 +264,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					<?php 
 					if( 'isotope' == $layout ) {
 						include PGCU_INC_DIR . 'templates/sortable/sortable.php';
-					} elseif( 'carousel' == $layout && ( 'top-left' == $navigation_position || 'top-right' == $navigation_position ) ) {
+					} elseif( 'yes' == $navigation && 'carousel' == $layout && ( 'top-left' == $navigation_position || 'top-right' == $navigation_position ) ) {
 						include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 					}
 						
@@ -307,7 +307,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 					</div>
 
 						<?php
-						if( 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
+						if( 'yes' == $navigation && 'carousel' == $layout && ( 'middle' == $navigation_position || 'bottom-left' == $navigation_position || 'bottom-right' == $navigation_position ) ) {
 							include PGCU_INC_DIR . 'templates/navigation/navigation.php';
 						}elseif( 'grid' == $layout && 'yes' == $display_pagination ) {
 							include PGCU_INC_DIR . 'templates/pagination/pagination.php';

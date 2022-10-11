@@ -183,6 +183,9 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 					$this->custom_post_type()
 				),
 				'default' => 'post',
+				'condition'    => [
+					'layout!'          => 'isotope',
+				],
 			),
 			array(
 				'type'    => Controls_Manager::SELECT,
@@ -309,13 +312,6 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 				'default'   => 'no',
 			),
 			array(
-				'type'      => Controls_Manager::SWITCHER,
-				'id'        => 'marquee',
-				'label'     => __( 'Marquee', 'post-grid-carousel-ultimate' ),
-				'default'   => 'no',
-				'separator' => 'after'
-			),
-			array(
 				'type'      => Controls_Manager::TEXT,
 				'id'        => 'post_column',
 				'label'     => __( 'Post Columns', 'post-grid-carousel-ultimate' ),
@@ -351,17 +347,6 @@ class Elementor_Post_Ultimate_Widget extends \Elementor\Widget_Base {
 				'id'        => 'c_autoplay_time',
 				'label'     => __( 'Slide Timeout', 'post-grid-carousel-ultimate' ),
 				'default'   => 2000,
-			),
-			array(
-				'type'    => Controls_Manager::SELECT,
-				'id'      => 'scrool_direction',
-				'label'   => __( 'Scroll Direction', 'post-grid-carousel-ultimate' ),
-				'options' => array(
-					'right_left' 	=> __( 'Right to Left', 'post-grid-carousel-ultimate' ),
-					'left_right' 	=> __( 'Left to Right', 'post-grid-carousel-ultimate' ),
-				),
-				'default' => 'right_left',
-				'separator' => 'after'
 			),
 			array(
 				'type'      => Controls_Manager::SWITCHER,

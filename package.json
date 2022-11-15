@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "scss": "node-sass --watch --output-style expanded assets/scss -o assets/css"
+    "scss": "node-sass --watch --output-style expanded assets/scss -o assets/css",
+    "start": "wp-scripts start",
+    "build": "wp-scripts build"
   },
   "repository": {
     "type": "git",

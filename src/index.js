@@ -1,1 +1,1 @@
-import './blocks/wcc-ultimate-block.js'
+import './blocks/pgcu-ultimate-block.js'

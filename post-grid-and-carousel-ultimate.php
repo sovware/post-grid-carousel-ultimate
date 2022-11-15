@@ -200,6 +200,7 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
         public function include_files(){
 
             require_once PGCU_INC_DIR . 'helper.php';
+            require_once PGCU_INC_DIR . 'gutenberg/init.php';
             require_once PGCU_INC_DIR . 'elementor/init.php';
             pgcu_load_dependencies( 'all', PGCU_INC_DIR . 'classes/' );
 

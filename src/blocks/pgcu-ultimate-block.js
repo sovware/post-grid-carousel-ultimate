@@ -119,7 +119,7 @@ function extra_js() {
 	pgcuMasonryInit();
 
 	/* Filter Buttons AJAX */
-	$('.pgcu-post-sortable__btn').each(function(id, elm){
+	jQuery('.pgcu-post-sortable__btn').each(function(id, elm){
 		$(elm).on("click", function (e) {
 			e.preventDefault();
 			var button = $(this),
@@ -145,7 +145,7 @@ function extra_js() {
 	})
 
 	/* Load More Button AJAX */
-	$('.pgcu_load_more').each(function(id, element){
+	jQuery('.pgcu_load_more').each(function(id, element){
 		$(element).on("click", function(){
 			var append_class = '.pgcu-grid-'+$(element).attr('data-id');
 			var button = $(element),
@@ -628,7 +628,7 @@ registerBlockType( 'pgcup/block', {
 
                     </InspectorControls>
                 
-			    	<ServerSideRender block="wcpcsup/block" attributes={ attributes } />
+			    	<ServerSideRender block="pgcup/block" attributes={ attributes } />
                  </div>
             </Fragment>
 		)

@@ -21,6 +21,14 @@
   },
   "homepage": "https://github.com/Armanul46/post-grid-carousel-ultimate#readme",
   "dependencies": {
+    "@wordpress/block-editor": "^10.4.0",
+    "@wordpress/blocks": "^11.20.0",
+    "@wordpress/components": "^22.0.0",
+    "@wordpress/element": "^4.19.0",
+    "@wordpress/server-side-render": "^3.19.0",
     "node-sass": "^6.0.1"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "24.5.0"
   }
 }

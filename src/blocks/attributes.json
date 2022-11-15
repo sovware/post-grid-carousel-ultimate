@@ -5,7 +5,7 @@
   },
   "theme":{
     "type":"string",
-    "default":"theme_1"
+    "default":"theme-1"
   },
   "display_header_title":{
     "type":"boolean",

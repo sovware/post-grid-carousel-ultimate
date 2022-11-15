@@ -6,7 +6,7 @@ function register_block() {
 
     wp_enqueue_script( 
         'pgcup-gutenberg-js', 
-        WCPCSU_URL . 'build/index.js', 
+        PGCU_URL . 'build/index.js', 
         [
         'wp-block-editor', 
         'wp-blocks', 
@@ -40,27 +40,23 @@ function register_block() {
 }
 
 function render_callback( $attributes ) {
-    $attributes['h_title_show']                 = ! empty( $attributes['h_title_show'] ) ? 'yes' : 'no';
+    $attributes['display_header_title']         = ! empty( $attributes['display_header_title'] ) ? 'yes' : 'no';
     $attributes['display_title']                = ! empty( $attributes['display_title'] ) ? 'yes' : 'no';
-    $attributes['exclude_stock_out']            = ! empty( $attributes['exclude_stock_out'] ) ? 'yes' : 'no';
-    $attributes['display_sale_ribbon']          = ! empty( $attributes['display_sale_ribbon'] ) ? 'yes' : 'no';
-    $attributes['display_featured_ribbon']      = ! empty( $attributes['display_featured_ribbon'] ) ? 'yes' : 'no';
-    $attributes['display_sold_out_ribbon']      = ! empty( $attributes['display_sold_out_ribbon'] ) ? 'yes' : 'no';
-    $attributes['display_discount_ribbon']      = ! empty( $attributes['display_discount_ribbon'] ) ? 'yes' : 'no';
-    $attributes['display_price']                = ! empty( $attributes['display_price'] ) ? 'yes' : 'no';
-    $attributes['display_ratings']              = ! empty( $attributes['display_ratings'] ) ? 'yes' : 'no';
-    $attributes['display_cart']                 = ! empty( $attributes['display_cart'] ) ? 'yes' : 'no';
-    $attributes['A_play']                       = ! empty( $attributes['A_play'] ) ? 'yes' : 'no';
-    $attributes['repeat_product']               = ! empty( $attributes['repeat_product'] ) ? 'yes' : 'no';
-    $attributes['stop_hover']                   = ! empty( $attributes['stop_hover'] ) ? 'yes' : 'no';
+    $attributes['display_content']              = ! empty( $attributes['display_content'] ) ? 'yes' : 'no';
+    $attributes['display_read_more']            = ! empty( $attributes['display_read_more'] ) ? 'yes' : 'no';
+    $attributes['display_author']               = ! empty( $attributes['display_author'] ) ? 'yes' : 'no';
+    $attributes['display_date']                 = ! empty( $attributes['display_date'] ) ? 'yes' : 'no';
+    $attributes['display_term']                 = ! empty( $attributes['display_term'] ) ? 'yes' : 'no';
+    $attributes['autoplay']                     = ! empty( $attributes['autoplay'] ) ? 'yes' : 'no';
+    $attributes['repeat_post']                  = ! empty( $attributes['repeat_post'] ) ? 'yes' : 'no';
+    $attributes['pause_hover']                  = ! empty( $attributes['pause_hover'] ) ? 'yes' : 'no';
     $attributes['marquee']                      = ! empty( $attributes['marquee'] ) ? 'yes' : 'no';
-    $attributes['nav_show']                     = ! empty( $attributes['nav_show'] ) ? 'yes' : 'no';
-    $attributes['carousel_pagination']          = ! empty( $attributes['carousel_pagination'] ) ? 'yes' : 'no';
-    $attributes['grid_pagination']              = ! empty( $attributes['grid_pagination'] ) ? 'yes' : 'no';
-    $attributes['grid_pagination']              = ! empty( $attributes['grid_pagination'] ) ? 'yes' : 'no';
+    $attributes['navigation']                   = ! empty( $attributes['navigation'] ) ? 'yes' : 'no';
+    $attributes['display_pagination']           = ! empty( $attributes['display_pagination'] ) ? 'yes' : 'no';
+    $attributes['image_resize_crop']            = ! empty( $attributes['image_resize_crop'] ) ? 'yes' : 'no';
     $attributes['img_hover_effect']             = ! empty( $attributes['img_hover_effect'] ) ? 'yes' : 'no';
 
-    return run_shortcode( 'wcpcsu', $attributes );
+    return run_shortcode( 'pgcu', $attributes );
     
 }
 

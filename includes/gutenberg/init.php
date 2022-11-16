@@ -2,7 +2,7 @@
 
 if( ! defined( 'ABSPATH' ) ) : exit(); endif; // No direct access allowed
 
-function register_block() {
+function pgcup_register_block() {
 
     wp_enqueue_script( 
         'pgcup-gutenberg-js', 
@@ -25,7 +25,7 @@ function register_block() {
     wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery'), '', true );
 
 
-    $attributes = get_attributes_from_metadata( trailingslashit( __DIR__ ) );
+    $attributes = pgcup_get_attributes_from_metadata( trailingslashit( __DIR__ ) );
 
     register_block_type(
         'pgcup/block',
@@ -34,12 +34,12 @@ function register_block() {
             'editor_script'   => 'pgcup-gutenberg-js',
             'api_version'     => 2,
             'attributes'      => $attributes,
-            'render_callback' => 'render_callback'
+            'render_callback' => 'pgcu_render_callback'
         ]
     );
 }
 
-function render_callback( $attributes ) {
+function pgcu_render_callback( $attributes ) {
     $attributes['display_header_title']         = ! empty( $attributes['display_header_title'] ) ? 'yes' : 'no';
     $attributes['display_title']                = ! empty( $attributes['display_title'] ) ? 'yes' : 'no';
     $attributes['display_content']              = ! empty( $attributes['display_content'] ) ? 'yes' : 'no';
@@ -56,11 +56,11 @@ function render_callback( $attributes ) {
     $attributes['image_resize_crop']            = ! empty( $attributes['image_resize_crop'] ) ? 'yes' : 'no';
     $attributes['img_hover_effect']             = ! empty( $attributes['img_hover_effect'] ) ? 'yes' : 'no';
 
-    return run_shortcode( 'pgcu', $attributes );
+    return pgcup_run_shortcode( 'pgcu', $attributes );
     
 }
 
-function get_attributes_from_metadata( $file_or_folder ) {
+function pgcup_get_attributes_from_metadata( $file_or_folder ) {
 	$filename      = 'attributes.json';
 	$metadata_file = ( substr( $file_or_folder, -strlen( $filename ) ) !== $filename ) ?
 		trailingslashit( $file_or_folder ) . $filename :
@@ -79,7 +79,7 @@ function get_attributes_from_metadata( $file_or_folder ) {
 	return $metadata;
 }
 
-function run_shortcode( $shortcode, $atts = [] ) {
+function pgcup_run_shortcode( $shortcode, $atts = [] ) {
     $html = '';
 
     foreach ( $atts as $key => $value ) {
@@ -91,20 +91,5 @@ function run_shortcode( $shortcode, $atts = [] ) {
     return do_shortcode( $html );
 }
 
-add_action( 'init', 'register_block' );
-
-function add_rest_method( $endpoints ) {
-    if ( is_wp_version_compatible( '5.5' ) ) {
-        return $endpoints;
-    }
-
-    foreach ( $endpoints as $route => $handler ) {
-        if ( isset( $endpoints[ $route ][0] ) ) {
-            $endpoints[ $route ][0]['methods'] = [ WP_REST_Server::READABLE, WP_REST_Server::CREATABLE ];
-        }
-    }
-
-    return $endpoints;
-}
-//add_filter( 'rest_endpoints', 'add_rest_method');
+add_action( 'init', 'pgcup_register_block' );
 ?>

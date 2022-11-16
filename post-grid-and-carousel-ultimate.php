@@ -92,6 +92,8 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
                 add_action( 'elementor/preview/enqueue_styles', [ self::$instance, 'elementor_enqueue_preview_style' ] );
                 add_action( 'elementor/preview/enqueue_scripts', [ self::$instance, 'elementor_preview_enqueue_script' ] );
 
+                add_action( 'enqueue_block_editor_assets', [ self::$instance, 'enqueue_block_editor_assets' ] );
+
                 add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
                 // Initialize appsero tracking
                 self::$instance->init_appsero();
@@ -256,6 +258,10 @@ if( ! in_array('post-grid-carousel-ultimate-pro/post-grid-and-carousel-ultimate.
             wp_enqueue_script( 'pgcu-macy', PGCU_URL . 'assets/js/macy.min.js', array('jquery'), '', true );
             wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
             wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery'), '', true );
+        }
+
+        public function enqueue_block_editor_assets() {
+            wp_enqueue_style( 'pgcu-block-editor', PGCU_URL . 'admin/block-editor.css' );
         }
 
         /**

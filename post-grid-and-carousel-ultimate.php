@@ -84,6 +84,8 @@ Final class post_grid_and_carousel_ultimate
             add_action( 'elementor/preview/enqueue_styles', [ self::$instance, 'elementor_enqueue_preview_style' ] );
             add_action( 'elementor/preview/enqueue_scripts', [ self::$instance, 'elementor_preview_enqueue_script' ] );
 
+            add_action( 'enqueue_block_editor_assets', [ self::$instance, 'enqueue_block_editor_assets' ] );
+
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
             if( empty( get_option('pgcu_dismiss_notice') ) ) {
@@ -187,6 +189,7 @@ Final class post_grid_and_carousel_ultimate
     public function include_files(){
 
 		require_once PGCU_INC_DIR . 'helper.php';
+        require_once PGCU_INC_DIR . 'gutenberg/init.php';
         require_once PGCU_INC_DIR . 'elementor/init.php';
         pgcu_load_dependencies( 'all', PGCU_INC_DIR . 'classes/' );
     }
@@ -250,6 +253,10 @@ Final class post_grid_and_carousel_ultimate
         wp_enqueue_script( 'pgcu-swiper', PGCU_URL . 'assets/js/swiper-bundle.min.js', array('jquery') );
         wp_enqueue_script( 'pgcu-main-js', PGCU_URL . 'assets/js/main.js', array('jquery'), '', true );
         wp_enqueue_script( 'pgcu-ajax', PGCU_URL . 'assets/js/ajax.js', array('jquery'), '', true );
+    }
+
+    public function enqueue_block_editor_assets() {
+        wp_enqueue_style( 'pgcu-block-editor', PGCU_URL . 'admin/block-editor.css' );
     }
 
     /**

@@ -210,7 +210,7 @@ registerBlockType( 'pgcup/block', {
 			useEffect( () => {
 				setTimeout(() => {
 					extra_js();
-				}, 5000 );
+				}, 4000 );
 			} );
 
         let {
@@ -249,7 +249,6 @@ registerBlockType( 'pgcup/block', {
 			g_mobile,
 			display_pagination,
 			pagination_type,
-
 			image_resize_crop,
 			image_width,
 			image_hight,
@@ -437,7 +436,7 @@ registerBlockType( 'pgcup/block', {
 
 						</PanelBody>
 
-						<PanelBody title={ __( 'Carousel', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
+						{ layout == 'carousel' ? <PanelBody title={ __( 'Carousel', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
 
 							<ToggleControl
 								label={ __( 'Auto Play', 'directorist' ) }
@@ -537,9 +536,9 @@ registerBlockType( 'pgcup/block', {
 								onChange={ newState => setAttributes( { navigation_position: newState } ) }
 							/>
 							
-						</PanelBody>
+						</PanelBody> : '' }
 
-						<PanelBody title={ __( 'Grid / Masonry', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
+						{ layout == 'grid' || layout == 'masonry' ? <PanelBody title={ __( 'Grid / Masonry', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
 
 							<TextControl
 								label={ __( 'Grid Columns', 'directorist' ) }
@@ -579,7 +578,7 @@ registerBlockType( 'pgcup/block', {
 								onChange={ newState => setAttributes( { pagination_type: newState } ) }
 							/> : '' }
 
-						</PanelBody>
+						</PanelBody> : '' }
 
 						<PanelBody title={ __( 'Image', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
 

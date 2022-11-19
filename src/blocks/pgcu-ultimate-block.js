@@ -399,7 +399,7 @@ registerBlockType( 'pgcup/block', {
 
 						</PanelBody>
 
-						<PanelBody title={ __( 'Carousel', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
+						{ layout == 'carousel' ? <PanelBody title={ __( 'Carousel', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
 
 							<ToggleControl
 								label={ __( 'Auto Play', 'directorist' ) }
@@ -482,9 +482,9 @@ registerBlockType( 'pgcup/block', {
 								onChange={ newState => setAttributes( { navigation_position: newState } ) }
 							/>
 							
-						</PanelBody>
+						</PanelBody> : '' }
 
-						<PanelBody title={ __( 'Grid / Masonry', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
+						{ layout == 'grid' ? <PanelBody title={ __( 'Grid', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
 
 							<TextControl
 								label={ __( 'Grid Columns', 'directorist' ) }
@@ -513,7 +513,7 @@ registerBlockType( 'pgcup/block', {
 								onChange={ newState => setAttributes( { display_pagination: newState } ) }
 							/>
 
-						</PanelBody>
+						</PanelBody> : '' }
 
 						<PanelBody title={ __( 'Image', 'post-grid-carousel-ultimate' ) } initialOpen={ false }>
 

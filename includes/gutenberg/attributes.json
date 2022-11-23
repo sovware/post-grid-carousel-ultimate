@@ -119,6 +119,10 @@
     "type":"string",
     "default": "1"
   },
+  "display_pagination":{
+    "type":"boolean",
+    "default": true
+  },
   "pagination_type":{
     "type":"string",
     "default": "number"

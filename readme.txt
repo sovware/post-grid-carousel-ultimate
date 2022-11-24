@@ -136,7 +136,7 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 15. Backend: Custom Widget
 
 == Changelog ==
-= 1.6.1 =
+= 1.6.0 =
 * Add: WordPress 6.1 compatibility
 * Add: Elementor support
 * Add: Gutenberg support

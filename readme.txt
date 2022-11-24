@@ -1,4 +1,4 @@
-=== Post Grid, Slider & Carousel Ultimate ===
+=== Post Grid, Slider & Carousel Ultimate - with Shortcode, Gutenberg Block & Elementor Widget ===
 Contributors: wpwax
 Tags: post grid, post carousel, post slider, post view, post list
 Requires at least: 4.0
@@ -16,6 +16,8 @@ The easiest and most useful plugin to display blog posts, pages, or custom posts
 The presentation of your posts determines how good they are to your users at the first sight. Do you want to display your posts in a beautiful way so that it attracts your users more? Now you can increase the attractiveness of your posts by using the Post Grid, Slider & Carousel Ultimate plugin.
 
 [youtube https://youtu.be/hAVqsDftmF4]
+
+**NEW UPDATE**: Now Supports Elementor & Gutenberg Page Builders
 
 It is the easiest and the most useful plugin that allows you to display your blog posts, pages, or any other custom posts in different beautiful grids & carousels. You can use different layouts like Normal Grid, Sortable Grid, and Carousel to display your posts. It is 100% responsive and mobile-friendly. Your posts will display perfectly on any device and most importantly, you do not need to be a pro to use the Post Grid, Slider & Carousel Ultimate plugin. 
 
@@ -41,7 +43,9 @@ HERE’S WHAT USERS SAY ABOUT  POST GRID, POST SLIDER & POST CAROUSEL ULTIMATE
 = Features of this plugin =
 *   4 beautiful themes for Post Grid 
 *   4 beautiful themes for Post Carousel or Post Slider.
-*   4 beautiful themes for Post Filterable Grid 
+*   4 beautiful themes for Post Filterable Grid.
+*   Gutenberg Block [New].
+*   Elementor Page Builder Support [New]. 
 *   Create unlimited Post Grid, Post Ffilterable Grid, Post Carousel, or Post Slider
 *   Customizable columns for any device.
 *   Easy Shortcode Generator and insert shortcode easily with Gutenberg editor.
@@ -69,8 +73,10 @@ More amazing features are available in the Post Grid, Post Slider & Post Carouse
 = FEATURES OF THE  POST GRID, POST SLIDER & POST CAROUSEL ULTIMATE PRO VERSION =
 *   21 different themes for Post Grid.
 *   21 different themes for Post Carousel.
-*   21 different themes for Post Filterable Grid
-*   21 different themes for Post Masonry
+*   21 different themes for Post Filterable Grid.
+*   21 different themes for Post Masonry.
+*   Gutenberg Block [New].
+*   Elementor Page Builder Support [New]. 
 *   Display popular, featured, latest, older and random posts.
 *   Display posts by category, IDs, tag, month, and year.
 *   Control font size, weight, alignment of post title and content.
@@ -84,6 +90,16 @@ More amazing features are available in the Post Grid, Post Slider & Post Carouse
 *   Read more button text edit option
 *   Premium Support
 *   And many more features
+
+
+**ELEMENTOR PAGE BUILDER SUPPORT**
+
+Post Grid, Slider & Carousel Ultimate now supports the most popular page builder Elementor. With just a few clicks you can create an unlimited number of post sliders, grids, and carousels within the Elementor interface. You have the flexibility to personalize the layout, select from a variety of themes, and customize the elements. The Elementor Addon simply improves the whole user experience making it more streamlined and intuitive.
+
+
+**GUTENBERG BLOCK**
+
+Post Grid, Slider & Carousel Ultimate Gutenberg Block includes multiple layouts like grid, carousel, and sortable grid along with a collection of themes to showcase posts in an elegant manner. By using this Post Grid, Slider & Carousel Ultimate, you are merging the most user-friendly post grid plugin with the most powerful page builder that lets you create 100% responsive and smooth post sliders, grids, and carousels.
 
 
 👉 Like us on Facebook : [wpWax](https://www.facebook.com/wpwax)
@@ -122,8 +138,8 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 == Changelog ==
 = 1.6.1 =
 * Add: WordPress 6.1 compatibility
-* Add: Elementor compatibility
-* Add: Gutenberg compatibility
+* Add: Elementor support
+* Add: Gutenberg support
 = 1.5.0 =
 * Add: WordPress 6.0 compatibility
 * Fix: Security issue

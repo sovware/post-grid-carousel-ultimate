@@ -88,9 +88,10 @@ Final class post_grid_and_carousel_ultimate
 
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
-            if( empty( get_option('pgcu_dismiss_notice') ) ) {
-                add_action( 'admin_notices', array( self::$instance, 'admin_notices') );
-            }
+            
+            // if( empty( get_option('pgcu_dismiss_notice') ) ) {
+            //     add_action( 'admin_notices', array( self::$instance, 'admin_notices') );
+            // }
             // Initialize appsero tracking
             self::$instance->init_appsero();
         }

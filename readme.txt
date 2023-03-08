@@ -3,7 +3,7 @@ Contributors: wpwax
 Tags: post grid, post carousel, post slider, post view, post list
 Requires at least: 4.0
 Tested up to: 6.1
-Stable tag: 1.6.1
+Stable tag: 1.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -106,6 +106,19 @@ Post Grid, Slider & Carousel Ultimate Gutenberg Block includes multiple layouts 
 👉 Official YouTube Channel : [YouTube](https://www.youtube.com/c/wpWax)
 
 
+**OTHER AMAZING PRODUCTS FROM WPWAX**
+
+👉  [Directorist](https://wordpress.org/plugins/directorist/) – WordPress Business Directory Plugin with Classified Ads Listings
+
+👉  [HelpGent](https://wordpress.org/plugins/helpgent/) – Your Ultimate Help Agent for Video, Voice, and Text Messaging with Screen Record Facility
+
+👉  [Legal Pages](https://wordpress.org/plugins/legal-pages/) – Privacy Policy, Terms & Conditions, GDPR, CCPA, and Cookie Notice Generator
+
+👉  [Product Carousel Slider & Grid Ultimate for WooCommerce](https://wordpress.org/plugins/woo-product-carousel-slider-and-grid-ultimate/) – The most intuitive solution to make your eCommerce site visually appealing. Create & customize WooCommerce product carousel, sliders, or grids easily
+
+👉  [Logo Showcase Ultimate](https://wordpress.org/plugins/logo-showcase-ultimate/) – Ultimate logo showcase plugin to create responsive logo carousel, logo slider & logo grid and display unlimited clients, partners, sponsors logos
+
+
 == Installation ==
 
 1. Unzip the downloaded zip file and upload the plugin folder into the `wp-content/plugins/` directory. Alternatively, upload from Plugins >> Add New >> Upload Plugin.
@@ -136,8 +149,10 @@ Post Grid and Carousel Ultimate plugin is very easy to use. Just follow the foll
 15. Backend: Custom Widget
 
 == Changelog ==
+= 1.6.2 =
+* Fix: Style issue
 = 1.6.1 =
-* Fix: translate issue
+* Fix: Translate issue
 = 1.6.0 =
 * Add: WordPress 6.1 compatibility
 * Add: Elementor support

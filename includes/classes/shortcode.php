@@ -78,7 +78,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$display_term         = ! empty( $display_term ) ? $display_term : 'yes';
 			$display_title        = ! empty( $display_title ) ? $display_title : 'yes';
 			$display_header_title = ! empty( $display_header_title ) ? $display_header_title : 'no';
-			$header_title 	 	  = ! empty( $header_title ) ? $header_title : '';
+			$header_title         = ! empty( $header_title ) ? $header_title : '';
 			$display_content      = ! empty( $display_content ) ? $display_content : 'yes';
 			$content_word_limit   = ! empty( $content_word_limit ) ? $content_word_limit : '16';
 			$display_read_more    = ! empty( $display_read_more ) ? $display_read_more : 'yes';
@@ -86,6 +86,8 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 			$read_more_type       = ! empty( $read_more_type ) ? $read_more_type : 'link';
 			$display_author       = ! empty( $display_author ) ? $display_author : 'yes';
 			$display_date         = ! empty( $display_date   ) ? $display_date   : 'yes';
+			$post_from            = ! empty( $post_from   ) ? $post_from   : '';
+			$total_posts          = ! empty( $total_posts   ) ? $total_posts   : 12;
 
 			$image_resize_crop = ! empty( $image_resize_crop ) ? $image_resize_crop : "yes";
 			$image_width	   = ! empty( $image_width ) ? $image_width : 300;
@@ -271,7 +273,7 @@ if( !defined('ABSPATH')) { die('Direct access not allow');}
 						?>
 
 
-    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-' . $g_column . ' pgcu-column-md-' . $g_tablet . ' pgcu-column-sm-' . $g_mobile . ''; ?>" style="
+    				<div class="<?php echo ( 'carousel' == $layout) ? 'swiper-wrapper' : 'pgcu-row pgcu-column-' . esc_attr( $g_column ) . ' pgcu-column-md-' . esc_attr( $g_tablet ) . ' pgcu-column-sm-' . esc_attr( $g_mobile ) . ''; ?>" style="
 					--pgcu-titleColor: <?php echo esc_attr( $post_title_color ); ?>;
     				--pgcu-titleColorHover: <?php echo esc_attr( $post_title_hover_color ); ?>;
 					--pgcu-excerptColor: <?php echo esc_attr( $post_content_color ); ?>;

@@ -42,7 +42,7 @@ class PGCU_Ajax
         $query        = ! empty( $_POST['query']  ) ? json_decode( stripslashes( $_POST['query'] ), true ) : '';
         
         $data 	 = get_post_meta( $post_id, 'gc', true );
-        $data = post_grid_and_carousel_ultimate::unserialize_and_decode24( $data );
+        $data = post_grid_and_carousel_ultimate::json_decoded( $data );
         $value = is_array( $data ) ? $data : array();
         extract( $value );
 

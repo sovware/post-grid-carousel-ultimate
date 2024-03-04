@@ -46,7 +46,7 @@ class PGCU_Metabox
         wp_nonce_field( 'aps_meta_save', 'gc_meta_save_nonce' );
 
         $get_value = get_post_meta( $post->ID,'gc',true );
-        $get_value = ! is_array( $get_value ) ? post_grid_and_carousel_ultimate::unserialize_and_decode24( $get_value ) : $get_value;
+        $get_value = ! is_array( $get_value ) ? post_grid_and_carousel_ultimate::json_decoded( $get_value ) : $get_value;
 
         $gc_value = is_array( $get_value ) ? $get_value : array();
 
@@ -92,7 +92,7 @@ class PGCU_Metabox
         // save the meta data if it is our post type lcg_mainpost post type
         if ( ! empty( $_POST['post_type'] ) && ( PGCU_POST_TYPE == $_POST['post_type'] ) ) {
 
-            $gc = ! empty( $_POST['gc'] ) ? post_grid_and_carousel_ultimate::serialize_and_encode24( pgcu_sanitize_array( $_POST['gc'] ) ) : post_grid_and_carousel_ultimate::serialize_and_encode24( array() );
+            $gc = ! empty( $_POST['gc'] ) ? post_grid_and_carousel_ultimate::json_encoded( pgcu_sanitize_array( $_POST['gc'] ) ) : post_grid_and_carousel_ultimate::json_encoded( array() );
 
             //save the meta value
             update_post_meta( $post_id, "gc", $gc );

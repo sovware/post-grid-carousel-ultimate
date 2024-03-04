@@ -89,6 +89,10 @@ Final class post_grid_and_carousel_ultimate
             add_action( 'admin_menu', array( self::$instance, 'upgrade_support_submenu_pages_for_gc') );
             add_action( 'wp_head',  array( self::$instance, 'track_post_views') );
 
+            if( empty( get_option('pgcu_migrate_serialize_to_json') ) ) {
+                add_action( 'admin_init', array( self::$instance, 'migrate_serialize_data') );
+            }
+
             // if( empty( get_option('pgcu_dismiss_notice') ) ) {
             //     add_action( 'admin_notices', array( self::$instance, 'admin_notices') );
             // }
@@ -97,6 +101,40 @@ Final class post_grid_and_carousel_ultimate
         }
 
         return self::$instance;
+    }
+
+    public function migrate_serialize_data() {
+            
+        if ( ! current_user_can( 'manage_options' ) ) {
+            return;
+        }
+
+        $args = array(
+            'post_type'      => PGCU_POST_TYPE,
+        );
+
+        $query = new WP_Query( $args );
+        
+        // Check if there are posts in the query
+        if ( $query->have_posts() ) {
+            // Loop through each post
+            while ( $query->have_posts() ) {
+                $query->the_post();
+                $wcpscu_data = get_post_meta( get_the_ID(), 'gc', true );
+                
+                if ( ! empty( $wcpscu_data ) && ! is_json_encoded( $wcpscu_data ) ) {
+                    $unserialized_data = unserialize( base64_decode( $wcpscu_data ) );
+                    
+                    $json_decode_data = self::json_encoded( $unserialized_data );
+                    update_post_meta( get_the_ID(), 'gc', $json_decode_data );
+                }
+            }
+
+            // Restore the global post data
+            wp_reset_postdata();
+        }
+        update_option( 'pgcu_migrate_serialize_to_json', true );
+
     }
 
     /**
@@ -261,22 +299,29 @@ Final class post_grid_and_carousel_ultimate
     }
 
     /**
-     * It will serialize and then encode the string using base64_encode() and return the encoded data
+     * Encodes a PHP value into its JSON representation.
      * @param $data
      * @return string
      */
-    public static function serialize_and_encode24( $data )
-    {
-        return base64_encode( serialize( $data ) );
+    public static function json_encoded( $data ) {
+        return json_encode( $data );
     }
 
     /**
-     * It will decode the data using base64_decode() and then unserialize the data and return it
-     * @param string $data Encoded strings that should be decoded and then unserialize
-     * @return mixed
+     * Decodes a JSON-encoded string into a PHP associative array.
+     * @param string $data The JSON-encoded string to be decoded.
+     * @return array Returns the decoded PHP associative array on success, or an empty array on failure.
      */
-    public static function unserialize_and_decode24( $data ){
-        return unserialize( base64_decode( $data ) );
+    public static function json_decoded( $data ) {
+    
+        $decoded_data = json_decode( $data, true );
+
+        
+        if ( json_last_error() === JSON_ERROR_NONE && is_array( $decoded_data ) ) {
+            return $decoded_data;
+        } else {
+            return array();
+        }
     }
 
 } //end of class

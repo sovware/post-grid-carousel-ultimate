@@ -47,7 +47,7 @@ class PGCU_Migration
                 $new_meta['pagi_active_color']                   = ! empty( $get_meta['pagi_text_active_color'] ) ? $get_meta['pagi_text_active_color'] : '';
                 $new_meta['pagi_active_back_color']              = ! empty( $get_meta['pagi_active_back_color'] ) ? $get_meta['pagi_active_back_color'] : '';
 
-                update_post_meta( $old_post->ID, 'gc', post_grid_and_carousel_ultimate::serialize_and_encode24( $new_meta ) );
+                update_post_meta( $old_post->ID, 'gc', post_grid_and_carousel_ultimate::json_encoded( $new_meta ) );
                 
                 
             }
